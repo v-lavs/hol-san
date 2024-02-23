@@ -1,23 +1,64 @@
 .section-banner {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  min-height: 700px;
+  position: relative;
+  min-height: calc(100vh - 100px);
   color: $white;
+  display: flex;
+  align-items: center;
+
+  .container {
+    min-height: 340px;
+  }
+
+  &__bg {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+
   .part_left {
     width: 58%;
     max-width: 680px;
 
   }
+
   .part_right {
     width: 42%;
     max-width: 500px;
 
   }
-  .section__title{
+
+  .section__title {
     color: $white;
     font-weight: 700;
     text-align: left;
     text-transform: initial;
   }
+
+  &__wrap-img {
+    position: relative;
+    height: 100%;
+  }
+}
+
+.img-banner {
+  display: block;
+}
+
+.img-banner_1 {
+  max-width: 342px;
+  margin-left: auto;
+
+}
+
+.img-banner_2 {
+  max-width: 365px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
