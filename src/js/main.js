@@ -76,6 +76,7 @@ $(document).ready(function () {
 
     const bannerImg1 = document.querySelector('.img-banner_1');
     const bannerImg2 = document.querySelector('.img-banner_2');
+    const disclaimerMain = document.querySelector('.disclaimer-main');
 
     if(bannerImg1) {
         gsap.fromTo(bannerImg1, {
@@ -105,22 +106,32 @@ $(document).ready(function () {
             delay: 0.35
         })
     }
+
+    if(disclaimerMain) {
+        gsap.fromTo(disclaimerMain, {
+            y: 120,
+            duration: -1,
+            opacity: 0
+        }, {
+            y: 0,
+            opacity: 1,
+            stagger: 0.2,
+            ease: 'power1.out',
+            duration: 1.2,
+            delay: 0.25
+        });
+
+    }
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to(".box", {
+        scrollTrigger: ".box", // start the animation when ".box" enters the viewport (once)
+        x: 500,
+    });
+
 });
-const disclaimerMain = document.querySelector('.disclaimer-main');
-if(disclaimerMain) {
-    gsap.fromTo(disclaimerMain, {
-        y: 120,
-        duration: -1,
-        opacity: 0
-    }, {
-        y: 0,
-        opacity: 1,
-        stagger: 0.2,
-        ease: 'power1.out',
-        duration: 1.2,
-        delay: 0.25
-    })
-}
+
 
 
 

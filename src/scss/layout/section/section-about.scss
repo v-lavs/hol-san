@@ -5,6 +5,7 @@
   background-size: cover;
 
   .part_left {
+    position: relative;
     max-width: 580px;
     width: 50%;
   }
@@ -25,6 +26,19 @@
       transform: translateY(-50%);
     }
   }
+}
+
+.img-about_1 {
+  display: block;
+  max-width: 393px;
+}
+
+.img-about_2 {
+  display: block;
+  position: absolute;
+  max-width: 431px;
+  bottom: 0;
+  right: 0;
 }
 
 .slider-components {
