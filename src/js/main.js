@@ -50,6 +50,45 @@ $(document).ready(function () {
         })
     );
 
+    // Banner letters
+    const bannerTitle = document.querySelector('.section-banner .section__title');
+    if (bannerTitle) {
+        const text = bannerTitle.innerText;
+        const htmlText = text.split('').map(letter => {
+            if (letter.trim()) {
+                return '<span class="section-banner__title-letter">' + letter + '</span>';
+            }
+            return letter;
+        }).join('');
+
+        bannerTitle.innerHTML = htmlText;
+        const chars = document.querySelectorAll('.section-banner__title-letter');
+
+        if (chars) {
+            gsap.fromTo(chars, {opacity: 0.6}, {
+                stagger: 0.075,
+                ease: 'back.in',
+                duration: 0.01,
+                opacity:1,
+            })
+        }
+    }
+    const bannerImg = document.querySelector('.section-banner__wrap-img');
+
+    if(bannerImg) {
+        gsap.fromTo(bannerImg, {
+            x: 500,
+            duration: -1,
+            opacity: 0
+        }, {
+            x: 0,
+            opacity: 1,
+            stagger: 0.2,
+            ease: 'power.out',
+            duration: 1.2,
+            delay: 0.2
+        })
+    }
 
 });
 
