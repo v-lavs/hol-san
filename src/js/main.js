@@ -69,7 +69,7 @@ $(document).ready(function () {
                 stagger: 0.075,
                 ease: 'back.in',
                 duration: 0.01,
-                opacity:1,
+                opacity: 1,
             })
         }
     }
@@ -78,7 +78,7 @@ $(document).ready(function () {
     const bannerImg2 = document.querySelector('.img-banner_2');
     const disclaimerMain = document.querySelector('.disclaimer-main');
 
-    if(bannerImg1) {
+    if (bannerImg1) {
         gsap.fromTo(bannerImg1, {
             x: 500,
             duration: -1,
@@ -92,7 +92,7 @@ $(document).ready(function () {
             delay: 0.2
         })
     }
-    if(bannerImg2) {
+    if (bannerImg2) {
         gsap.fromTo(bannerImg2, {
             x: 500,
             duration: -1,
@@ -107,7 +107,7 @@ $(document).ready(function () {
         })
     }
 
-    if(disclaimerMain) {
+    if (disclaimerMain) {
         gsap.fromTo(disclaimerMain, {
             y: 120,
             duration: -1,
@@ -124,11 +124,6 @@ $(document).ready(function () {
     }
 
     gsap.registerPlugin(ScrollTrigger);
-
-    gsap.to(".box", {
-        scrollTrigger: ".box", // start the animation when ".box" enters the viewport (once)
-        x: 500,
-    });
 
 });
 

@@ -1,6 +1,7 @@
 .section-symptoms {
   min-height: 874px;
   padding-bottom: 0;
+  align-items: flex-end;
 
   .img_1 {
     display: block;
@@ -16,6 +17,7 @@
   .img-ellipse {
     z-index: -1;
   }
+
   .img-ellipse,
   .dot {
     position: absolute;
@@ -33,7 +35,8 @@
     box-shadow: 0 0 40px 0 rgba(0, 154, 157, 0.5);
     top: 56%;
     left: 12px;
-    &.right{
+
+    &.right {
       right: -45px;
       left: auto;
       bottom: 22%;
@@ -64,7 +67,7 @@
     left: -22px;
   }
 
-  .img-ellipse_green{
+  .img-ellipse_green {
     max-width: 305px;
     bottom: -65px;
     right: -90px;
