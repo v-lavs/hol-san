@@ -1,0 +1,29 @@
+/*@font-face {*/
+/*    font-family: 'Uni Neue';*/
+/*    src: url('UniNeueHeavy.eot');*/
+/*    src: local('Uni Neue Heavy'), local('UniNeueHeavy'),*/
+/*        url('UniNeueHeavy.eot?#iefix') format('embedded-opentype'),*/
+/*        url('UniNeueHeavy.woff2') format('woff2'),*/
+/*        url('UniNeueHeavy.woff') format('woff'),*/
+/*        url('UniNeueHeavy.ttf') format('truetype');*/
+/*    font-weight: 800;*/
+/*    font-style: normal;*/
+/*}*/
+
+
+@font-face {
+    font-family: 'Uni Neue';
+    src:url('fonts/UniNeueRegular.woff2') format('woff2'),
+        url('fonts/UniNeueRegular.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Uni Neue';
+    src:url('fonts/UniNeueBold.woff2') format('woff2'),
+        url('fonts/UniNeueBold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}

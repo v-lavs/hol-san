@@ -1,0 +1,38 @@
+.section-note {
+  color: #545b66;
+  font-size: 16px;
+  line-height: 130%;
+  .title {
+    font-size: 16px;
+    color: #545b66;
+    margin-bottom: 16px;
+  }
+  p{
+    margin-bottom: 4px;
+  }
+  a{
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    &:hover,
+    &:focus{
+      text-decoration: none;
+    }
+  }
+  ol {
+    counter-reset: list;
+
+    li {
+      position: relative;
+      margin-bottom: 4px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:before {
+        counter-increment: list;
+        content: counter(list) ". ";
+      }
+    }
+  }
+}

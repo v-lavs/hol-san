@@ -1,0 +1,53 @@
+.btn {
+  display: inline-flex;
+  font-family: $main-font;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+  text-transform: uppercase;
+  padding: 15px 32px;
+  transition: .5s;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100px;
+
+  &_main {
+    box-shadow: 0 0 0 4px rgba(248,250,252,.25);
+    background-color: $white;
+    color: $warm;
+  }
+
+  &_stroke {
+    border: 1px solid #f8fafc;
+    color: $warm;
+  }
+
+  &_glass {
+    border: 1px solid #ffffff;
+    color: $white;
+  }
+
+  //&:hover,
+  //&:focus {
+  //  background-color: #008BBB;
+  //}
+
+  .icon {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    margin-right: 16px;
+    color: currentColor;
+  }
+
+  svg {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@include respond-to($xs) {
+
+}
+

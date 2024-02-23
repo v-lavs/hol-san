@@ -1,0 +1,28 @@
+@import 'utils/variables';
+@import 'utils/mixins';
+
+@import '../lib/swiper/swiper-bundle.min';
+
+@import 'base/reset';
+@import 'base/base';
+@import 'base/typography';
+
+@import 'components/menu';
+@import 'components/button';
+@import 'components/slider';
+@import 'components/accordion';
+
+@import "layout/layout";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/section/section-banner";
+@import "layout/section/section-symptoms";
+@import "layout/section/section-effects";
+@import "layout/section/section-questions";
+@import "layout/section/section-about";
+@import "layout/section/section-note";
+
+
+
+
+

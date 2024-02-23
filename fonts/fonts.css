@@ -1,0 +1,17 @@
+@font-face {
+	font-family: 'Uni Neue';
+	src:url('../fonts/UniNeueRegular.woff2') format('woff2'),
+	url('../fonts/UniNeueRegular.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'Uni Neue';
+	src:url('../fonts/UniNeueBold.woff2') format('woff2'),
+	url('../fonts/UniNeueBold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+}
+

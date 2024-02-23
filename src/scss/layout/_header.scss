@@ -1,0 +1,148 @@
+.header {
+  background-color: $warm;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  z-index: 900;
+
+  .container {
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .hide-deck {
+    display: none;
+  }
+
+  &__logo {
+    max-width: 180px;
+    display: inline-block;
+    margin-right: auto;
+  }
+
+}
+
+.btn-burger {
+  display: none;
+  border: none;
+  background-color: transparent;
+  width: 25px;
+  height: 18px;
+  padding: 0;
+  transition: .5s ease-in-out;
+  z-index: 1;
+}
+
+.backdrop {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10;
+  background-color: #000000;
+  opacity: .5;
+}
+
+@include respond-to($xl) {
+  .header {
+    padding: 23px 0;
+
+    &__logo {
+      max-width: 260px;
+    }
+  }
+}
+
+@include respond-to($lg) {
+  .header {
+    &__logo {
+      max-width: 210px;
+    }
+
+    &__lang-link {
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    &__lang {
+      font-size: 16px;
+    }
+  }
+}
+
+@include respond-to($md) {
+
+  .header__nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 96px;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #00ADF1;
+    transform: translateX(-100%);
+    transition: all 0.35s ease;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    max-width: 480px;
+    width: 100%;
+    overflow: auto;
+    max-height: 100%;
+
+    &.open {
+      transform: translateX(0px);
+    }
+  }
+  .header__contacts-mob {
+    display: block;
+  }
+  .btn-burger {
+    display: block;
+    margin-left: 30px;
+  }
+  .header__lang {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+}
+
+@include respond-to($xs) {
+  .header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &__nav {
+      top: 88px;
+    }
+
+    .container {
+      flex-wrap: wrap;
+    }
+
+    &__lang {
+      order: -1;
+      width: 100%;
+      text-align: right;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+
+    &__logo {
+      max-width: 163px;
+    }
+  }
+  .header__contacts-mob {
+    font-size: 15px;
+  }
+}
+

@@ -1,0 +1,50 @@
+.menu {
+  display: flex;
+  margin-right: 60px;
+
+  &__item {
+    font-family: $main-font;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: #fff;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    transition: .35s;
+
+    &:hover,
+    &:focus {
+
+    }
+  }
+
+  @include respond-to($lg) {
+
+  }
+  @include respond-to($md) {
+    text-align: left;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .menu__link {
+      &:hover,
+      &:focus {
+
+      }
+    }
+    .menu__item {
+
+    }
+
+  }
+  @include respond-to($xs) {
+
+  }
+}

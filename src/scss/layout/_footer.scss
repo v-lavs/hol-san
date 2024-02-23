@@ -1,0 +1,96 @@
+.footer {
+  //position: relative;
+  font-size: 16px;
+  line-height: 130%;
+  color: #fff;
+  background-color: #009a9d;
+
+  .container {
+    max-width: 100%;
+  }
+
+  &_top {
+    padding-top: 120px;
+    padding-bottom: 60px;
+    background-color: #009a9d;
+  }
+
+  &_bottom {
+    backdrop-filter: blur(25px);
+    background-color: #008c8f;
+
+    color: #2e3540;
+    border-radius: 20px 20px 0 0;
+    padding: 48px 0 38px 0;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    //&.active {
+    //  position: static !important;
+    //}
+  }
+
+  &__logo {
+    max-width: 180px;
+    display: inline-block;
+  }
+
+  &__text {
+    padding-top: 24px;
+  }
+}
+
+.copyright {
+  display: flex;
+  color: #ffffff;
+
+  a {
+    font-weight: 700;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+
+  div:first-child {
+    margin-right: 32px;
+  }
+}
+
+@media only screen and (min-width: 1441px) {
+
+}
+
+@include respond-to($xl) {
+
+}
+
+@include respond-to($lg) {
+
+}
+
+@include respond-to($md) {
+
+}
+
+@include respond-to($sm) {
+  .footer {
+
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .footer {
+
+  }
+}
+
+@include respond-to($xs) {
+  .footer {
+  }
+}

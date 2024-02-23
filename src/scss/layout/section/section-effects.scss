@@ -1,0 +1,28 @@
+.section-effects {
+
+}
+
+.effects {
+  display: flex;
+  margin: -10px;
+
+  &__item {
+    text-align: center;
+    padding: 0 10px;
+    width: 25%;
+  }
+
+  .card__text {
+    padding: 0 16%;
+  }
+
+  .card__thumb {
+    max-width: 225px;
+    padding-top: 80.25%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+}
