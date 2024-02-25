@@ -4,6 +4,7 @@
   color: $white;
   display: flex;
   align-items: center;
+  overflow: hidden;
 
   .container {
     min-height: 340px;
@@ -11,13 +12,23 @@
 
   &__bg {
     position: absolute;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+  }
+
+  &__bg-img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 110%;
+    width: 110%;
+    object-fit: cover;
     z-index: -1;
   }
 

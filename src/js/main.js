@@ -35,6 +35,19 @@ $(document).ready(function () {
             },
         });
     }
+    //  function preventScrolling() {
+    //      window.addEventListener("scroll", function(){
+    //          window.scrollTo(0,0);
+    //      });
+    //  }function removeEventListener() {
+    //      window.removeEventListener("scroll", function(){
+    //          window.scrollTo(0,0);
+    //      });
+    //  }
+    // let slider = document.querySelector(".slider-components");
+    //  slider.addEventListener("slideChanged", removeEventListener);
+    //  preventScrolling();
+
 
 //ACCORDION
     const accordionList = document.querySelectorAll(".accordion__item");
@@ -106,7 +119,6 @@ $(document).ready(function () {
             delay: 0.35
         })
     }
-
     if (disclaimerMain) {
         gsap.fromTo(disclaimerMain, {
             y: 120,
@@ -120,10 +132,289 @@ $(document).ready(function () {
             duration: 1.2,
             delay: 0.25
         });
-
     }
 
+
     gsap.registerPlugin(ScrollTrigger);
+
+    // const tl = gsap.timeline();
+    // tl.fromTo(' .img_1',
+    //         {
+    //             y: 100,
+    //             opacity: 0,
+    //             duration: -1,
+    //         },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             stagger: 0.2,
+    //             ease: 'power1.out',
+    //             duration: 1.2,
+    //         },
+    //     )
+    //     .fromTo('.block-bg',
+    //         {
+    //             y: 100,
+    //             opacity: 0,
+    //             duration: -1,
+    //         },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             stagger: 0.2,
+    //             ease: 'power1.out',
+    //             duration: 1.2,
+    //             force3D: true
+    //         },
+    //         .8
+    //     )
+    //
+    //     .fromTo('.section-symptoms .section__title',
+    //         {
+    //             y: 100,
+    //             opacity: 0,
+    //             duration: -1,
+    //         },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             stagger: 0.2,
+    //             ease: 'power1.out',
+    //             duration: 1.2,
+    //         },
+    //         .8
+    //     )
+    //     .fromTo('.img-ellipse_warm',
+    //         {
+    //             y: 100,
+    //             opacity: 0,
+    //             duration: -1,
+    //         },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             stagger: 0.2,
+    //             ease: 'power1.out',
+    //             duration: 1.2,
+    //
+    //         },
+    //         .6
+    //     )
+    //     .fromTo('.img-ellipse_green',
+    //         {
+    //             y: 100,
+    //             opacity: 0,
+    //             duration: -1,
+    //         },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             stagger: 0.2,
+    //             ease: 'power1.out',
+    //             duration: 1.2,
+    //         },
+    //         .8
+    //     )
+    //     .fromTo('.dot',
+    //         {
+    //             y: 50,
+    //             opacity: 0,
+    //             duration: -1,
+    //         },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             stagger: 0.2,
+    //             ease: 'power1.out',
+    //             duration: 1.2,
+    //         },
+    //         .9
+    //     )
+    //     .fromTo('.symptoms .card',
+    //         {
+    //             opacity: 0,
+    //             duration: -1,
+    //         },
+    //         {
+    //             opacity: 1,
+    //             stagger: 0.5,
+    //             ease: 'power1.in',
+    //             duration: 1.2,
+    //         },
+    //         1.5
+    //     )
+
+    gsap.to('.section-banner .section-banner__bg', {
+        // scrollTrigger: {
+        //     trigger: '.section',
+        //     toggleActions: 'restart none revers none',
+        //     // markers: true,
+        //     start: 'center center',
+        //     scrub: true,
+        // },
+        // yPercent: 40
+    })
+
+    gsap.from('section-symptoms', {
+            scrollTrigger: 'section-effects',
+            start: 'center center',
+            scrub: 2,
+        },
+    )
+
+    // $(function () {
+    //     function scrollTrig() {
+    //         gsap.registerPlugin(ScrollTrigger);
+    //         let parallaxWrapp = gsap.utils.toArray('.parallax__wrapp');
+    //         parallaxWrapp.forEach(parallax => {
+    //             gsap.to(parallax, {
+    //                 scrollTrigger: {
+    //                     trigger: parallax,
+    //                     start: 'top top',
+    //                     end: 'bottom top',
+    //                     scrub: true,
+    //                     marker: true,
+    //                 },
+    //                 yPercent: -40,
+    //                 ease: 'none',
+    //             });
+    //         });
+    //     }
+    //
+    //     scrollTrig();
+    // });
+    const tl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".section-symptoms",
+            scrub: 3,
+            markers: true,
+            pin: true,
+            start: "top 10%",
+            end: `+=${innerHeight * 1.3}`,
+// end: 'bottom 70%'
+        }
+    });
+
+    tl.fromTo(' .img_1',
+        {
+            y: 100,
+            opacity: 0,
+            // duration: -1,
+        },
+        {
+            y: 0,
+            opacity: 1,
+            // stagger: 0.2,
+            ease: 'power1.out',
+            // duration: 1.2,
+        },
+    )
+        .fromTo('.block-bg',
+            {
+                y: 100,
+                opacity: 0,
+                // duration: -1,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                ease: 'power1.out',
+                // duration: 1.2,
+                force3D: true
+            },
+            .8
+        )
+
+        .fromTo('.section-symptoms .section__title',
+            {
+                y: 100,
+                opacity: 0,
+                // duration: -1,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                ease: 'power1.out',
+                // duration: 1.2,
+            },
+            .8
+        )
+        .fromTo('.img-ellipse_warm',
+            {
+                y: 100,
+                opacity: 0,
+                // duration: -1,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                ease: 'power1.out',
+                // duration: 1.2,
+
+            },
+            .6
+        )
+        .fromTo('.img-ellipse_green',
+            {
+                y: 100,
+                opacity: 0,
+                // duration: -1,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                ease: 'power1.out',
+                // duration: 1.2,
+            },
+            .8
+        )
+        .fromTo('.dot',
+            {
+                y: 50,
+                opacity: 0,
+                // duration: -1,
+            },
+            {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                ease: 'power1.out',
+                // duration: 1.2,
+            },
+            .9
+        )
+        .fromTo('.symptoms .card',
+            {
+                opacity: 0,
+                // duration: -1,
+            },
+            {
+                opacity: 1,
+                stagger: 0.5,
+                ease: 'power1.in',
+                // duration: 1.2,
+            },
+            1.5
+        )
+
+
+
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        ScrollTrigger.update();
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
 
 });
 

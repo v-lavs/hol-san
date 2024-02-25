@@ -3,6 +3,11 @@
   padding-bottom: 0;
   align-items: flex-end;
 
+  .parallax__wrapp {
+    align-items: flex-end;
+    display: flex;
+  }
+
   .img_1 {
     display: block;
     max-width: 462px;
@@ -28,6 +33,7 @@
     border-radius: 100%;
     width: 24px;
     height: 24px;
+    z-index: 1;
   }
 
   .dot_white {
@@ -71,6 +77,10 @@
     max-width: 305px;
     bottom: -65px;
     right: -90px;
+  }
+
+  .container {
+    overflow: hidden;
   }
 
   &__inner {
