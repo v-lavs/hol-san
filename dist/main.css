@@ -846,8 +846,24 @@ a:hover {
   text-decoration: none;
 }
 
-html {
-  scroll-behavior: smooth;
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
@@ -896,6 +912,7 @@ body {
   display: flex;
   align-items: center;
   padding: 120px 0;
+  min-height: 100vh;
 }
 
 .section__title {
@@ -1236,10 +1253,12 @@ body {
 }
 
 .footer {
+  position: relative;
   font-size: 16px;
   line-height: 130%;
   color: #fff;
   background-color: #009a9d;
+  z-index: 100;
 }
 
 .footer .container {
@@ -1294,6 +1313,10 @@ body {
 }
 
 .header {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
   background-color: #FF7330;
   padding: 18px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -1342,7 +1365,6 @@ body {
 
 .section-banner {
   position: relative;
-  min-height: calc(100vh - 100px);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -1414,7 +1436,6 @@ body {
 }
 
 .section-symptoms {
-  min-height: 874px;
   padding-bottom: 0;
   align-items: flex-end;
 }
@@ -1664,6 +1685,10 @@ body {
   background-size: contain;
   overflow: hidden;
   margin: 0 auto;
+}
+
+.section-questions {
+  min-height: 0;
 }
 
 .section-about {
