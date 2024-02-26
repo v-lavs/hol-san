@@ -1472,6 +1472,7 @@ body {
 .section-banner .part_right {
   width: 42%;
   max-width: 500px;
+  height: 340px;
 }
 
 .section-banner .section__title {
@@ -1484,7 +1485,6 @@ body {
 .section-banner__wrap-img {
   position: relative;
   height: 100%;
-  padding-bottom: 78px;
 }
 
 .img-banner {
@@ -1493,11 +1493,13 @@ body {
 
 .img-banner_1 {
   max-width: 342px;
+  width: 70%;
   margin-left: auto;
 }
 
 .img-banner_2 {
   max-width: 365px;
+  width: 70%;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1928,12 +1930,11 @@ body {
     font-size: 48px;
   }
 
-  .menu .menu {
-    margin-left: 15px;
-    flex-direction: column;
+  .menu {
+    margin-right: 0;
   }
 
-  .menu .menu__item {
+  .menu__item {
     margin-right: 15px;
     font-size: 16px;
   }
@@ -1946,6 +1947,10 @@ body {
     padding-left: 16px;
     padding-right: 16px;
     margin-left: 20px;
+  }
+
+  .section-banner .part_right {
+    height: 274px;
   }
 
   .section-symptoms .img_1 {
@@ -2145,16 +2150,8 @@ body {
   .section-banner .part_right {
     width: 100%;
     max-width: 366px;
-    height: 249px;
+    height: 254px;
     margin: 0 auto 80px;
-  }
-
-  .img-banner_1 {
-    width: 70%;
-  }
-
-  .img-banner_2 {
-    width: 70%;
   }
 
   .section-symptoms {
@@ -2257,6 +2254,10 @@ body {
 
   .section {
     padding: 60px 0;
+  }
+
+  .menu__item {
+    font-size: 24px;
   }
 
   .container {
