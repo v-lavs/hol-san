@@ -286,7 +286,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://unpkg.com/@studio-freight/lenis@1.0.38/dist/lenis.min.js"></script>
 <script src="dist/main.js"></script>
 <script>
     $(document).ready(function () {
@@ -383,6 +382,24 @@
                 },
             },
         )
+            gsap.fromTo('.symptoms .card',
+                {
+                    opacity: 0,
+                    duration: -1,
+                },
+                {
+                    opacity: 1,
+                    stagger: 0.8,
+                    ease: 'power1.in',
+                    duration: 2,
+                    scrollTrigger: {
+                        trigger: ".section-symptoms",
+                        scrub: true,
+                        start: "top top",
+                        end: 'bottom 70%'
+                    },
+                },
+            )
         const tl1 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".section-symptoms",
@@ -390,7 +407,7 @@
                 // markers: true,
                 pin: true,
                 start: "top top",
-                end: 'bottom 70%'
+                end: 'bottom bottom'
             }
         });
 
@@ -398,44 +415,50 @@
             {
                 y: 100,
                 opacity: 0,
-                // duration: -1,
+                duration: -1,
             },
             {
                 y: 0,
                 opacity: 1,
-                stagger: 0.2,
+                stagger: 0.4,
                 ease: 'power1.out',
-                // duration: 1.2,
+                duration: 1.2,
             },
             .8
         ).fromTo('.dot',
             {
                 y: 50,
                 opacity: 0,
-                // duration: -1,
+                duration: -1,
             },
             {
                 y: 0,
                 opacity: 1,
-                stagger: 0.2,
+                stagger: 0.4,
                 ease: 'power1.out',
-                // duration: 1.2,
+                duration: 1.2,
             },
             .9
-        ).fromTo('.symptoms .card',
-            {
-                opacity: 0,
-                duration: -1,
-            },
-            {
-                opacity: 1,
-                stagger: 0.8,
-                ease: 'power1.in',
-                duration: 1.2,
-
-            },
         )
         ScrollTrigger.refresh();
+
+
+        initialiseLenisScroll();
+        function initialiseLenisScroll() {
+            const lenis = new Lenis({
+                smoothWheel: true,
+                duration: 1.2
+            });
+
+            lenis.on('scroll', ScrollTrigger.update);
+
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+
+            gsap.ticker.lagSmoothing(0);
+        }
+
     });
 </script>
 </body>
