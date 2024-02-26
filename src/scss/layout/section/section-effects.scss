@@ -26,3 +26,17 @@
     margin: 0 auto;
   }
 }
+
+@include respond-to($lg) {
+
+}
+
+@include respond-to($md) {
+
+}
+@include respond-to($sm) {
+
+}
+@include respond-to($xs) {
+
+}

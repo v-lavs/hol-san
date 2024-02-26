@@ -1,3 +1,17 @@
 .section-questions{
 min-height: 0;
 }
+
+@include respond-to($lg) {
+
+}
+
+@include respond-to($md) {
+
+}
+@include respond-to($sm) {
+
+}
+@include respond-to($xs) {
+
+}
