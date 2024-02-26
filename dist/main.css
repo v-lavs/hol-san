@@ -2247,8 +2247,21 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  .section__title {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
   .container {
-    max-width: 100%;
+    max-width: 568px;
+    padding: 0 20px;
     background-color: mediumorchid;
   }
 
@@ -2277,7 +2290,6 @@ body {
 
 @media only screen and (max-width: 568px) {
   .container {
-    max-width: 780px;
     background-color: palegoldenrod;
   }
 }
@@ -2289,7 +2301,6 @@ body {
   }
 
   .container {
-    max-width: 100%;
     background-color: lightblue;
   }
 

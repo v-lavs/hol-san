@@ -18,16 +18,17 @@
     max-width: 780px;
   }
   @include respond-to($md) {
-    max-width: 100%;
+    max-width: 568px;
+    padding: 0 20px;
     background-color: mediumorchid;
   }
 
   @include respond-to($sm) {
-    max-width: 780px;
+
     background-color: palegoldenrod;
   }
   @include respond-to($xs) {
-    max-width: 100%;
+
     background-color: lightblue;
   }
 }

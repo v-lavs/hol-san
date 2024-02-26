@@ -239,12 +239,12 @@ body {
 }
 
 @include respond-to($lg) {
-  .section{
+  .section {
     min-height: auto;
   }
-.main__bg .container{
-  grid-template-columns: repeat(2, 1fr);
-}
+  .main__bg .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .section {
     padding: 80px 0;
 
@@ -255,7 +255,15 @@ body {
 }
 
 @include respond-to($md) {
-
+  body {
+    font-size: 18px;
+  }
+  .section__title {
+    font-size: 32px;
+  }
+  .section {
+    padding: 60px 0;
+  }
 }
 
 @include respond-to($sm) {
