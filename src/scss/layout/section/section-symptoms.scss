@@ -2,7 +2,7 @@
   //min-height: 874px;
   padding-bottom: 0;
   align-items: flex-end;
-
+  overflow: hidden;
   .parallax__wrapp {
     align-items: flex-end;
     display: flex;
@@ -77,10 +77,6 @@
     max-width: 305px;
     bottom: -65px;
     right: -90px;
-  }
-
-  .container {
-    overflow: hidden;
   }
 
   &__inner {

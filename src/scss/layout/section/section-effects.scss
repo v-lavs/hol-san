@@ -28,15 +28,34 @@
 }
 
 @include respond-to($lg) {
+  .section-effects {
+    height: auto;
+    .section__title {
+      max-width: 678px;
+    }
+  }
+  .effects {
+    flex-wrap: wrap;
 
+    &__item {
+      width: 50%;
+    }
+
+    .card__thumb {
+      //max-width: 176px;
+      //padding-top: 53.25%;
+    }
+  }
 }
 
 @include respond-to($md) {
 
 }
+
 @include respond-to($sm) {
 
 }
+
 @include respond-to($xs) {
 
 }
