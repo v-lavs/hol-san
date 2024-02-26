@@ -3,6 +3,7 @@
   padding-bottom: 0;
   align-items: flex-end;
   overflow: hidden;
+
   .parallax__wrapp {
     align-items: flex-end;
     display: flex;
@@ -287,15 +288,29 @@
 }
 
 @include respond-to($lg) {
+  .section-symptoms {
+    padding-bottom: 0;
 
+    &__wrap-img {
+      width: 80%;
+    }
+
+    .dot_white.right,
+    .dot_green,
+    .img-ellipse_green {
+      display: none;
+    }
+  }
 }
 
 @include respond-to($md) {
 
 }
+
 @include respond-to($sm) {
 
 }
+
 @include respond-to($xs) {
 
 }
