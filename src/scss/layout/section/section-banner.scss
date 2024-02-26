@@ -73,3 +73,42 @@
   left: 0;
   bottom: 0;
 }
+
+
+@include respond-to($lg) {
+  .section-banner {
+    padding-top: 180px;
+    padding-bottom: 200px;
+
+    .section__title {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .btn_main {
+      margin-bottom: 48px;
+    }
+
+    .container {
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .part_left {
+      width: 100%;
+      text-align: center;
+    }
+
+    .part_right {
+      width: 100%;
+      margin: 0 auto 80px;
+    }
+
+  }
+  @include respond-to($xs) {
+
+  }
+}

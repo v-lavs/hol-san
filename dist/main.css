@@ -2013,6 +2013,14 @@ body {
 }
 
 @media only screen and (max-width: 1024px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .section__title {
+    font-size: 56px;
+  }
+
   .menu {
     flex-direction: column;
     padding: 60px 0;
@@ -2076,6 +2084,38 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .section-banner {
+    padding-top: 180px;
+    padding-bottom: 200px;
+  }
+
+  .section-banner .section__title {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  .section-banner .btn_main {
+    margin-bottom: 48px;
+  }
+
+  .section-banner .container {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .section-banner .part_left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section-banner .part_right {
+    width: 100%;
+    margin: 0 auto 80px;
   }
 }
 
