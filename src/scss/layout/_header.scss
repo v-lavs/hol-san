@@ -103,6 +103,7 @@
       border-radius: 0 0 16px 16px;
       transform: translateY(-100%);
       transition:.5s;
+      z-index: 600;
       &.open{
         transform: translateY(0);
         transition:.5s;

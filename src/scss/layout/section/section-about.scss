@@ -144,6 +144,8 @@
 
     .part_left {
       width: 100%;
+      max-width: 366px;
+      height: 249px;
       margin-bottom: 40px;
     }
   }
@@ -159,8 +161,9 @@
       padding-bottom: 0;
     }
   }
-  .img-about_1 {
-    margin-bottom: 50px;
+  .img-about_1,
+  .img-about_2 {
+    width: 70%;
   }
   .count-indicator {
     bottom: 76px;
