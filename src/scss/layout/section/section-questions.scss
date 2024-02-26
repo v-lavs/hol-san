@@ -1,17 +1,20 @@
-.section-questions{
-min-height: 0;
-}
-
-@include respond-to($lg) {
-
+.section-questions {
+  min-height: 0;
 }
 
 @include respond-to($md) {
+  .section-questions {
+    .section__title {
+      margin-bottom: 40px;
+    }
+  }
 
 }
+
 @include respond-to($sm) {
 
 }
+
 @include respond-to($xs) {
 
 }

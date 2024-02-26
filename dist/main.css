@@ -2260,6 +2260,25 @@ body {
     font-size: 24px;
   }
 
+  .accordion__tab-container {
+    font-size: 24px;
+  }
+
+  .accordion__caret {
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .accordion__tab-container {
+    padding-right: 65px;
+  }
+
+  .accordion__item {
+    padding: 8px 0;
+  }
+
   .container {
     max-width: 568px;
     padding: 0 20px;
@@ -2320,6 +2339,10 @@ body {
   .symptoms .card__thumb {
     width: 110px;
     height: 110px;
+  }
+
+  .section-questions .section__title {
+    margin-bottom: 40px;
   }
 
   .section-about {

@@ -69,7 +69,6 @@
 
 .accordion__item.active .display {
   max-height: 500px;
-
   transition: max-height 1s ease;
   overflow: hidden;
 }
@@ -81,5 +80,23 @@
 
   &:before {
     filter: invert(57%) sepia(59%) saturate(2489%) hue-rotate(337deg) brightness(126%) contrast(105%);
+  }
+}
+
+@include respond-to($md) {
+  .accordion__tab-container {
+    font-size: 24px;
+  }
+  .accordion__caret {
+    width: 48px;
+    height: 48px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .accordion__tab-container {
+    padding-right: 65px;
+  }
+  .accordion__item{
+    padding: 8px 0;
   }
 }
