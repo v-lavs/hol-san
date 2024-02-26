@@ -127,15 +127,70 @@
 }
 
 @include respond-to($lg) {
+  .section-about {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .part_right {
+      width: 100%;
+      padding: 0;
+
+      &:before {
+        display: none;
+      }
+    }
+
+    .part_left {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+  .slider-components {
+    height: auto;
+
+    .swiper-wrapper {
+      padding-bottom: 76px;
+    }
+
+    .swiper-slide {
+      padding-left: 0;
+      padding-bottom: 0;
+    }
+  }
+  .img-about_1 {
+    margin-bottom: 50px;
+  }
+  .count-indicator {
+    bottom: 76px;
+    left: 248px;
+  }
+  .post {
+    display: flex;
+
+    &__thumb {
+      width: 228px;
+      height: 228px;
+      flex-shrink: 0;
+
+    }
+
+    &__content {
+      padding: 9px 20px 56px;
+    }
+  }
 
 }
 
 @include respond-to($md) {
 
 }
+
 @include respond-to($sm) {
 
 }
+
 @include respond-to($xs) {
 
 }

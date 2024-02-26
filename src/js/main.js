@@ -26,28 +26,27 @@ $(document).ready(function () {
 
 
     //SLIDER
+
     if ($('.slider-components').length > 0) {
         const sliderComponents = new Swiper(".slider-components", {
-            direction: "vertical",
-            spaceBetween:20,
             pagination: {
                 el: ".section-about .part_right .swiper-pagination",
                 clickable: true,
             },
+            breakpoints: {
+                0: {
+                    direction: 'horizontal',
+                    slidesPerView: 1,
+                    autoHeight: true,
+                },
+                1025: {
+                    direction: 'vertical',
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+            }
         });
     }
-    //  function preventScrolling() {
-    //      window.addEventListener("scroll", function(){
-    //          window.scrollTo(0,0);
-    //      });
-    //  }function removeEventListener() {
-    //      window.removeEventListener("scroll", function(){
-    //          window.scrollTo(0,0);
-    //      });
-    //  }
-    // let slider = document.querySelector(".slider-components");
-    //  slider.addEventListener("slideChanged", removeEventListener);
-    //  preventScrolling();
 
 
 //ACCORDION
