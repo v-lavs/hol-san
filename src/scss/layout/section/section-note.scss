@@ -3,22 +3,27 @@
   font-size: 16px;
   line-height: 130%;
   min-height: 0;
+
   .title {
     font-size: 16px;
     color: #545b66;
     margin-bottom: 16px;
   }
-  p{
+
+  p {
     margin-bottom: 4px;
   }
-  a{
+
+  a {
     text-decoration: underline;
     text-decoration-skip-ink: none;
+
     &:hover,
-    &:focus{
+    &:focus {
       text-decoration: none;
     }
   }
+
   ol {
     counter-reset: list;
 
@@ -44,11 +49,40 @@
 }
 
 @include respond-to($md) {
+  .footer_top {
+    padding: 60px 40px;
+  }
+  .footer__disclaimer {
+    height: 90px;
+  }
+  .footer_bottom {
+    padding: 20px 0 10px;
 
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+    }
+  }
+  .footer__logo {
+    margin-bottom: 24px;
+  }
+  .copyright {
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.5;
+
+    div:first-child {
+      margin-right: 0;
+    }
+  }
 }
+
 @include respond-to($sm) {
 
 }
+
 @include respond-to($xs) {
 
 }
