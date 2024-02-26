@@ -74,7 +74,6 @@
   bottom: 0;
 }
 
-
 @include respond-to($lg) {
   .section-banner {
     padding-top: 180px;
@@ -106,9 +105,5 @@
       width: 100%;
       margin: 0 auto 80px;
     }
-
-  }
-  @include respond-to($xs) {
-
   }
 }
