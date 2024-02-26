@@ -238,3 +238,55 @@
   }
 }
 
+@include respond-to($xl) {
+  .section-symptoms .img_1 {
+    max-width: inherit;
+    height: 100%;
+    width: 100%;
+  }
+  .section-symptoms__inner {
+    justify-content: flex-end;
+  }
+  .section-symptoms__wrap-img {
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    width: 60%;
+    min-height: 700px;
+
+  }
+  .symptoms {
+    position: static;
+    display: block;
+    width: 50%;
+    z-index: 1;
+    padding: 92px 0 92px 80px;
+
+    .item_1,
+    .item_7 {
+      .card__thumb {
+        order: 0;
+      }
+
+      .card__text {
+        text-align: left;
+      }
+    }
+
+    .item_3,
+    .item_7,
+    .item_9,
+    .item_1 {
+      justify-content: flex-start;
+
+      .card {
+        margin: 0;
+      }
+
+      .card__text {
+        padding: 0 18px 0 0;
+      }
+    }
+  }
+}
+

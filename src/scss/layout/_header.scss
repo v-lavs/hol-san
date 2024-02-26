@@ -53,11 +53,11 @@
 
 @include respond-to($xl) {
   .header {
-    padding: 23px 0;
-
-    &__logo {
-      max-width: 260px;
+    .btn_glass {
+      padding-left: 16px;
+      padding-right: 16px;
     }
+
   }
 }
 

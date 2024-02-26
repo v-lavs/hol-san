@@ -74,8 +74,8 @@
 
   &__thumb {
     position: relative;
-    max-width: 180px;
-    padding-top: 43.5%;
+    width: 180px;
+    height: 180px;
     margin-bottom: 20px;
 
     img {
@@ -112,5 +112,16 @@
 
   sup {
     font-size: 0.6em;
+  }
+}
+
+@include respond-to($xl) {
+  .post__thumb {
+    position: relative;
+    width: 140px;
+    height: 140px;
+  }
+  .post__title {
+    font-size: 29px;
   }
 }

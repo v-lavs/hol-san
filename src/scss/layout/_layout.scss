@@ -5,12 +5,34 @@
   width: 100%;
   margin: 0 auto;
 
+
+  @include respond-to($xxl) {
+    max-width: 1280px;
+    background-color: lime;
+  }
+  @include respond-to($xl) {
+    max-width: 1024px;
+    background-color: lightgreen;
+  }
   @include respond-to($lg) {
     max-width: 780px;
+    background-color: rosybrown;
   }
   @include respond-to($md) {
     max-width: 100%;
+    background-color: mediumorchid;
+  }
+
+  @include respond-to($sm) {
+    max-width: 780px;
+    background-color: palegoldenrod;
+  }
+  @include respond-to($xs) {
+    max-width: 100%;
+    background-color: lightblue;
   }
 }
+
+
 
 

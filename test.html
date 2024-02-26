@@ -302,7 +302,14 @@
             },
             yPercent: 40
         })
-
+        let sectionSymp = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.section-symptom',
+                start: 'top bottom',
+                end: 'top top',
+                pin: true,
+            }
+        });
         gsap.fromTo(' .img_1',
             {
                 y: 100,
@@ -319,6 +326,7 @@
                     // markers: true,
                     // pin: true,
                     start: "top 70%",
+                    end: 'bottom 70%'
                 },
             },
         )
@@ -339,6 +347,7 @@
                     // markers: true,
                     // pin: true,
                     start: "top 25%",
+                    end: 'bottom 70%'
                 },
             },
         )
@@ -358,7 +367,7 @@
                     trigger: ".section-symptoms",
                     scrub: true,
                     start: "top 15%",
-
+                    end: 'bottom 70%'
                 },
 
             },
@@ -378,7 +387,7 @@
                     trigger: ".section-symptoms",
                     scrub: true,
                     start: "top 15%",
-
+                    end: 'bottom 70%'
                 },
             },
         )
@@ -407,7 +416,7 @@
                 // markers: true,
                 pin:true,
                 start: "top top",
-                end: 'bottom bottom'
+                end: 'bottom 70%'
             }
         });
 
@@ -447,7 +456,8 @@
         function initialiseLenisScroll() {
             const lenis = new Lenis({
                 smoothWheel: true,
-                duration: 1.2
+                duration: 1.2,
+                easing:(t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             });
 
             lenis.on('scroll', ScrollTrigger.update);

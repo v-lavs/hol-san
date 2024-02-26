@@ -231,7 +231,11 @@ body {
     height: 100%;
   }
 }
-
+@include respond-to($xl) {
+  .section__title{
+    font-size: 48px;
+  }
+}
 @include respond-to($lg) {
 
 }

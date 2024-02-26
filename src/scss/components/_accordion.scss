@@ -31,7 +31,7 @@
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  transition: transform .35s ease-in-out;
+  transition: .35s ease-in-out;
 
   &:before {
     position: absolute;
@@ -46,6 +46,16 @@
     left: 50%;
     transform: translate(-50%, -50%) rotate(-45deg);
 
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #ff864c;
+    border-color: #ff864c;
+  }
+  &:active{
+    background-color: #F25F18;
+    border-color: #F25F18;
   }
 }
 

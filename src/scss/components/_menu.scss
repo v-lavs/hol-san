@@ -25,6 +25,15 @@
     }
   }
 
+  @include respond-to($xl) {
+    .menu {
+      margin-left: 15px;
+    }
+    .menu__item {
+      margin-right: 15px;
+      font-size: 16px;
+    }
+  }
   @include respond-to($lg) {
 
   }
