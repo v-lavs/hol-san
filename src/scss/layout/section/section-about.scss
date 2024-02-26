@@ -187,11 +187,22 @@
 }
 
 @include respond-to($md) {
+  .section-about {
+    padding-bottom: 40px;
 
+    .section__title {
+      margin-bottom: 40px;
+    }
+  }
+  .slider-components .swiper-wrapper {
+    padding-bottom: 56px;
+  }
 }
 
 @include respond-to($sm) {
-
+  .post {
+    flex-direction: column;
+  }
 }
 
 @include respond-to($xs) {

@@ -2321,11 +2321,27 @@ body {
     width: 110px;
     height: 110px;
   }
+
+  .section-about {
+    padding-bottom: 40px;
+  }
+
+  .section-about .section__title {
+    margin-bottom: 40px;
+  }
+
+  .slider-components .swiper-wrapper {
+    padding-bottom: 56px;
+  }
 }
 
 @media only screen and (max-width: 568px) {
   .container {
     background-color: palegoldenrod;
+  }
+
+  .post {
+    flex-direction: column;
   }
 }
 
