@@ -635,7 +635,7 @@
             const lenis = new Lenis({
                 smoothWheel: true,
                 duration: 1.2,
-                // easing: easeInQuart,
+                easing:(t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
                 // easing:easeInExpo,
             });
 
