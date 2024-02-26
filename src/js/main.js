@@ -15,13 +15,11 @@ $(document).ready(function () {
 
     $('.btn-burger').click(function (e) {
         e.preventDefault();
-        nav.toggleClass('open');
-        $(this).toggleClass('open');
-        jQuery('.backdrop').fadeToggle();
+        nav.addClass('open');
+        jQuery('.backdrop').fadeIn();
     });
 
-    $('.menu__link, .backdrop').click(function (e) {
-        $('.btn-burger').removeClass('open');
+    $('.menu__link, .btn_close, .backdrop').click(function (e) {
         nav.removeClass('open');
         jQuery('.backdrop').fadeOut();
     });

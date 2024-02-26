@@ -21,22 +21,46 @@
   }
 
   &__logo {
+    position: relative;
     max-width: 180px;
     display: inline-block;
     margin-right: auto;
+
   }
 
+  .btn_close,
+  &__nav-top,
+  &__logo-nav {
+    display: none;
+  }
+}
+
+.btn-burger,
+.btn_close {
+  display: none;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .btn-burger {
-  display: none;
-  border: none;
+  background-image: url(../assets/img/burger.svg);
+  background-size: 32px 32px;
+  border: 1px solid #f8fafc;
+  border-radius: 100px;
+  padding: 16px;
+  width: 64px;
+  height: 65px;
+}
+
+.btn_close {
+  width: 56px;
+  height: 56px;
+  background-image: url(../assets/img/close.svg);
   background-color: transparent;
-  width: 25px;
-  height: 18px;
-  padding: 0;
-  transition: .5s ease-in-out;
-  z-index: 1;
+  border: 1px solid #ff7330;
+  border-radius: 16px;
+  background-size: 24px 24px;
 }
 
 .backdrop {
@@ -56,28 +80,52 @@
     .btn_glass {
       padding-left: 16px;
       padding-right: 16px;
+      margin-left: 20px;
     }
-
   }
 }
 
 @include respond-to($lg) {
   .header {
-    &__logo {
-      max-width: 210px;
+    .btn_close,
+    .btn-burger {
+      display: block;
     }
 
-    &__lang-link {
-      margin-right: 15px;
-
-      &:last-child {
-        margin-right: 0;
+    &__nav {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: auto;
+      background: #fafbff;
+      padding: 0 50px 100px;
+      border-radius: 0 0 16px 16px;
+      transform: translateY(-100%);
+      transition:.5s;
+      &.open{
+        transform: translateY(0);
+        transition:.5s;
       }
     }
 
-    &__lang {
-      font-size: 16px;
+    &__nav-top {
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    &__logo-nav {
+      display: block;
+      max-width: 180px;
+      padding: 22px 0;
+    }
+  }
+  .hide-deck.btn_stroke {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -85,23 +133,7 @@
 
   .header__nav {
     position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 96px;
 
-    display: flex;
-    flex-direction: column;
-
-    background-color: #00ADF1;
-    transform: translateX(-100%);
-    transition: all 0.35s ease;
-    padding-top: 35px;
-    padding-bottom: 35px;
-    max-width: 480px;
-    width: 100%;
-    overflow: auto;
-    max-height: 100%;
 
     &.open {
       transform: translateX(0px);

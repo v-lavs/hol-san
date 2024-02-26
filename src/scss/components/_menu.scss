@@ -28,6 +28,7 @@
   @include respond-to($xl) {
     .menu {
       margin-left: 15px;
+      flex-direction: column;
     }
     .menu__item {
       margin-right: 15px;
@@ -36,11 +37,30 @@
   }
   @include respond-to($lg) {
 
+      flex-direction: column;
+      padding: 60px 0;
+      margin: 0;
+
+      &__item {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 140%;
+        color: #262522;
+        margin-bottom: 40px;
+        margin-right: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
   }
   @include respond-to($md) {
-    text-align: left;
-    flex-direction: column;
-    align-items: flex-start;
+
+    //text-align: left;
+    //
+    //align-items: flex-start;
+
 
     .menu__link {
       &:hover,
