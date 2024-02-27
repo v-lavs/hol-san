@@ -133,11 +133,34 @@
 @include respond-to($sm) {
   .btn_main {
     padding: 16px 32px;
-    min-width:186px;
+    min-width: 186px;
+
     .icon {
       width: 32px;
       height: 32px;
       margin-right: 16px;
+    }
+  }
+  .section-banner {
+    .section__title{
+      font-size: 28px;
+      line-height: 130%;
+      letter-spacing: -0.01em;
+    }
+    .part_right {
+      width: 335px;
+      height: 229px;
+    }
+  }
+}
+
+@include respond-to($xs) {
+  .section-banner {
+    padding-top: 70px;
+
+    .part_right {
+      max-width: 280px;
+      height: 195px;
     }
   }
 }

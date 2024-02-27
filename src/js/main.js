@@ -26,9 +26,13 @@ $(document).ready(function () {
 
 
     //SLIDER
-
     if ($('.slider-components').length > 0) {
         const sliderComponents = new Swiper(".slider-components", {
+            effect: 'fade',
+
+            fadeEffect: {
+                crossFade: true
+            },
             pagination: {
                 el: ".section-about .part_right .swiper-pagination",
                 clickable: true,
@@ -249,7 +253,7 @@ $(document).ready(function () {
             trigger: ".section-symptoms",
             scrub: true,
             // markers: true,
-            pin:true,
+            pin: true,
             start: "top top",
             end: 'bottom 70%'
         }
@@ -288,11 +292,12 @@ $(document).ready(function () {
 
 
     initialiseLenisScroll();
+
     function initialiseLenisScroll() {
         const lenis = new Lenis({
             smoothWheel: true,
             duration: 1.2,
-            easing:(t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         });
 
         lenis.on('scroll', ScrollTrigger.update);

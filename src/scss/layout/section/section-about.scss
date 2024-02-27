@@ -7,6 +7,7 @@
   .part_left {
     position: relative;
     max-width: 580px;
+    height: 416px;
     width: 50%;
   }
 
@@ -31,6 +32,7 @@
 .img-about_1 {
   display: block;
   max-width: 393px;
+  width: 70%;
 }
 
 .img-about_2 {
@@ -39,6 +41,7 @@
   max-width: 431px;
   bottom: 0;
   right: 0;
+  width: 70%;
 }
 
 .slider-components {
@@ -124,6 +127,9 @@
   .post__title {
     font-size: 29px;
   }
+  .section-about .part_left {
+    height: 340px;
+  }
 }
 
 @include respond-to($lg) {
@@ -161,10 +167,7 @@
       padding-bottom: 0;
     }
   }
-  .img-about_1,
-  .img-about_2 {
-    width: 70%;
-  }
+
   .count-indicator {
     bottom: 76px;
     left: 248px;
@@ -206,14 +209,21 @@
   .post__thumb {
     margin: 0 auto 20px;
   }
-  .post__title{
+  .post__title {
     font-size: 24px;
   }
-  .count-indicator{
+  .count-indicator {
     left: 20px;
+  }
+  .section-about .part_left{
+    width: 335px;
+    height: 249px;
   }
 }
 
 @include respond-to($xs) {
-
+  .section-about .part_left {
+    max-width: 280px;
+    height: 205px;
+  }
 }

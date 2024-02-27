@@ -1058,8 +1058,7 @@ body {
   bottom: 0;
   right: 0;
   left: 0;
-  width: 100%;
-  height: 120px;
+  height: 15vh;
 }
 
 .disclaimer-main img {
@@ -1781,6 +1780,7 @@ body {
 .section-about .part_left {
   position: relative;
   max-width: 580px;
+  height: 416px;
   width: 50%;
 }
 
@@ -1804,6 +1804,7 @@ body {
 .img-about_1 {
   display: block;
   max-width: 393px;
+  width: 70%;
 }
 
 .img-about_2 {
@@ -1812,6 +1813,7 @@ body {
   max-width: 431px;
   bottom: 0;
   right: 0;
+  width: 70%;
 }
 
 .slider-components {
@@ -2033,6 +2035,10 @@ body {
   .post__title {
     font-size: 29px;
   }
+
+  .section-about .part_left {
+    height: 340px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -2075,7 +2081,7 @@ body {
     margin: 0 7px !important;
   }
 
-  .swiper-pagination-bullets.swiper-pagination-horizontal {
+  .swiper-pagination-bullets {
     bottom: 0 !important;
   }
 
@@ -2232,11 +2238,6 @@ body {
     padding-bottom: 0;
   }
 
-  .img-about_1,
-  .img-about_2 {
-    width: 70%;
-  }
-
   .count-indicator {
     bottom: 76px;
     left: 248px;
@@ -2291,8 +2292,7 @@ body {
 
   .container {
     max-width: 568px;
-    padding: 0 20px;
-    background-color: mediumorchid;
+    padding: 0 22px;
   }
 
   .footer_top {
@@ -2413,9 +2413,12 @@ body {
     font-size: 18px;
   }
 
+  .disclaimer-main {
+    padding: 0 20px;
+  }
+
   .container {
     max-width: 375px;
-    background-color: palegoldenrod;
   }
 
   .header {
@@ -2463,6 +2466,17 @@ body {
     margin-right: 16px;
   }
 
+  .section-banner .section__title {
+    font-size: 28px;
+    line-height: 130%;
+    letter-spacing: -0.01em;
+  }
+
+  .section-banner .part_right {
+    width: 335px;
+    height: 229px;
+  }
+
   .section-symptoms__wrap-img {
     width: 90%;
     min-height: 403px;
@@ -2492,6 +2506,11 @@ body {
   .count-indicator {
     left: 20px;
   }
+
+  .section-about .part_left {
+    width: 335px;
+    height: 249px;
+  }
 }
 
 @media only screen and (max-width: 370px) {
@@ -2502,7 +2521,16 @@ body {
 
   .container {
     width: 100%;
-    background-color: lightblue;
+    padding: 0 15px;
+  }
+
+  .section-banner {
+    padding-top: 70px;
+  }
+
+  .section-banner .part_right {
+    max-width: 280px;
+    height: 195px;
   }
 
   .section-symptoms__wrap-img {
@@ -2513,6 +2541,11 @@ body {
 
   .symptoms {
     width: 67%;
+  }
+
+  .section-about .part_left {
+    max-width: 280px;
+    height: 205px;
   }
 }
 
