@@ -2,7 +2,6 @@
 * to include js file write: `//= include ./path-to-file`
 * */
 //= include ../lib/jquery.min.js ;
-//= include ../lib/lenis.js
 //= include ../lib/swiper/swiper-bundle.min.js
 
 
@@ -28,11 +27,6 @@ $(document).ready(function () {
     //SLIDER
     if ($('.slider-components').length > 0) {
         const sliderComponents = new Swiper(".slider-components", {
-            effect: 'fade',
-
-            fadeEffect: {
-                crossFade: true
-            },
             pagination: {
                 el: ".section-about .part_right .swiper-pagination",
                 clickable: true,
@@ -140,13 +134,13 @@ $(document).ready(function () {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    ScrollTrigger.refresh();
     let sectionSymp = gsap.timeline({
         scrollTrigger: {
             trigger: '.section-symptom',
             start: 'top bottom',
             end: 'top top',
             pin: true,
+
         }
     });
     gsap.fromTo(' .img_1',
@@ -161,7 +155,7 @@ $(document).ready(function () {
 
             scrollTrigger: {
                 trigger: ".section-symptoms",
-                scrub: true,
+                scrub: 3,
                 // markers: true,
                 // pin: true,
                 start: "top 70%",
@@ -182,7 +176,7 @@ $(document).ready(function () {
 
             scrollTrigger: {
                 trigger: ".section-symptoms",
-                scrub: true,
+                scrub: 3,
                 // markers: true,
                 // pin: true,
                 start: "top 25%",
@@ -204,7 +198,7 @@ $(document).ready(function () {
             ease: 'power1.out',
             scrollTrigger: {
                 trigger: ".section-symptoms",
-                scrub: true,
+                scrub: 3,
                 start: "top 15%",
                 end: 'bottom 70%'
             },
@@ -224,7 +218,7 @@ $(document).ready(function () {
             ease: 'power1.out',
             scrollTrigger: {
                 trigger: ".section-symptoms",
-                scrub: true,
+                scrub: 3,
                 start: "top 15%",
                 end: 'bottom 70%'
             },
@@ -242,7 +236,7 @@ $(document).ready(function () {
             duration: 2,
             scrollTrigger: {
                 trigger: ".section-symptoms",
-                scrub: true,
+                scrub: 3,
                 start: "top top",
                 end: 'bottom 70%'
             },
@@ -251,11 +245,9 @@ $(document).ready(function () {
     const tl1 = gsap.timeline({
         scrollTrigger: {
             trigger: ".section-symptoms",
-            scrub: true,
-            // markers: true,
-            pin: true,
-            start: "top top",
-            end: 'bottom 70%'
+            scrub: 3,
+             start: "top top",
+            end: 'top bottom'
         }
     });
 
@@ -270,7 +262,7 @@ $(document).ready(function () {
             opacity: 1,
             stagger: 0.4,
             ease: 'power1.out',
-            duration: 1.2,
+            duration: 2.2,
         },
         .8
     ).fromTo('.dot',
@@ -289,339 +281,6 @@ $(document).ready(function () {
         .9
     )
     ScrollTrigger.refresh();
-
-
-    initialiseLenisScroll();
-
-    function initialiseLenisScroll() {
-        const lenis = new Lenis({
-            smoothWheel: true,
-            duration: 1.2,
-            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        });
-
-        lenis.on('scroll', ScrollTrigger.update);
-
-        gsap.ticker.add((time) => {
-            lenis.raf(time * 5000);
-        });
-
-        gsap.ticker.lagSmoothing(0);
-    }
-
-    // gsap.fromTo(' .img_1',
-    //     {
-    //         y: 100,
-    //         opacity: 0,
-    //     },
-    //     {
-    //         y: 0,
-    //         opacity: 1,
-    //         ease: 'power1.out',
-    //
-    //         scrollTrigger: {
-    //             trigger: ".section-symptoms",
-    //             scrub: true,
-    //             // markers: true,
-    //             // pin: true,
-    //             start: "top 70%",
-    //         },
-    //     },
-    // )
-    // gsap.fromTo('.block-bg',
-    //     {
-    //         y: 100,
-    //         opacity: 0,
-    //     },
-    //     {
-    //         y: 0,
-    //         opacity: 1,
-    //         stagger: 0.2,
-    //         ease: 'power1.out',
-    //
-    //         scrollTrigger: {
-    //             trigger: ".section-symptoms",
-    //             scrub: true,
-    //             // markers: true,
-    //             // pin: true,
-    //             start: "top 25%",
-    //         },
-    //     },
-    // )
-    //
-    // gsap.fromTo('.img-ellipse_warm',
-    //     {
-    //         y: 100,
-    //         opacity: 0,
-    //         // duration: -1,
-    //     },
-    //     {
-    //         y: 0,
-    //         opacity: 1,
-    //         stagger: 0.1,
-    //         ease: 'power1.out',
-    //         scrollTrigger: {
-    //             trigger: ".section-symptoms",
-    //             scrub: true,
-    //             start: "top 15%",
-    //
-    //         },
-    //
-    //     },
-    // )
-    // gsap.fromTo('.img-ellipse_green',
-    //     {
-    //         y: 100,
-    //         opacity: 0,
-    //         // duration: -1,
-    //     },
-    //     {
-    //         y: 0,
-    //         opacity: 1,
-    //         // stagger: 0.1,
-    //         ease: 'power1.out',
-    //         scrollTrigger: {
-    //             trigger: ".section-symptoms",
-    //             scrub: true,
-    //             start: "top 15%",
-    //
-    //         },
-    //     },
-    // )
-    // const tl1 = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: ".section-symptoms",
-    //         scrub: true,
-    //         // markers: true,
-    //         pin: true,
-    //         start: "top top",
-    //         end: 'bottom 70%'
-    //     }
-    // });
-    //
-    // tl1.fromTo('.section-symptoms .section__title',
-    //     {
-    //         y: 100,
-    //         opacity: 0,
-    //         // duration: -1,
-    //     },
-    //     {
-    //         y: 0,
-    //         opacity: 1,
-    //         stagger: 0.2,
-    //         ease: 'power1.out',
-    //         // duration: 1.2,
-    //     },
-    //     .8
-    // ).fromTo('.dot',
-    //     {
-    //         y: 50,
-    //         opacity: 0,
-    //         // duration: -1,
-    //     },
-    //     {
-    //         y: 0,
-    //         opacity: 1,
-    //         stagger: 0.2,
-    //         ease: 'power1.out',
-    //         // duration: 1.2,
-    //     },
-    //     .9
-    // ).fromTo('.symptoms .card',
-    //         {
-    //             opacity: 0,
-    //             duration: -1,
-    //         },
-    //         {
-    //             opacity: 1,
-    //             stagger: 0.8,
-    //             ease: 'power1.in',
-    //             duration: 1.2,
-    //
-    //         },
-    //
-    //     )
-
-
-    // const lenis = new Lenis()
-    //
-    // lenis.on('scroll', (e) => {
-    //     console.log(e)
-    // })
-    //
-    // lenis.on('scroll', ScrollTrigger.update)
-    //
-    // gsap.ticker.add((time)=>{
-    //     lenis.raf(time * 5000)
-    // })
-    //
-    // gsap.ticker.lagSmoothing(0)
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    // (function ($) {
-    //     // $(document).ready(function() {
-    //     initialiseApp();
-    //
-    //     function initialiseApp() {
-    //         initialiseGSAPScrollTriggerPinning();
-    //         initialiseGSAPScrollTriggerPinningInsidePinning();
-    //         initialiseLenisScroll();
-    //     }
-    //
-    //     function initialiseGSAPScrollTriggerPinning() {
-    //         gsap.utils.toArray('.section-pin').forEach((section, i) => {
-    //             const nextSection = section.nextElementSibling;
-    //
-    //             ScrollTrigger.normalizeScroll({
-    //                 allowNestedScroll: true
-    //             });
-    //
-    //             if (section.classList.contains('section-symptoms')) {
-    //
-    //             } else {
-    //                 ScrollTrigger.normalizeScroll(false);
-    //
-    //                 ScrollTrigger.create({
-    //                     trigger: section,
-    //                     start: 'bottom bottom',
-    //                     pin: true,
-    //                     pinType: 'fixed',
-    //                     pinSpacing: false,
-    //                     anticipatePin: 2,
-    //                     scrub: .5,
-    //                     invalidateOnRefresh: true,
-    //                     ease: 'none'
-    //                 })
-    //             }
-    //
-    //             gsap.to(section, {
-    //                 opacity: 0,
-    //                 scrollTrigger: {
-    //                     trigger: nextSection,
-    //                     start: '10% bottom',
-    //                     end: 'top top',
-    //                     stagger: .1,
-    //                     scrub: .5,
-    //                     ease: 'Power2.easeInOut'
-    //                 }
-    //             });
-    //         });
-    //     }
-    //
-    //     function initialiseGSAPScrollTriggerPinningInsidePinning() {
-    //         let sectionSymp = gsap.timeline({
-    //             scrollTrigger: {
-    //                 trigger: '.section-symptom',
-    //                 start: 'top bottom',
-    //                 end: 'top top',
-    //                 pin: true
-    //             }
-    //         });
-    //             gsap.registerPlugin(ScrollTrigger);
-    //
-    //             const parallax = gsap.timeline();
-    //             parallax.from(' .img_1',
-    //                 {
-    //                     y: 100,
-    //                     opacity: 0,
-    //                     stagger: 0.2,
-    //                     ease: 'power1.out',
-    //                     duration: 1.6,
-    //                 },
-    //             )
-    //                 .from('.block-bg',
-    //                     {
-    //                         y: 100,
-    //                         opacity: 0,
-    //                         stagger: 0.2,
-    //                         ease: 'power1.out',
-    //                         duration: 1.6,
-    //                     },
-    //                     .8
-    //                 )
-    //
-    //                 .from('.section-symptoms .section__title',
-    //                     {
-    //                         y: 100,
-    //                         opacity: 0,
-    //                         stagger: 0.2,
-    //                         ease: 'power1.out',
-    //                         duration: 1.6,
-    //                     },
-    //                     .8
-    //                 )
-    //                 .from('.img-ellipse_warm',
-    //                     {
-    //                         y: 100,
-    //                         opacity: 0,
-    //                         stagger: 0.2,
-    //                         ease: 'power1.out',
-    //                         duration: 1.6,
-    //
-    //                     },
-    //                     .7
-    //                 )
-    //                 .from('.img-ellipse_green',
-    //                     {
-    //                         y: 100,
-    //                         opacity: 0,
-    //                         stagger: 0.2,
-    //                         ease: 'power1.out',
-    //                         duration: 1.6,
-    //                     },
-    //                     .9
-    //                 )
-    //                 .from('.dot',
-    //                     {
-    //                         y: 50,
-    //                         opacity: 0,
-    //                         stagger: 0.2,
-    //                         ease: 'power2.out',
-    //                         duration: 1.6,
-    //                     },
-    //                    '<'
-    //                 )
-    //                 .from('.symptoms .card',
-    //                     {
-    //                         opacity: 0,
-    //                         stagger: 0.6,
-    //                         ease: 'power1.out',
-    //                         duration: 1.6,
-    //                     },
-    //                    1.2
-    //                 )
-    //             ScrollTrigger.create({
-    //                 animation: parallax,
-    //                 trigger: '.section-symptoms',
-    //                 start: 'top 30%',
-    //                 end: 'bottom 80%',
-    //                 marker: true,
-    //                 scrub:5,
-    //
-    //             })
-    //     }
-    //     ScrollTrigger.refresh();
-    //
-    //     function initialiseLenisScroll() {
-    //         const lenis = new Lenis({
-    //             smoothWheel: true,
-    //             duration: 1.2,
-    //             // easing: easeInQuart,
-    //             easing:easeInExpo,
-    //         });
-    //
-    //         lenis.on('scroll', ScrollTrigger.update);
-    //
-    //         gsap.ticker.add((time) => {
-    //             lenis.raf(time * 6000);
-    //         });
-    //
-    //         gsap.ticker.lagSmoothing(0);
-    //     }
-    //
-    //     // });
-    // })(jQuery);
 
 });
 

@@ -1,36 +1,8 @@
-// START; Lenis Scroll.
-html {
-  &.lenis {
-    height: auto;
-  }
-}
-
-.lenis {
-  &.lenis-smooth {
-    scroll-behavior: auto;
-
-    [data-lenis-prevent] {
-      overscroll-behavior: contain;
-    }
-  }
-
-  &.lenis-scrolling {
-    iframe {
-      pointer-events: none;
-    }
-  }
-
-  &.lenis-stopped {
-    overflow: hidden;
-  }
-}
-
-// END; Lenis Scroll.
-
 body {
   font: 500 24px/1.4 $main-font;
   color: #2e3540;
   background-color: #fafbff;
+  scroll-behavior: smooth;
 }
 
 .wrapper {

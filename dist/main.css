@@ -846,30 +846,11 @@ a:hover {
   text-decoration: none;
 }
 
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
 body {
   font: 500 24px/1.4 "Uni Neue", sans-serif;
   color: #2e3540;
   background-color: #fafbff;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
