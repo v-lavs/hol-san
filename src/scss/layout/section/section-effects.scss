@@ -45,13 +45,22 @@
 }
 
 @include respond-to($md) {
-  .effects .card__text {
-    padding: 0;
+  .effects {
+
+    .card__text {
+      padding: 0 10px;
+    }
   }
 }
 
 @include respond-to($sm) {
+  .effects {
+    gap: 10px 0;
 
+    .card__thumb {
+      max-width: 152px;
+    }
+  }
 }
 
 @include respond-to($xs) {

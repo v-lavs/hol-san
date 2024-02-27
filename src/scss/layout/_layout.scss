@@ -28,7 +28,7 @@
     background-color: palegoldenrod;
   }
   @include respond-to($xs) {
-
+    width: 100%;
     background-color: lightblue;
   }
 }

@@ -2370,7 +2370,7 @@ body {
   }
 
   .effects .card__text {
-    padding: 0;
+    padding: 0 10px;
   }
 
   .section-questions .section__title {
@@ -2406,6 +2406,14 @@ body {
     left: -40px;
   }
 
+  .effects {
+    gap: 10px 0;
+  }
+
+  .effects .card__thumb {
+    max-width: 152px;
+  }
+
   .post {
     flex-direction: column;
   }
@@ -2418,6 +2426,7 @@ body {
   }
 
   .container {
+    width: 100%;
     background-color: lightblue;
   }
 
