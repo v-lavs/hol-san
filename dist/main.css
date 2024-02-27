@@ -1738,14 +1738,36 @@ body {
   padding: 0 16%;
 }
 
+.effects .card {
+  padding-top: 80.25%;
+  position: relative;
+  height: 100%;
+}
+
+.effects .card__inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-color: #fafbff;
+}
+
 .effects .card__thumb {
+  position: relative;
   max-width: 225px;
   padding-top: 80.25%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  overflow: hidden;
   margin: 0 auto;
+}
+
+.effects .card__thumb img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .section-questions {
@@ -2369,7 +2391,7 @@ body {
   }
 
   .effects .card__text {
-    padding: 0 10px;
+    padding: 0 23px;
   }
 
   .section-questions .section__title {
@@ -2468,8 +2490,17 @@ body {
     gap: 10px 0;
   }
 
+  .effects .card {
+    padding-top: 97.25%;
+  }
+
   .effects .card__thumb {
     max-width: 152px;
+    padding-top: 97.25%;
+  }
+
+  .effects .card__text {
+    padding: 0 10px;
   }
 
   .post {
@@ -2522,6 +2553,10 @@ body {
 
   .symptoms {
     width: 67%;
+  }
+
+  .effects .card__text {
+    padding: 0;
   }
 
   .section-about .part_left {

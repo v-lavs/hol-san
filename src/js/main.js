@@ -23,6 +23,22 @@ $(document).ready(function () {
         jQuery('.backdrop').fadeOut();
     });
 
+    // SMOOTH SCROLL TO ANCHOR
+    function smoothScrollToAnchor(selector) {
+        $(selector).on('click', function (event) {
+            let anchor = $.attr(this, 'href');
+
+            if (anchor.match(/^#/) && anchor !== '#') {
+                event.preventDefault();
+
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top + 50
+                }, 3000);
+            }
+        });
+    }
+
+    smoothScrollToAnchor('.menu__item a');
 
     //SLIDER
     if ($('.slider-components').length > 0) {
@@ -133,6 +149,10 @@ $(document).ready(function () {
 
 
     gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollToPlugin);
+    let panel = document.querySelector(".panel");
+// let tops=
+
 
     let sectionSymp = gsap.timeline({
         scrollTrigger: {
@@ -238,7 +258,7 @@ $(document).ready(function () {
                 trigger: ".section-symptoms",
                 scrub: 3,
                 start: "top top",
-                end: 'bottom 70%'
+                end: '-=50',
             },
         },
     )
@@ -246,7 +266,7 @@ $(document).ready(function () {
         scrollTrigger: {
             trigger: ".section-symptoms",
             scrub: 3,
-             start: "top top",
+            start: "top top",
             end: 'top bottom'
         }
     });

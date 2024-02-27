@@ -16,14 +16,37 @@
     padding: 0 16%;
   }
 
+  .card {
+    padding-top: 80.25%;
+    position: relative;
+    height: 100%;
+
+  }
+
+  .card__inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fafbff;
+  }
+
   .card__thumb {
+    position: relative;
     max-width: 225px;
     padding-top: 80.25%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    overflow: hidden;
     margin: 0 auto;
+
+    img {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
   }
 }
 
@@ -48,7 +71,7 @@
   .effects {
 
     .card__text {
-      padding: 0 10px;
+      padding: 0 23px;
     }
   }
 }
@@ -57,12 +80,25 @@
   .effects {
     gap: 10px 0;
 
+    .card {
+      padding-top: 97.25%;
+    }
+
     .card__thumb {
       max-width: 152px;
+      padding-top: 97.25%;
+    }
+
+    .card__text {
+      padding: 0 10px;
     }
   }
 }
 
 @include respond-to($xs) {
-
+  .effects {
+    .card__text {
+      padding: 0;
+    }
+  }
 }
