@@ -111,11 +111,4 @@
   }
 }
 
-@include respond-to($sm) {
 
-}
-
-@include respond-to($xs) {
-  .footer {
-  }
-}

@@ -334,14 +334,18 @@
     padding-top: 0;
 
     .card__thumb {
-      width: 110px;
-      height: 110px;
+      width: 96px;
+      height: 96px;
     }
   }
 }
 
 @include respond-to($sm) {
-
+  .section-symptoms__wrap-img {
+    width: 90%;
+    min-height: 403px;
+    left: -40px;
+  }
 }
 
 @include respond-to($xs) {

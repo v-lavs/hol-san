@@ -24,7 +24,7 @@
   }
 
   @include respond-to($sm) {
-
+    max-width: 375px;
     background-color: palegoldenrod;
   }
   @include respond-to($xs) {

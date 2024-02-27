@@ -37,7 +37,6 @@ $(document).ready(function () {
                 0: {
                     direction: 'horizontal',
                     slidesPerView: 1,
-                    autoHeight: true,
                 },
                 1025: {
                     direction: 'vertical',

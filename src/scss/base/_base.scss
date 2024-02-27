@@ -255,9 +255,7 @@ body {
 }
 
 @include respond-to($md) {
-  body {
-    font-size: 18px;
-  }
+
   .section__title {
     font-size: 32px;
   }
@@ -267,7 +265,9 @@ body {
 }
 
 @include respond-to($sm) {
-
+  body {
+    font-size: 18px;
+  }
 }
 
 @include respond-to($xs) {

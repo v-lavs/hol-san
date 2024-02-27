@@ -30,6 +30,7 @@
 @include respond-to($lg) {
   .section-effects {
     height: auto;
+
     .section__title {
       max-width: 678px;
     }
@@ -40,16 +41,13 @@
     &__item {
       width: 50%;
     }
-
-    .card__thumb {
-      //max-width: 176px;
-      //padding-top: 53.25%;
-    }
   }
 }
 
 @include respond-to($md) {
-
+  .effects .card__text {
+    padding: 0;
+  }
 }
 
 @include respond-to($sm) {
