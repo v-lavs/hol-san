@@ -152,7 +152,7 @@ $(document).ready(function () {
 
     const banner = document.querySelector('.section-banner');
     const bannerContainer = document.querySelector('.section-banner .container');
-    const bannerGoOutStage= gsap.to(
+    const bannerGoOutStage = gsap.to(
         bannerContainer, {
             opacity: 0,
             yPercent: -100,
@@ -174,6 +174,47 @@ $(document).ready(function () {
     });
 
     gsap.registerPlugin(ScrollToPlugin);
+
+    const sectEff = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".section-effects",
+            start: 'top bottom',
+            end: 'top top',
+            scrub: 3,
+            markers:true,
+        }
+    });
+
+    gsap.to('.section-effects .effects__pill_right',
+        {
+            x: 0,
+            ease: 'power1.in',
+            duration: 1.2,
+            scrollTrigger: {
+                trigger: ".section-effects",
+                scrub: 3,
+                start: "center 30%",
+                end: 'top center',
+                markers: true,
+
+            }
+        },
+    )
+    gsap.to('.section-effects .aaa',
+        {
+            width: 0,
+            duration: 1.2,
+            ease: 'power1.in',
+            scrollTrigger: {
+                trigger: ".section-effects",
+                scrub: 3,
+                start: "center 30%",
+                end: 'top center',
+                markers: true,
+
+            }
+        }
+    )
 
 
     let sectionSymp = gsap.timeline({
