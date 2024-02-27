@@ -176,9 +176,8 @@ $(document).ready(function () {
         animation: bannerGoOutStage,
         trigger: document.querySelector('.section-effects'),
         end: "bottom center",
-        scrub: 1,
+        scrub: 0.1,
         immediateRender: true,
-        // markers: markersVal
     });
 
     ScrollTrigger.create({

@@ -3,8 +3,30 @@
 }
 
 .effects {
+  position: relative;
   display: flex;
   margin: -10px;
+
+  &-wrap {
+    position: relative;
+  }
+
+  &__pill {
+    position: absolute;
+    bottom: 0;
+    z-index: 4;
+
+    &_left {
+      right: 50%;
+      transform: translateX(-680px);
+    }
+
+    &_right {
+      left: 50%;
+      transform: translateX(680px);
+    }
+  }
+
 
   &__item {
     text-align: center;
@@ -20,32 +42,25 @@
     padding-top: 80.25%;
     position: relative;
     height: 100%;
-
   }
 
   .card__inner {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    background-color: #fafbff;
+    position: relative;
   }
 
   .card__thumb {
-    position: relative;
-    max-width: 225px;
-    padding-top: 80.25%;
-    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
+    width: 100%;
+    background-color: #fafbff;
 
     img {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      position: relative;
       height: 100%;
       width: 100%;
-      object-fit: cover;
+      max-width: 225px;
+      object-fit: contain;
     }
   }
 }
