@@ -14,6 +14,8 @@
   &_main {
     background-color: $white;
     color: $warm;
+    padding: 20px 40px;
+    min-width: 233px;
 
     &:hover,
     &:focus {
@@ -36,6 +38,7 @@
   &_glass {
     border: 1px solid #f8fafc;
     color: $white;
+
     &:hover,
     &:focus {
       box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
@@ -46,6 +49,7 @@
       color: #f2f2f2;
     }
   }
+
   .icon {
     width: 32px;
     height: 32px;
@@ -57,6 +61,18 @@
   svg {
     display: inline-block;
     max-width: 100%;
+    height: auto;
+  }
+}
+
+.btn_main .icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+
+  svg {
+    display: block;
+    width: 100%;
     height: auto;
   }
 }

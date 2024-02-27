@@ -203,6 +203,15 @@
   .post {
     flex-direction: column;
   }
+  .post__thumb {
+    margin: 0 auto 20px;
+  }
+  .post__title{
+    font-size: 24px;
+  }
+  .count-indicator{
+    left: 20px;
+  }
 }
 
 @include respond-to($xs) {

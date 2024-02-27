@@ -1112,6 +1112,8 @@ body {
 .btn_main {
   background-color: #ffffff;
   color: #FF7330;
+  padding: 20px 40px;
+  min-width: 233px;
 }
 
 .btn_main:hover,
@@ -1157,6 +1159,18 @@ body {
 .btn svg {
   display: inline-block;
   max-width: 100%;
+  height: auto;
+}
+
+.btn_main .icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+}
+
+.btn_main .icon svg {
+  display: block;
+  width: 100%;
   height: auto;
 }
 
@@ -2335,6 +2349,10 @@ body {
     margin-right: 0;
   }
 
+  .section-banner {
+    padding-top: 100px;
+  }
+
   .section-symptoms {
     padding-bottom: 0;
     min-height: 0;
@@ -2400,6 +2418,51 @@ body {
     background-color: palegoldenrod;
   }
 
+  .header {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .header .btn_glass {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-left: 16px;
+    flex-shrink: 0;
+  }
+
+  .header .btn_glass .icon {
+    margin-right: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__nav {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .btn-burger {
+    width: 40px;
+    height: 40px;
+    background-size: 24px 24px;
+  }
+
+  .text-hide-mob {
+    display: none !important;
+  }
+
+  .btn_main {
+    padding: 16px 32px;
+    min-width: 186px;
+  }
+
+  .btn_main .icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 16px;
+  }
+
   .section-symptoms__wrap-img {
     width: 90%;
     min-height: 403px;
@@ -2417,6 +2480,18 @@ body {
   .post {
     flex-direction: column;
   }
+
+  .post__thumb {
+    margin: 0 auto 20px;
+  }
+
+  .post__title {
+    font-size: 24px;
+  }
+
+  .count-indicator {
+    left: 20px;
+  }
 }
 
 @media only screen and (max-width: 370px) {
@@ -2430,33 +2505,14 @@ body {
     background-color: lightblue;
   }
 
-  .header {
-    padding-top: 15px;
-    padding-bottom: 15px;
+  .section-symptoms__wrap-img {
+    width: 90%;
+    min-height: 330px;
+    left: -67px;
   }
 
-  .header__nav {
-    top: 88px;
-  }
-
-  .header .container {
-    flex-wrap: wrap;
-  }
-
-  .header__lang {
-    order: -1;
-    width: 100%;
-    text-align: right;
-    margin-bottom: 5px;
-    font-size: 12px;
-  }
-
-  .header__logo {
-    max-width: 163px;
-  }
-
-  .header__contacts-mob {
-    font-size: 15px;
+  .symptoms {
+    width: 67%;
   }
 }
 
