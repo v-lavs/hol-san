@@ -890,10 +890,12 @@ body {
 }
 
 .section {
+  position: relative;
   display: flex;
   align-items: center;
   padding: 120px 0;
   min-height: 100vh;
+  z-index: 1;
 }
 
 .section__title {
@@ -1721,6 +1723,10 @@ body {
 
 .symptoms .item_3 .card {
   margin-left: 30px;
+}
+
+.section-effects {
+  background-color: #fafbff;
 }
 
 .effects {

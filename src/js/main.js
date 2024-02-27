@@ -147,11 +147,34 @@ $(document).ready(function () {
         });
     }
 
-
     gsap.registerPlugin(ScrollTrigger);
+
+
+    const banner = document.querySelector('.section-banner');
+    const bannerContainer = document.querySelector('.section-banner .container');
+    const bannerGoOutStage= gsap.to(
+        bannerContainer, {
+            opacity: 0,
+            yPercent: -100,
+        })
+
+    ScrollTrigger.create({
+        animation: bannerGoOutStage,
+        trigger: document.querySelector('.section-effects'),
+        end: "bottom center",
+        scrub: 1,
+        immediateRender: true,
+        // markers: markersVal
+    });
+
+    ScrollTrigger.create({
+        trigger: banner,
+        start: () => banner.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+        pin: true,
+        pinSpacing: false
+    });
+
     gsap.registerPlugin(ScrollToPlugin);
-    let panel = document.querySelector(".panel");
-// let tops=
 
 
     let sectionSymp = gsap.timeline({
