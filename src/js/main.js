@@ -200,7 +200,7 @@ $(document).ready(function () {
             }
         },
     )
-    gsap.to('.section-effects .aaa',
+    gsap.to('.section-effects .pill-side',
         {
             width: 0,
             duration: 1.2,

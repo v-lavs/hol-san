@@ -1054,23 +1054,6 @@ body {
   font-size: 16px;
 }
 
-.effects__pill {
-  display: flex;
-  justify-content: center;
-}
-
-.effects__pill_right {
-  margin-bottom: -2px;
-}
-
-.effects__pill_right.active {
-  transition: 2s ease-in;
-}
-
-.aaa {
-  transition: .2s ease-in;
-}
-
 .menu {
   display: flex;
   margin-right: 60px;
@@ -1744,6 +1727,19 @@ body {
 
 .section-effects {
   background-color: #fafbff;
+}
+
+.pill-side {
+  transition: .2s ease-in;
+}
+
+.effects__pill_right {
+  margin-bottom: -2px;
+}
+
+.effects__pill {
+  display: flex;
+  justify-content: center;
 }
 
 .effects {
