@@ -175,25 +175,25 @@ $(document).ready(function () {
 
     gsap.registerPlugin(ScrollToPlugin);
 
-    const sectEff = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".section-effects",
-            start: 'top bottom',
-            end: 'top top',
-            scrub: 3,
-            markers:true,
-        }
-    });
+    // const sectEff = gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: ".section-effects",
+    //         start: 'top bottom',
+    //         end: 'top top',
+    //         scrub: 3,
+    //         markers:true,
+    //     }
+    // });
 
-    gsap.to('.section-effects .effects__pill_right',
+    gsap.to('.section-effects .effects__pill',
         {
             x: 0,
-            ease: 'power1.in',
+            ease: 'circ.inOut',
             duration: 1.2,
             scrollTrigger: {
                 trigger: ".section-effects",
                 scrub: 3,
-                start: "center 30%",
+                start: "center 55%",
                 end: 'top center',
                 markers: true,
 
@@ -204,11 +204,11 @@ $(document).ready(function () {
         {
             width: 0,
             duration: 1.2,
-            ease: 'power1.in',
+            ease: 'circ.inOut',
             scrollTrigger: {
                 trigger: ".section-effects",
                 scrub: 3,
-                start: "center 30%",
+                start: "center 55%",
                 end: 'top center',
                 markers: true,
 

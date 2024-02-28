@@ -11,18 +11,21 @@
 //  animation: 1s in-out forwards;
 //}
 //
-.effects__pill_right {
+.effects__pill {
   display: flex;
+justify-content: center;
+
 }
-//
-//.effects__pill_right.active {
-//  transform: translateX(0) scaleX(1.01);
-//  transition: 4s ease-out;
-//
-// > .aaa {
-//    width: 0;
-//    transition: 2s linear;
-//
-//    animation: width 2s, in-out;
-//  }
-//}
+
+.effects__pill_right{
+  margin-bottom: -2px;
+}
+
+.effects__pill_right.active {
+
+  transition: 2s ease-in;
+}
+.aaa {
+
+    transition: .2s ease-in;
+  }
