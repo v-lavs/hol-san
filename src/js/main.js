@@ -149,6 +149,34 @@ $(document).ready(function () {
 
     gsap.registerPlugin(ScrollTrigger);
 
+    gsap.to('.disclaimer-main', {
+        toggleClass: '.hide',
+        scrollTrigger: {
+            trigger: '.footer',
+            start: 'bottom bottom',
+            end: 'center center',
+            scrub: true
+        }
+    });
+
+    var elementToModify = document.querySelector('.disclaimer-main');
+
+// all good - it works
+    const sections = gsap.utils.toArray('[data-dark]');
+    sections.forEach(section => {
+
+        ScrollTrigger.create({
+            trigger: section,
+            start: 'top top',
+            end: 'top bottom',
+            toggleClass: {
+                targets: elementToModify,
+                className: 'has-scrolled'
+            },
+            markers: true
+        })
+
+    });
 
     const banner = document.querySelector('.section-banner');
     const bannerContainer = document.querySelector('.section-banner .container');
@@ -173,22 +201,19 @@ $(document).ready(function () {
         pinSpacing: false
     });
 
-    gsap.registerPlugin(ScrollToPlugin);
 
-    // const cardtEff = gsap.timeline({
-    //
     const sectionEffects = document.querySelector('.section-effects');
     ScrollTrigger.create({
         trigger: sectionEffects,
         start: () => sectionEffects.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
         pin: true,
-       scrub:true,
+        scrub: true,
         end: "bottom+=200% 200%",
     });
     gsap.to('.section-effects .card__thumb',
         {
             yPercent: 50,
-          pin:true,
+            pin: true,
             scrollTrigger: {
                 trigger: ".section-effects",
                 start: 'top top',
@@ -207,11 +232,11 @@ $(document).ready(function () {
             }
         }, "-=1");
 
-
     gsap.to('.section-effects .effects',
         {
             scale: 0.45,
             opacity: 0,
+            delay: 2.5,
             ease: 'circ.inOut',
             scrollTrigger: {
                 trigger: ".section-effects",
@@ -237,7 +262,6 @@ $(document).ready(function () {
     gsap.to('.section-effects .pill-side',
         {
             width: 0,
-            duration: 1.2,
             ease: 'circ.inOut',
             scrollTrigger: {
                 trigger: ".section-effects",
@@ -248,22 +272,16 @@ $(document).ready(function () {
         }
     )
     ScrollTrigger.refresh();
-    // const sectionSymp = document.querySelector('.section-symptoms');
-    // ScrollSymp.create({
-    //     trigger: sectionSymp,
-    //     start: () => sectionSymp.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
-    //     pin: true,
-    //     scrub:true,
-    //     end: "bottom+=100% 100%",
-    // });
-    let sectionSymp1 = gsap.timeline({
-        scrollTrigger: {
-            trigger: '.section-symptom',
-            start: 'top bottom',
-            end: 'top top',
-            pin: true,
 
-        }
+    const sectionSym = document.querySelector('.section-symptoms');
+    ScrollTrigger.create({
+        trigger: sectionSym,
+        start: () => sectionSym.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+        pin: true,
+        pinSpacing: true,
+        scrub: 3,
+        end: "bottom bottom",
+        // markers: true,
     });
     gsap.fromTo(' .img_1',
         {
@@ -346,24 +364,48 @@ $(document).ready(function () {
             },
         },
     )
-    gsap.fromTo('.symptoms .card',
-        {
-            opacity: 0,
-            duration: -1,
-        },
-        {
-            opacity: 1,
-            stagger: 0.8,
-            ease: 'power1.in',
-            duration: 2,
-            scrollTrigger: {
-                trigger: ".section-symptoms",
-                scrub: 3,
-                start: "top top",
-                end: '-=50',
+
+
+    document.querySelectorAll(".symptoms .card").forEach(function (box) {
+        gsap.fromTo(".symptoms .card",
+            {
+                opacity: 0,
+                duration: -1,
             },
-        },
-    )
+            {
+                opacity: 1,
+                stagger: 0.8,
+                ease: 'power1.in',
+                duration: 2,
+                scrollTrigger: {
+
+                    trigger: ".section-symptoms",
+                    scrub: 3,
+                    start: "bottom 80%",
+                    end: 'bottom 80%'
+                },
+            },);
+    });
+
+    //
+    // gsap.fromTo('.symptoms .card',
+    //     {
+    //         opacity: 0,
+    //         duration: -1,
+    //     },
+    //     {
+    //         opacity: 1,
+    //         stagger: 0.8,
+    //         ease: 'power1.in',
+    //         duration: 2,
+    //         scrollTrigger: {
+    //             trigger: ".section-symptoms",
+    //             scrub: 3,
+    //             start: "top top",
+    //             end: '-=50',
+    //         },
+    //     },
+    // )
     const tl1 = gsap.timeline({
         scrollTrigger: {
             trigger: ".section-symptoms",

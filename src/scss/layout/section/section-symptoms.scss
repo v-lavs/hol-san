@@ -1,13 +1,16 @@
 .section-symptoms {
-  //min-height: 874px;
+  min-height: 874px;
   padding-bottom: 0;
   align-items: flex-end;
   overflow: hidden;
+  background-color: #fafbff;
 
+  //background-color: lightblue;
   .parallax__wrapp {
     align-items: flex-end;
     display: flex;
   }
+
 
   .img_1 {
     display: block;
@@ -113,7 +116,9 @@
     }
   }
 }
-
+.pin-wrapper{
+  min-height: 874px;
+}
 .symptoms {
   position: absolute;
   padding: 138px 0;
