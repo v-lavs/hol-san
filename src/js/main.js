@@ -177,15 +177,22 @@ $(document).ready(function () {
 
     // const cardtEff = gsap.timeline({
     //
-    // });
+    const sectionEffects = document.querySelector('.section-effects');
+    ScrollTrigger.create({
+        trigger: sectionEffects,
+        start: () => sectionEffects.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+        pin: true,
+       scrub:true,
+        end: "bottom+=100% 100%",
+    });
     gsap.to('.section-effects .card__thumb',
         {
             yPercent: 50,
-            each: 0.1,
+          pin:true,
             scrollTrigger: {
                 trigger: ".section-effects",
-                start: 'top 20%',
-                end: 'top bottom',
+                start: 'top top',
+                end: 'bottom top',
                 scrub: 3,
                 markers: {
                     startColor: "purple",
@@ -197,11 +204,10 @@ $(document).ready(function () {
     gsap.to(".section-effects .card__text",
         {
             opacity: 0,
-            duration: 1,
             scrollTrigger: {
                 trigger: ".section-effects",
-                start: 'top 10%',
-                end: 'top bottom',
+                start: 'top top',
+                end: 'bottom top',
                 scrub: 3,
                 markers: {
                     startColor: "blue",
@@ -214,16 +220,14 @@ $(document).ready(function () {
 
     gsap.to('.section-effects .effects',
         {
-            scale: 0.5,
+            scale: 0.45,
             opacity: 0,
             ease: 'circ.inOut',
-            duration: 1.2,
             scrollTrigger: {
                 trigger: ".section-effects",
                 scrub: 3,
                 start: "center 60%",
-                end: 'top 56%',
-                markers: true,
+                end: 'bottom top',
 
             }
         },
@@ -232,14 +236,11 @@ $(document).ready(function () {
         {
             x: 0,
             ease: 'circ.inOut',
-            duration: 1.2,
             scrollTrigger: {
                 trigger: ".section-effects",
                 scrub: 3,
-                start: "center 60%",
-                end: 'top center',
-                markers: true,
-
+                start: "center 70%",
+                end: 'bottom top',
             }
         },
     )
@@ -251,16 +252,21 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: ".section-effects",
                 scrub: 3,
-                start: "center 55%",
-                end: 'top 60',
-                markers: true,
-
+                start: "center 70%",
+                end: 'bottom top',
             }
         }
     )
-
-
-    let sectionSymp = gsap.timeline({
+    ScrollTrigger.refresh();
+    // const sectionSymp = document.querySelector('.section-symptoms');
+    // ScrollSymp.create({
+    //     trigger: sectionSymp,
+    //     start: () => sectionSymp.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+    //     pin: true,
+    //     scrub:true,
+    //     end: "bottom+=100% 100%",
+    // });
+    let sectionSymp1 = gsap.timeline({
         scrollTrigger: {
             trigger: '.section-symptom',
             start: 'top bottom',
