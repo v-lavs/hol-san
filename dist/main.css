@@ -1995,6 +1995,16 @@ body {
   content: counter(list) ". ";
 }
 
+#about-main-img-start {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  width: 800px;
+  height: 732px;
+  z-index: 10;
+}
+
 @media only screen and (max-width: 1440px) {
   .container {
     max-width: 1280px;

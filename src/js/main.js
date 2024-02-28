@@ -446,6 +446,23 @@ $(document).ready(function () {
     )
     ScrollTrigger.refresh();
 
+    gsap.registerPlugin(Flip);
+
+
+    const details = document.querySelector('#about-main-img-end img');
+    Flip.fit( details, document.querySelector('#about-main-img-start'), {scale: true, fitChild: document.querySelector('#about-main-img-end img')});
+
+    const state = Flip.getState(details);
+
+    // set the final state
+    gsap.set(details, {clearProps: true}); // wipe out all inline stuff so it's in the native state (not scaled)
+    gsap.set(details, { visibility: "visible", overflow: "hidden"});
+
+    Flip.from(state, {
+        duration: 1.4,
+        ease: "power2.inOut",
+        scale: true,
+    })
 });
 
 
