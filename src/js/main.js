@@ -76,6 +76,41 @@ $(document).ready(function () {
         })
     );
 
+
+    // ------------------------------------------GSAP----------------------
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to('.disclaimer-main', {
+        toggleClass: '.hide',
+        scrollTrigger: {
+            trigger: '.footer',
+            start: 'bottom bottom',
+            end: 'center center',
+            scrub: true
+        }
+    });
+
+    // var elementToModify = document.querySelector('.disclaimer-main');
+    //
+    //
+    // const sections = gsap.utils.toArray('[data-dark]');
+    // sections.forEach(section => {
+    //
+    //     ScrollTrigger.create({
+    //         trigger: section,
+    //         start: 'top top',
+    //         end: 'top bottom',
+    //         toggleClass: {
+    //             targets: elementToModify,
+    //             className: 'has-scrolled'
+    //         },
+    //         markers: true
+    //     })
+    //
+    // });
+
+    //--------------------------------------------SECT BANNER ------------------------
+
     // Banner letters
     const bannerTitle = document.querySelector('.section-banner .section__title');
     if (bannerTitle) {
@@ -147,37 +182,6 @@ $(document).ready(function () {
         });
     }
 
-    gsap.registerPlugin(ScrollTrigger);
-
-    gsap.to('.disclaimer-main', {
-        toggleClass: '.hide',
-        scrollTrigger: {
-            trigger: '.footer',
-            start: 'bottom bottom',
-            end: 'center center',
-            scrub: true
-        }
-    });
-
-    var elementToModify = document.querySelector('.disclaimer-main');
-
-// all good - it works
-    const sections = gsap.utils.toArray('[data-dark]');
-    sections.forEach(section => {
-
-        ScrollTrigger.create({
-            trigger: section,
-            start: 'top top',
-            end: 'top bottom',
-            toggleClass: {
-                targets: elementToModify,
-                className: 'has-scrolled'
-            },
-            markers: true
-        })
-
-    });
-
     const banner = document.querySelector('.section-banner');
     const bannerContainer = document.querySelector('.section-banner .container');
     const bannerGoOutStage = gsap.to(
@@ -201,14 +205,15 @@ $(document).ready(function () {
         pinSpacing: false
     });
 
+    //----------------------------------------SECT EFFECT---------------
 
     const sectionEffects = document.querySelector('.section-effects');
     ScrollTrigger.create({
         trigger: sectionEffects,
-        start: () => sectionEffects.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+        start: 'top top', // if it's shorter than the viewport, we prefer to pin it at the top
         pin: true,
         scrub: true,
-        end: "bottom+=200% 200%",
+        end: "bottom+=400% 200%",
     });
     gsap.to('.section-effects .card__thumb',
         {
@@ -273,15 +278,15 @@ $(document).ready(function () {
     )
     ScrollTrigger.refresh();
 
+    // -------------------------------------SEC_SYMPT---------------------
+
     const sectionSym = document.querySelector('.section-symptoms');
     ScrollTrigger.create({
         trigger: sectionSym,
-        start: () => sectionSym.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
+        start: 'top top',
         pin: true,
-        pinSpacing: true,
-        scrub: 3,
-        end: "bottom bottom",
-        // markers: true,
+        scrub: true,
+        end: "bottom+=200% 200%",
     });
     gsap.fromTo(' .img_1',
         {
@@ -296,10 +301,8 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: ".section-symptoms",
                 scrub: 3,
-                // markers: true,
-                // pin: true,
-                start: "top 70%",
-                end: 'bottom 70%'
+                start: "top 35%",
+                end: 'bottom bottom'
             },
         },
     )
@@ -317,10 +320,8 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: ".section-symptoms",
                 scrub: 3,
-                // markers: true,
-                // pin: true,
                 start: "top 25%",
-                end: 'bottom 70%'
+                end: 'bottom bottom'
             },
         },
     )
@@ -340,7 +341,7 @@ $(document).ready(function () {
                 trigger: ".section-symptoms",
                 scrub: 3,
                 start: "top 15%",
-                end: 'bottom 70%'
+                end: 'bottom bottom'
             },
 
         },
@@ -359,63 +360,13 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: ".section-symptoms",
                 scrub: 3,
-                start: "top 15%",
-                end: 'bottom 70%'
+                start: "top 18%",
+                end: 'bottom bottom',
             },
         },
     )
 
-
-    document.querySelectorAll(".symptoms .card").forEach(function (box) {
-        gsap.fromTo(".symptoms .card",
-            {
-                opacity: 0,
-                duration: -1,
-            },
-            {
-                opacity: 1,
-                stagger: 0.8,
-                ease: 'power1.in',
-                duration: 2,
-                scrollTrigger: {
-
-                    trigger: ".section-symptoms",
-                    scrub: 3,
-                    start: "bottom 80%",
-                    end: 'bottom 80%'
-                },
-            },);
-    });
-
-    //
-    // gsap.fromTo('.symptoms .card',
-    //     {
-    //         opacity: 0,
-    //         duration: -1,
-    //     },
-    //     {
-    //         opacity: 1,
-    //         stagger: 0.8,
-    //         ease: 'power1.in',
-    //         duration: 2,
-    //         scrollTrigger: {
-    //             trigger: ".section-symptoms",
-    //             scrub: 3,
-    //             start: "top top",
-    //             end: '-=50',
-    //         },
-    //     },
-    // )
-    const tl1 = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".section-symptoms",
-            scrub: 3,
-            start: "top top",
-            end: 'top bottom'
-        }
-    });
-
-    tl1.fromTo('.section-symptoms .section__title',
+    gsap.fromTo('.section-symptoms .section__title',
         {
             y: 100,
             opacity: 0,
@@ -427,9 +378,14 @@ $(document).ready(function () {
             stagger: 0.4,
             ease: 'power1.out',
             duration: 2.2,
-        },
-        .8
-    ).fromTo('.dot',
+            scrollTrigger: {
+                trigger: ".section-symptoms",
+                scrub: 3,
+                start: "top 20%",
+                end: 'top bottom',
+            }
+        })
+    gsap.fromTo('.dot',
         {
             y: 50,
             opacity: 0,
@@ -441,22 +397,69 @@ $(document).ready(function () {
             stagger: 0.4,
             ease: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             duration: 1.2,
-        },
-        .9
-    )
-    ScrollTrigger.refresh();
+            scrollTrigger: {
+                trigger: ".section-symptoms",
+                scrub: 3,
+                start: "top 45%",
+                end: 'top bottom',
+            }
+        })
+    document.querySelectorAll(".symptoms .dot").forEach(function (box) {
+        gsap.fromTo(".symptoms .dot",
+            {
+                opacity: 0,
+                duration: -1,
+            },
+            {
+                opacity: 1,
+                stagger: 0.4,
+                ease: 'power1.in',
+                scrollTrigger: {
+                    trigger: ".section-symptoms",
+                    scrub: 3,
+                    start: "bottom top",
+                    end: 'bottom bottom'
+                },
+            },);
+    });
+     document.querySelectorAll(".symptoms .card").forEach(function (box) {
+         gsap.fromTo(".symptoms .card",
+             {
+                 opacity: 0,
+                 duration: -1,
+             },
+             {
+                 opacity: 1,
+                 stagger: 0.2,
+                 ease: 'power1.in',
+                 scrollTrigger: {
+                     trigger: ".section-symptoms",
+                     scrub: 3,
+                     start: "top 20%",
+                     end: 'bottom bottom-=50'
+                 },
+             },);
+     });
 
+
+     ScrollTrigger.refresh();
+
+
+    // -------------------------------------FLIP------------------------------------
     gsap.registerPlugin(Flip);
 
 
     const details = document.querySelector('#about-main-img-end img');
-    Flip.fit( details, document.querySelector('#about-main-img-start'), {scale: true, fitChild: document.querySelector('#about-main-img-end img')});
+    Flip.fit(details, document.querySelector('#about-main-img-start'), {
+        scale: true,
+        fitChild: document.querySelector('#about-main-img-end img')
+    });
 
     const state = Flip.getState(details);
 
     // set the final state
     gsap.set(details, {clearProps: true}); // wipe out all inline stuff so it's in the native state (not scaled)
-    gsap.set(details, { visibility: "visible", overflow: "hidden"});
+    gsap.set(details, {visibility: "visible", overflow: "hidden"});
 
     Flip.from(state, {
         duration: 1.4,
