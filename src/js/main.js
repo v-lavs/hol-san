@@ -183,7 +183,7 @@ $(document).ready(function () {
         start: () => sectionEffects.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
         pin: true,
        scrub:true,
-        end: "bottom+=100% 100%",
+        end: "bottom+=200% 200%",
     });
     gsap.to('.section-effects .card__thumb',
         {
@@ -192,13 +192,8 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: ".section-effects",
                 start: 'top top',
-                end: 'bottom top',
+                end: 'bottom center',
                 scrub: 3,
-                markers: {
-                    startColor: "purple",
-                    endColor: "fuchsia",
-                    fontSize: "1rem",
-                },
             }
         })
     gsap.to(".section-effects .card__text",
@@ -207,13 +202,8 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: ".section-effects",
                 start: 'top top',
-                end: 'bottom top',
+                end: 'bottom center',
                 scrub: 3,
-                markers: {
-                    startColor: "blue",
-                    endColor: "gold",
-                    fontSize: "1rem",
-                },
             }
         }, "-=1");
 
@@ -226,7 +216,7 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: ".section-effects",
                 scrub: 3,
-                start: "center 60%",
+                start: "center 70%",
                 end: 'bottom top',
 
             }
