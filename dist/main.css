@@ -1794,6 +1794,7 @@ body {
   transform: translateY(-100%);
   width: 100%;
   background-color: #fafbff;
+  z-index: 1;
 }
 
 .effects .card__thumb img {

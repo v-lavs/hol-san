@@ -175,16 +175,59 @@ $(document).ready(function () {
 
     gsap.registerPlugin(ScrollToPlugin);
 
-    // const sectEff = gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: ".section-effects",
-    //         start: 'top bottom',
-    //         end: 'top top',
-    //         scrub: 3,
-    //         markers:true,
-    //     }
+    // const cardtEff = gsap.timeline({
+    //
     // });
+    gsap.to('.section-effects .card__thumb',
+        {
+            yPercent: 50,
+            each: 0.1,
+            scrollTrigger: {
+                trigger: ".section-effects",
+                start: 'top 20%',
+                end: 'top bottom',
+                scrub: 3,
+                markers: {
+                    startColor: "purple",
+                    endColor: "fuchsia",
+                    fontSize: "1rem",
+                },
+            }
+        })
+    gsap.to(".section-effects .card__text",
+        {
+            opacity: 0,
+            duration: 1,
+            scrollTrigger: {
+                trigger: ".section-effects",
+                start: 'top 10%',
+                end: 'top bottom',
+                scrub: 3,
+                markers: {
+                    startColor: "blue",
+                    endColor: "gold",
+                    fontSize: "1rem",
+                },
+            }
+        }, "-=1");
 
+
+    gsap.to('.section-effects .effects',
+        {
+            scale: 0.5,
+            opacity: 0,
+            ease: 'circ.inOut',
+            duration: 1.2,
+            scrollTrigger: {
+                trigger: ".section-effects",
+                scrub: 3,
+                start: "center 60%",
+                end: 'top 56%',
+                markers: true,
+
+            }
+        },
+    )
     gsap.to('.section-effects .effects__pill',
         {
             x: 0,
@@ -193,7 +236,7 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: ".section-effects",
                 scrub: 3,
-                start: "center 55%",
+                start: "center 60%",
                 end: 'top center',
                 markers: true,
 
@@ -209,7 +252,7 @@ $(document).ready(function () {
                 trigger: ".section-effects",
                 scrub: 3,
                 start: "center 55%",
-                end: 'top center',
+                end: 'top 60',
                 markers: true,
 
             }
