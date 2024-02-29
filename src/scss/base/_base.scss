@@ -201,7 +201,9 @@ body {
   z-index: 100;
   transition: .35s;
   color: #ffffff;
-
+  &.color-change {
+    color: #DCDDE0!important;
+  }
   &.hide {
     opacity: 0;
     transition: .35s;
@@ -268,6 +270,7 @@ body {
     }
   }
 }
+
 @include respond-to($xs) {
 
   .dynamic-content {

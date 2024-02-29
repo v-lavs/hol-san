@@ -1048,6 +1048,10 @@ body {
   color: #ffffff;
 }
 
+.disclaimer-main.color-change {
+  color: #DCDDE0 !important;
+}
+
 .disclaimer-main.hide {
   opacity: 0;
   transition: .35s;
@@ -1521,7 +1525,6 @@ body {
   align-items: flex-end;
   overflow: hidden;
   background-color: #fafbff;
-  background-color: lightblue;
 }
 
 .section-symptoms .parallax__wrapp {
@@ -1887,6 +1890,7 @@ body {
 
 .count-indicator {
   position: absolute;
+  white-space: nowrap;
   font-size: 14px;
   line-height: 120%;
   color: #2e3540;

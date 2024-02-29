@@ -41,10 +41,20 @@ $(document).ready(function () {
     smoothScrollToAnchor('.menu__item a');
 
     //SLIDER
+    let currentSlideRes = document.querySelector('.current-slide');
+    let result = document.querySelector('.total');
     if ($('.slider-components').length > 0) {
         const sliderComponents = new Swiper(".slider-components", {
             parallax: true,
-            speed: 1000,
+            speed: 2000,
+            slidesPerView: 1,
+            delay: 10000,
+            disableOnInteraction: false,
+            loopAdditionalSlides: false,
+            loop: true,
+            autoplay: {
+                delay: 3000
+            },
             pagination: {
                 el: ".section-about .part_right .swiper-pagination",
                 clickable: true,
@@ -59,8 +69,15 @@ $(document).ready(function () {
                     slidesPerView: 1,
                     spaceBetween: 20,
                 },
-            }
+            },
+
         });
+
+        sliderComponents.on('slideChange', function () {
+           let currentSlide = (sliderComponents.realIndex);
+            currentSlideRes.innerHTML = '0' + (currentSlide + 1);
+            result.innerHTML = '0' + sliderComponents.slides.length;
+        })
     }
 
 
@@ -92,24 +109,27 @@ $(document).ready(function () {
         }
     });
 
-    // var elementToModify = document.querySelector('.disclaimer-main');
-    //
-    //
-    // const sections = gsap.utils.toArray('[data-dark]');
-    // sections.forEach(section => {
-    //
-    //     ScrollTrigger.create({
-    //         trigger: section,
-    //         start: 'top top',
-    //         end: 'top bottom',
-    //         toggleClass: {
-    //             targets: elementToModify,
-    //             className: 'has-scrolled'
-    //         },
-    //         markers: true
-    //     })
-    //
-    // });
+    const sections = gsap.utils.toArray(".section .dark");
+    const dickl = document.getElementsByClassName("disclaimer-main");
+
+    function changeColor(sec) {
+        if (getComputedStyle(sec).backgroundColor === "rgb(255, 255, 255)") {
+            dickl.classList.add("color-change");
+
+        } else {
+            dickl.classList.remove("color-change");
+        }
+    }
+
+    sections.forEach((section) => {
+        ScrollTrigger.create({
+            trigger: section,
+            start: "bottom top",
+            end: "bottom bottom",
+            onEnter: () => changeColor(section),
+            onEnterBack: () => changeColor(section),
+        });
+    });
 
     //--------------------------------------------SECT BANNER ------------------------
 
@@ -424,27 +444,27 @@ $(document).ready(function () {
                 },
             },);
     });
-     document.querySelectorAll(".symptoms .card").forEach(function (box) {
-         gsap.fromTo(".symptoms .card",
-             {
-                 opacity: 0,
-                 duration: -1,
-             },
-             {
-                 opacity: 1,
-                 stagger: 0.2,
-                 ease: 'power1.in',
-                 scrollTrigger: {
-                     trigger: ".section-symptoms",
-                     scrub: 3,
-                     start: "top 20%",
-                     end: 'bottom bottom-=50'
-                 },
-             },);
-     });
+    document.querySelectorAll(".symptoms .card").forEach(function (box) {
+        gsap.fromTo(".symptoms .card",
+            {
+                opacity: 0,
+                duration: -1,
+            },
+            {
+                opacity: 1,
+                stagger: 0.2,
+                ease: 'power1.in',
+                scrollTrigger: {
+                    trigger: ".section-symptoms",
+                    scrub: 3,
+                    start: "top 20%",
+                    end: 'bottom bottom-=50'
+                },
+            },);
+    });
 
 
-     ScrollTrigger.refresh();
+    ScrollTrigger.refresh();
 
 
     // -------------------------------------FLIP------------------------------------
