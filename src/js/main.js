@@ -49,9 +49,6 @@ $(document).ready(function () {
             speed: 2000,
             slidesPerView: 1,
             delay: 10000,
-            disableOnInteraction: false,
-            loopAdditionalSlides: false,
-            loop: true,
             autoplay: {
                 delay: 3000
             },

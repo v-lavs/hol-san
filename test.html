@@ -107,13 +107,14 @@
             </div>
         </div>
 
-        <section class="section section-banner">
+        <section class="panel section section-banner">
             <div class="section-banner__bg">
-                <img class="section-banner__bg-img parallax__wrapp" src="assets/img/hero-section-a.png" alt="">
+                <img class="section-banner__bg-img" src="assets/img/hero-section-a.png" alt="">
             </div>
             <div class="container d-flex">
                 <div class="part_left">
                     <h1 class="section__title">Комплексний рослинний препарат з унікальним складом<sup>*</sup></h1>
+
                     <a href="#" class="btn btn_main" aria-label="Купити">
                          <span class="icon">
                         <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,43 +156,94 @@
             </div>
         </section>
 
-        <section id="action" class="section section-effects parallax__wrapp">
+        <section id="action" data-color="dark" class="section dark panel section-effects">
+            <div class="main__bg">
+                <div class="container">
+                    <div class="decor-el"></div>
+                    <div class="decor-el"></div>
+                    <div class="decor-el"></div>
+                    <div class="decor-el"></div>
+                </div>
+            </div>
             <div class="container">
                 <h2 class="section__title">4 ЕФЕКТИ В 1 КАПСУЛІ<sup>**</sup></h2>
-                <ul class="effects">
-                    <li class="effects__item">
-                        <div class="card">
-                            <div class="card__thumb" style="background-image: url(assets/img/effect-1.svg);"></div>
-                            <div class="card__text">Знімає біль</div>
-                        </div>
-                    </li>
-                    <li class="effects__item">
-                        <div class="card">
-                            <div class="card__thumb" style="background-image: url(assets/img/effect-2.svg);"></div>
-                            <div class="card__text">Стимулює утворення жовчі</div>
-                        </div>
-                    </li>
-                    <li class="effects__item">
-                        <div class="card">
-                            <div class="card__thumb" style="background-image: url(assets/img/effect-3.svg);"></div>
-                            <div class="card__text">Усуває застій жовчі</div>
-                        </div>
-                    </li>
-                    <li class="effects__item">
-                        <div class="card">
-                            <div class="card__thumb" style="background-image: url(assets/img/effect-4.svg);"></div>
-                            <div class="card__text">Покращує роботу печінки</div>
-                        </div>
-                    </li>
-                </ul>
+
+                <div class="effects-wrap">
+                    <div class="effects__pill effects__pill_left">
+                        <img src="./assets/img/pill-4c.png" alt="">
+                        <img class="pill-side" src="./assets/img/pill-4a.png" alt="">
+
+                    </div>
+                    <div class="effects__pill effects__pill_right">
+                        <img class="pill-side" src="./assets/img/pill%205a.png" alt="">
+                        <img src="./assets/img/pill%205b.png" alt="">
+                    </div>
+
+                    <ul class="effects">
+                        <li class="effects__item">
+
+
+                            <div class="card">
+
+                                    <div class="card__thumb">
+                                        <img src="assets/img/effect-1.svg" alt="">
+                                    </div>
+                                    <div class="card__text">Знімає біль</div>
+
+                            </div>
+
+                        </li>
+
+
+                        <li class="effects__item">
+                            <div class="card">
+
+                                    <div class="card__thumb">
+                                        <img src="assets/img/effect-2.svg" alt="">
+                                    </div>
+                                    <div class="card__text">Стимулює утворення жовчі</div>
+
+                            </div>
+                        </li>
+                        <li class="effects__item">
+                            <div class="card">
+
+                                    <div class="card__thumb">
+                                        <img src="assets/img/effect-3.svg" alt="">
+                                    </div>
+                                    <div class="card__text">Усуває застій жовчі</div>
+
+                            </div>
+                        </li>
+                        <li class="effects__item">
+                            <div class="card">
+
+                                    <div class="card__thumb">
+                                        <img src="assets/img/effect-4.svg" alt="">
+                                    </div>
+                                    <div class="card__text">Покращує роботу печінки</div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
-
-        <section id="symptoms" class="section section-symptoms parallax__wrapp">
+        <!--        <div class="pin-wrapper">-->
+        <section id="symptoms" data-color="dark" class="section dark panel section-symptoms">
+            <div class="main__bg">
+                <div class="container">
+                    <div class="decor-el"></div>
+                    <div class="decor-el"></div>
+                    <div class="decor-el"></div>
+                    <div class="decor-el"></div>
+                </div>
+            </div>
             <div class="container">
-                <h2 class="section__title">CИМПТОМАТИКА</h2>
+                <h2 class="section__title">СКАРГИ</h2>
                 <div class="section-symptoms__inner">
                     <div class="section-symptoms__wrap-img">
+                        <img class="img_1" src="assets/img/girl-symp.png" alt="">
                         <div class="block-bg"></div>
                         <img src="assets/img/ellipse-warm.png" alt="" class="img-ellipse img-ellipse_warm">
                         <img src="assets/img/ellipse-green.png" alt="" class="img-ellipse img-ellipse_green">
@@ -199,8 +251,6 @@
                         <span class="dot dot_green"></span>
                         <span class="dot dot_white"></span>
                         <span class="dot dot_white right"></span>
-
-                        <img class="img_1" src="assets/img/girl-symp.png" alt="">
                     </div>
 
                     <ul class="symptoms">
@@ -241,39 +291,35 @@
             </div>
         </section>
         <style>
-            .section-about {
-                position: relative;
+            .box-start {
+                width: 600px;
+                height: 500px;
+                background-color: lightseagreen;
             }
-            .box, .boxPosition {
-                position: absolute;
-                top: 8px;
-                left: 8px;
-                height: 10vmin;
-                width: 10vmin;
-                box-sizing: content-box;
-            }
-            .boxPosition {
-                top: 6px;
-                left: 6px;
-                visibility: hidden;
-                opacity: 0;
+            .pos-start{
+                width: 100%;
+                height: 800px;
+                background-color: #fff;
             }
         </style>
 
+        <div class="pos-start">
+            <div class="box-start"></div>
+        </div>
 
-        <section id="flip" data-state="initial" id="about" class="section panel  section-about" style="background-image: url(assets/img/hero-bg.png);">
-            <div class="boxPosition initialPosition"></div>
-            <div class="box">Flip</div>
+
+        <div class="boxflip-state-1">
+            <div class="flip-el-1"></div>
+        </div>
+        <section id="about" class="section panel  section-about" style="background-image: url(assets/img/hero-bg.png);">
 
             <div class="container d-flex">
                 <h2 class="section__title">ПРО ПРОДУКТ</h2>
                 <div class="part_left">
-
-                    <div id="about-main-img-end finalContaine">
-                        <img class="img-about_1 boxPosition finalPosition" src="assets/img/about-pack.png"
-                             alt="Упаковка Холелесан">
+                    <div id="about-main-img-end">
+                        <img class="img-about_1" src="assets/img/about-pack.png" alt="Упаковка 'Холелесан'"
+                             style="visibility: hidden">
                     </div>
-
                     <img class="img-about_2" src="assets/img/pill-1.png" alt="Упаковка 'Холелесан'">
                 </div>
                 <div class="part_right">
@@ -424,120 +470,7 @@
 <script src="dist/main.js"></script>
 <script>
     $(document).ready(function () {
-        HTML SCSS JS
         gsap.registerPlugin(Flip);
-
-        let states = [ toInitState, toFirstState, toLastState, toInvertState, toPlayState, toEndState ],
-            stateIndex = 0,
-            stateIndexWrap = gsap.utils.wrap(0, states.length),
-            stepBlurbs = gsap.utils.toArray('.steps p'),
-            boxEl = document.querySelector(".box"),
-            windowEl = document.querySelector(".window"),
-            finalContainerEl = document.querySelector(".finalContainer");
-
-        gsap.defaults({ duration: 0.4, overwrite: 'auto' });
-
-        document.querySelector('#prev').addEventListener('click', () => goToState(stateIndex - 1));
-        document.querySelector('#next').addEventListener('click', () => goToState(stateIndex + 1));
-
-        let transition;
-        function resize() {
-            transition && transition.kill();
-
-            // reset (put back in original container and remove any inline styles)
-            windowEl.appendChild(boxEl);
-            boxEl.style.cssText = "";
-
-            // grab the original state
-            const state = Flip.getState(boxEl);
-
-            // put into the new container
-            finalContainerEl.appendChild(boxEl);
-
-            // FLIP!
-            transition = Flip.from(state, {
-                scale: true,
-                duration: 1,
-                repeat: -1,
-                repeatDelay: 1.5,
-                ease: "power1.inOut",
-                paused: true
-            }).progress(1).progress(0); // lock in the starting/ending values.
-
-            if (stateIndex === 2 || stateIndex === 3) {
-                transition.progress(1);
-            } else if (stateIndex === 4 || stateIndex === 5) {
-                transition.play();
-            }
-        }
-
-        function goToState(newState) {
-            stateIndex = stateIndexWrap(newState);
-            states[stateIndex]();
-        }
-
-        function updateBlurb() {
-            const textState = Flip.getState(stepBlurbs);
-
-            gsap.set(stepBlurbs, { display: 'none' });
-            gsap.set(stepBlurbs[stateIndex], { display: 'block' });
-
-            Flip.from(textState, {
-                duration: 0.4,
-                absolute: true,
-                onLeave: elements => gsap.to(elements, {opacity: 0, duration: 0.3}),
-                onEnter: elements => gsap.fromTo(elements, {opacity: 0}, {opacity: 1, duration: 0.3})
-            });
-        }
-
-        function toInitState() {
-            transition.pause(0);
-            gsap.to(boxEl, {opacity: 1});
-            gsap.to(".boxPosition", {autoAlpha: 0});
-            updateBlurb();
-        }
-
-        function toFirstState() {
-            transition.pause(0);
-            gsap.to(boxEl, {opacity: 0.5});
-            gsap.to(".initialPosition", {autoAlpha: 1});
-            gsap.to(".finalPosition", {autoAlpha: 0});
-            updateBlurb();
-        }
-
-        function toLastState() {
-            gsap.killTweensOf(transition);
-            gsap.set(boxEl, {opacity: 1});
-            transition.progress(1).pause();
-            gsap.to(".finalPosition", {autoAlpha: 1});
-            updateBlurb();
-        }
-
-        function toInvertState() {
-            transition.tweenFromTo(">", 0, {duration: 1, overwrite: true});
-            updateBlurb();
-        }
-
-        function toPlayState() {
-            gsap.killTweensOf(transition);
-            gsap.to('.boxPosition', { autoAlpha: 1 });
-            transition.play();
-            updateBlurb();
-        }
-
-        function toEndState() {
-            gsap.to(boxEl, { opacity: 1 });
-            gsap.to('.boxPosition', { autoAlpha: 1 });
-            transition.play();
-            updateBlurb();
-        }
-
-        function init() {
-            window.addEventListener('resize', resize);
-            resize();
-        }
-
-        init();
 
     });
 
