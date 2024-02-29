@@ -43,6 +43,8 @@ $(document).ready(function () {
     //SLIDER
     if ($('.slider-components').length > 0) {
         const sliderComponents = new Swiper(".slider-components", {
+            parallax: true,
+            speed: 1000,
             pagination: {
                 el: ".section-about .part_right .swiper-pagination",
                 clickable: true,
@@ -213,7 +215,7 @@ $(document).ready(function () {
         start: 'top top', // if it's shorter than the viewport, we prefer to pin it at the top
         pin: true,
         scrub: true,
-        end: "bottom+=400% 200%",
+        end: "bottom+=200% 200%",
     });
     gsap.to('.section-effects .card__thumb',
         {
