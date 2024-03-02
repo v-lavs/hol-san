@@ -200,10 +200,14 @@ body {
   height: 15vh;
   z-index: 100;
   transition: .35s;
-  color: #ffffff;
-  &.color-change {
-    color: #DCDDE0!important;
+  background-color: rgba(255, 255, 255, .1);
+
+  color: #DCDDE0;
+
+  &.white {
+    color: #ffffff;
   }
+
   &.hide {
     opacity: 0;
     transition: .35s;

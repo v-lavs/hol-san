@@ -152,12 +152,12 @@
       height: 229px;
     }
   }
+
 }
 
 @include respond-to($xs) {
   .section-banner {
     padding-top: 70px;
-
     .part_right {
       max-width: 280px;
       height: 195px;

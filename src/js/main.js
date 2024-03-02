@@ -323,6 +323,7 @@ $(document).ready(function () {
     //         scrub: true
     //     }
     // });
+
     //
     // const sections = gsap.utils.toArray(".section .dark");
     // const dickl = document.getElementsByClassName("disclaimer-main");

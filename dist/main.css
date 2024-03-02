@@ -1045,11 +1045,12 @@ body {
   height: 15vh;
   z-index: 100;
   transition: .35s;
-  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #DCDDE0;
 }
 
-.disclaimer-main.color-change {
-  color: #DCDDE0 !important;
+.disclaimer-main.white {
+  color: #ffffff;
 }
 
 .disclaimer-main.hide {
