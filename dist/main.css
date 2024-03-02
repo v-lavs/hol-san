@@ -850,7 +850,6 @@ body {
   font: 500 24px/1.4 "Uni Neue", sans-serif;
   color: #2e3540;
   background-color: #fafbff;
-  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -1860,12 +1859,12 @@ body {
   padding: 0 80px;
 }
 
-.section-about .part_right:before {
+.section-about .arrow-left {
   position: absolute;
-  content: '';
   width: 80px;
   height: 80px;
-  background-image: url(../assets/img/to-right-dec.svg);
+  background-position: center;
+  background-size: contain;
   left: 0;
   top: 50%;
   transform: translateY(-50%);

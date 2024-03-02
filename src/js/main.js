@@ -49,9 +49,9 @@ $(document).ready(function () {
             speed: 2000,
             slidesPerView: 1,
             delay: 10000,
-            autoplay: {
-                delay: 3000
-            },
+            // autoplay: {
+            //     delay: 3000
+            // },
             pagination: {
                 el: ".section-about .part_right .swiper-pagination",
                 clickable: true,
@@ -67,13 +67,12 @@ $(document).ready(function () {
                     spaceBetween: 20,
                 },
             },
-
         });
+        result.innerHTML = '0' + sliderComponents.slides.length;
 
         sliderComponents.on('slideChange', function () {
-           let currentSlide = (sliderComponents.realIndex);
+            let currentSlide = (sliderComponents.realIndex);
             currentSlideRes.innerHTML = '0' + (currentSlide + 1);
-            result.innerHTML = '0' + sliderComponents.slides.length;
         })
     }
 
@@ -187,7 +186,7 @@ $(document).ready(function () {
                 scrub: 1.5,
                 start: "top+=10% top", // when the top of the trigger hits the top of the viewport
                 end: "bottom top+=20%",
-                markers: true
+                // markers: true
             }
         });
 
@@ -214,6 +213,7 @@ $(document).ready(function () {
             "<"
         );
     }
+
     sectionEffectsIntroAnim();
 
     function symptomsAnim() {
@@ -225,7 +225,7 @@ $(document).ready(function () {
                 pin: true,
                 duration: 3,
                 scrub: 6,
-                markers: true
+                // markers: true
             }
         });
 
@@ -302,14 +302,6 @@ $(document).ready(function () {
     }
 
     symptomsAnim();
-
-
-
-
-
-
-
-
 
 
     // gsap.registerPlugin(ScrollTrigger);
@@ -704,6 +696,77 @@ $(document).ready(function () {
     //     ease: "power2.inOut",
     //     scale: true,
     // })
+
+
+    function aboutAnim() {
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.section-about',
+                start: 'top top',
+                end: 'bottom bottom-=50% ',
+                pin: true,
+                duration: 2,
+                scrub: 5,
+                markers: true,
+
+            }
+        });
+
+
+        timeline.fromTo('.img-about_2',
+            {
+                x: -600,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                x: 0
+            },
+        );
+        timeline.fromTo('.swiper-pagination',
+            {
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+            }, '<'
+        );
+
+        timeline.fromTo('.section-about .section__title',
+            {
+                opacity: 0,
+                y: 100,
+            },
+            {
+                opacity: 1,
+                y: 0,
+            }, ' < 35%'
+        );
+        timeline.fromTo('.slider-components',
+            {
+                y: 100,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                y: 0
+            }, '<'
+        );
+        timeline.fromTo('.section-about .arrow-left',
+
+            {
+                x: 50,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                x: 0
+            }, '<'
+        );
+
+    }
+
+    aboutAnim();
 });
 
 

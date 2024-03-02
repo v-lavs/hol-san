@@ -15,17 +15,17 @@
     position: relative;
     width: 50%;
     padding: 0 80px;
+  }
 
-    &:before {
-      position: absolute;
-      content: '';
-      width: 80px;
-      height: 80px;
-      background-image: url(../assets/img/to-right-dec.svg);
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+  .arrow-left {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-position: center;
+    background-size: contain;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
@@ -216,7 +216,7 @@
   .count-indicator {
     left: 20px;
   }
-  .section-about .part_left{
+  .section-about .part_left {
     width: 335px;
     height: 249px;
   }
