@@ -144,9 +144,10 @@
       width: 100%;
       padding: 0;
 
-      &:before {
-        display: none;
-      }
+    }
+
+    .arrow-left {
+      display: none;
     }
 
     .part_left {
@@ -158,7 +159,6 @@
   }
   .slider-components {
     height: auto;
-
     .swiper-wrapper {
       padding-bottom: 76px;
     }
@@ -223,8 +223,10 @@
 }
 
 @include respond-to($xs) {
-  .section-about .part_left {
-    max-width: 280px;
-    height: 205px;
+  .section-about {
+    .part_left {
+      max-width: 280px;
+      height: 205px;
+    }
   }
 }

@@ -2302,7 +2302,7 @@ body {
     padding: 0;
   }
 
-  .section-about .part_right:before {
+  .section-about .arrow-left {
     display: none;
   }
 
@@ -2685,8 +2685,16 @@ body {
     width: 67%;
   }
 
+  .effects .card {
+    padding-top: 100%;
+  }
+
   .effects .card__text {
     padding: 0;
+  }
+
+  .effects .effects .card__thumb img {
+    max-width: 156px;
   }
 
   .section-about .part_left {

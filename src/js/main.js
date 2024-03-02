@@ -164,6 +164,7 @@ $(document).ready(function () {
 
     bannerAnimation();
 
+
     function bannerOutAnim() {
         const bannerGoOutStage = gsap.to(
             '.section-banner .container', {
@@ -177,6 +178,7 @@ $(document).ready(function () {
             end: "bottom center",
             scrub: 0.1,
             immediateRender: true,
+            invalidateOnRefresh: true,
         });
 
         const banner = document.querySelector('.section-banner');
@@ -185,11 +187,13 @@ $(document).ready(function () {
             trigger: '.section-banner',
             start: () => banner.offsetHeight < window.innerHeight ? "top top" : "bottom bottom", // if it's shorter than the viewport, we prefer to pin it at the top
             pin: true,
-            pinSpacing: false
+            pinSpacing: false,
+            invalidateOnRefresh: true,
         });
     }
 
-    bannerOutAnim();
+    // bannerOutAnim();
+
 
     function sectionEffectsIntroAnim() {
         const timeline = gsap.timeline({
@@ -199,6 +203,7 @@ $(document).ready(function () {
                 scrub: 1.5,
                 start: "top+=10% top", // when the top of the trigger hits the top of the viewport
                 end: "bottom top+=20%",
+                invalidateOnRefresh: true
                 // markers: true
             }
         });
@@ -225,9 +230,11 @@ $(document).ready(function () {
             {width: 0},
             "<"
         );
+        return timeline;
     }
 
-    sectionEffectsIntroAnim();
+    const effIntro = sectionEffectsIntroAnim();
+
 
     function symptomsAnim() {
         const timeline = gsap.timeline({
@@ -238,6 +245,7 @@ $(document).ready(function () {
                 pin: true,
                 duration: 3,
                 scrub: 6,
+                invalidateOnRefresh: true,
                 // markers: true
             }
         });
@@ -312,12 +320,78 @@ $(document).ready(function () {
                 stagger: 0.2,
                 ease: 'power1.in',
             }, '<');
+        return timeline;
     }
 
-    symptomsAnim();
+    const symptoms = symptomsAnim();
 
 
-    gsap.registerPlugin(ScrollTrigger);
+    function aboutAnim() {
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.section-about',
+                start: 'top-=20% top',
+                end: 'top bottom ',
+                pin: true,
+                duration: 2,
+                scrub: 5,
+                markers: true,
+                invalidateOnRefresh: true,
+            }
+        });
+        timeline.fromTo('.img-about_2',
+            {
+                x: -600,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                x: 0
+            },
+        );
+        timeline.fromTo('.swiper-pagination',
+            {
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+            }, '<15%'
+        );
+        timeline.fromTo('.section-about .section__title',
+            {
+                opacity: 0,
+                y: 100,
+            },
+            {
+                opacity: 1,
+                y: 0,
+            }, ' < 15%'
+        );
+        timeline.fromTo('.slider-components',
+            {
+                y: 100,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                y: 0
+            }, '<'
+        );
+        timeline.fromTo('.section-about .arrow-left',
+            {
+                x: 50,
+                opacity: 0,
+            },
+            {
+                opacity: 1,
+                x: 0
+            }, '<'
+        );
+        return timeline;
+    }
+
+    const about = aboutAnim();
+
 
     gsap.to('.disclaimer-main', {
         toggleClass: '.hide',
@@ -325,10 +399,17 @@ $(document).ready(function () {
             trigger: '.footer',
             start: 'bottom bottom',
             end: 'center center',
-            scrub: true
+            scrub: true,
+            invalidateOnRefresh: true,
         }
     });
 
+    document.addEventListener('resize', () => {
+        symptoms.refresh();
+        effIntro.refresh();
+        about.refresh();
+
+    });
     //
     // const sections = gsap.utils.toArray(".section .dark");
     // const dickl = document.getElementsByClassName("disclaimer-main");
@@ -711,75 +792,6 @@ $(document).ready(function () {
     // })
 
 
-    function aboutAnim() {
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.section-about',
-                start: 'top-=20% top',
-                end: 'top bottom ',
-                pin: true,
-                duration: 2,
-                scrub: 5,
-                markers: true,
-
-            }
-        });
-
-
-        timeline.fromTo('.img-about_2',
-            {
-                x: -600,
-                opacity: 0,
-            },
-            {
-                opacity: 1,
-                x: 0
-            },
-        );
-        timeline.fromTo('.swiper-pagination',
-            {
-                opacity: 0,
-            },
-            {
-                opacity: 1,
-            }, '<15%'
-        );
-
-        timeline.fromTo('.section-about .section__title',
-            {
-                opacity: 0,
-                y: 100,
-            },
-            {
-                opacity: 1,
-                y: 0,
-            }, ' < 15%'
-        );
-        timeline.fromTo('.slider-components',
-            {
-                y: 100,
-                opacity: 0,
-            },
-            {
-                opacity: 1,
-                y: 0
-            }, '<'
-        );
-        timeline.fromTo('.section-about .arrow-left',
-
-            {
-                x: 50,
-                opacity: 0,
-            },
-            {
-                opacity: 1,
-                x: 0
-            }, '<'
-        );
-
-    }
-
-    aboutAnim();
 });
 
 

@@ -152,8 +152,14 @@
 @include respond-to($xs) {
 
   .effects {
+    .card{
+      padding-top: 100%;
+    }
     .card__text {
       padding: 0;
+    }
+    .effects .card__thumb img {
+      max-width: 156px;
     }
   }
 }
