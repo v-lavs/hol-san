@@ -142,11 +142,12 @@
     }
   }
   .section-banner {
-    .section__title{
+    .section__title {
       font-size: 28px;
       line-height: 130%;
       letter-spacing: -0.01em;
     }
+
     .part_right {
       width: 335px;
       height: 229px;
@@ -158,6 +159,18 @@
 @include respond-to($xs) {
   .section-banner {
     padding-top: 70px;
+
+    .section__title {
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
+
+    .btn_main {
+      margin-bottom: 24px;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+
     .part_right {
       max-width: 280px;
       height: 195px;

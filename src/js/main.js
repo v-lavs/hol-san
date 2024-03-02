@@ -2,12 +2,25 @@
 * to include js file write: `//= include ./path-to-file`
 * */
 //= include ../lib/jquery.min.js ;
+//= include ../lib/lenis.js
 //= include ../lib/swiper/swiper-bundle.min.js
 
 
 // CUSTOM SCRIPTS
 
 $(document).ready(function () {
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(6, 1.001 - Math.pow(2, -10 * t)),
+    })
+
+    function raf(time) {
+        lenis.raf(time);
+        ScrollTrigger.update();
+        requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
 
     // MOBILE MENU
     const nav = $('.header__nav');
@@ -304,17 +317,17 @@ $(document).ready(function () {
     symptomsAnim();
 
 
-    // gsap.registerPlugin(ScrollTrigger);
-    //
-    // gsap.to('.disclaimer-main', {
-    //     toggleClass: '.hide',
-    //     scrollTrigger: {
-    //         trigger: '.footer',
-    //         start: 'bottom bottom',
-    //         end: 'center center',
-    //         scrub: true
-    //     }
-    // });
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to('.disclaimer-main', {
+        toggleClass: '.hide',
+        scrollTrigger: {
+            trigger: '.footer',
+            start: 'bottom bottom',
+            end: 'center center',
+            scrub: true
+        }
+    });
 
     //
     // const sections = gsap.utils.toArray(".section .dark");
@@ -702,8 +715,8 @@ $(document).ready(function () {
         const timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: '.section-about',
-                start: 'top top',
-                end: 'bottom bottom-=50% ',
+                start: 'top-=20% top',
+                end: 'top bottom ',
                 pin: true,
                 duration: 2,
                 scrub: 5,
@@ -729,7 +742,7 @@ $(document).ready(function () {
             },
             {
                 opacity: 1,
-            }, '<'
+            }, '<15%'
         );
 
         timeline.fromTo('.section-about .section__title',
@@ -740,7 +753,7 @@ $(document).ready(function () {
             {
                 opacity: 1,
                 y: 0,
-            }, ' < 35%'
+            }, ' < 15%'
         );
         timeline.fromTo('.slider-components',
             {

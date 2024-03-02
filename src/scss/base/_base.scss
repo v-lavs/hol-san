@@ -276,7 +276,13 @@ body {
 }
 
 @include respond-to($xs) {
-
+.section{
+  padding: 40px 0;
+  &__title{
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+}
   .dynamic-content {
     blockquote {
       padding: 15px 0;

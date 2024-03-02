@@ -2280,8 +2280,16 @@ body {
     flex-wrap: wrap;
   }
 
+  .effects__pill {
+    bottom: 150px;
+  }
+
   .effects__item {
     width: 50%;
+  }
+
+  .effects .card {
+    padding-top: 60.25%;
   }
 
   .section-about .container {
@@ -2479,6 +2487,10 @@ body {
     height: 96px;
   }
 
+  .effects .card {
+    padding-top: 80.25%;
+  }
+
   .effects .card__text {
     padding: 0 23px;
   }
@@ -2573,17 +2585,28 @@ body {
     left: -40px;
   }
 
+  .symptoms {
+    width: 60%;
+  }
+
   .effects {
     gap: 10px 0;
   }
 
+  .effects__pill {
+    bottom: 116px;
+  }
+
+  .effects__pill_right {
+    margin-bottom: 0.5px;
+  }
+
   .effects .card {
-    padding-top: 97.25%;
+    padding-top: 84.25%;
   }
 
   .effects .card__thumb {
     max-width: 152px;
-    padding-top: 97.25%;
   }
 
   .effects .card__text {
@@ -2613,6 +2636,15 @@ body {
 }
 
 @media only screen and (max-width: 370px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .section__title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
   .dynamic-content blockquote {
     padding: 15px 0;
     margin-bottom: 30px;
@@ -2625,6 +2657,17 @@ body {
 
   .section-banner {
     padding-top: 70px;
+  }
+
+  .section-banner .section__title {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .section-banner .btn_main {
+    margin-bottom: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .section-banner .part_right {

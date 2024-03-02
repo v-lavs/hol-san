@@ -75,6 +75,7 @@
     width: 100%;
     background-color: #fafbff;
     z-index: 1;
+
     img {
       position: relative;
       height: 100%;
@@ -96,14 +97,25 @@
   .effects {
     flex-wrap: wrap;
 
+    &__pill {
+      bottom: 150px;
+    }
+
     &__item {
       width: 50%;
+    }
+
+    .card {
+      padding-top: 60.25%;
     }
   }
 }
 
 @include respond-to($md) {
   .effects {
+    .card {
+      padding-top: 80.25%;
+    }
 
     .card__text {
       padding: 0 23px;
@@ -115,22 +127,30 @@
   .effects {
     gap: 10px 0;
 
+    &__pill {
+      bottom: 116px;
+    }
+
+    &__pill_right {
+      margin-bottom: 0.5px;
+    }
+
     .card {
-      padding-top: 97.25%;
-    }
+      padding-top: 84.25%;
 
-    .card__thumb {
-      max-width: 152px;
-      padding-top: 97.25%;
-    }
+      &__thumb {
+        max-width: 152px;
+      }
 
-    .card__text {
-      padding: 0 10px;
+      &__text {
+        padding: 0 10px;
+      }
     }
   }
 }
 
 @include respond-to($xs) {
+
   .effects {
     .card__text {
       padding: 0;

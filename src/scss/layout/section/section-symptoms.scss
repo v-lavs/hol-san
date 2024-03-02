@@ -349,6 +349,9 @@
     min-height: 403px;
     left: -40px;
   }
+  .symptoms {
+    width: 60%;
+  }
 }
 
 @include respond-to($xs) {
