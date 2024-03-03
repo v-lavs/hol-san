@@ -1526,7 +1526,8 @@ body {
 }
 
 .section-symptoms {
-  min-height: 874px;
+  min-height: 0;
+  padding-top: 0;
   padding-bottom: 0;
   align-items: flex-end;
   overflow: hidden;
@@ -1881,10 +1882,15 @@ body {
   transform: translateY(-50%);
 }
 
-.img-about_1 {
-  display: block;
+.about-main-img-end {
+  position: relative;
   max-width: 393px;
   width: 70%;
+}
+
+.about-main-img-end img {
+  max-width: none;
+  width: 100%;
 }
 
 .img-about_2 {
@@ -2014,16 +2020,6 @@ body {
 .section-note ol li:before {
   counter-increment: list;
   content: counter(list) ". ";
-}
-
-#about-main-img-start {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-50%, -100%);
-  width: 800px;
-  height: 732px;
-  z-index: 10;
 }
 
 @media only screen and (max-width: 1440px) {
