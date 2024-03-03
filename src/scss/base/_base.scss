@@ -20,12 +20,12 @@ body {
 
   &__bg {
     position: absolute;
-    left: 0;
     right: 0;
-    top: 0;
-    height: 100%;
     z-index: -1;
-
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -100px;
     .container {
       height: 100%;
       display: grid;
@@ -40,6 +40,11 @@ body {
       border-right: 1px solid #f0f1f5;
     }
   }
+}
+
+.container-scale-img{
+  position: relative;
+  height: 50vh;
 }
 
 .section {
@@ -236,8 +241,12 @@ body {
   .section {
     min-height: auto;
   }
-  .main__bg .container {
-    grid-template-columns: repeat(2, 1fr);
+  .main__bg {
+    top: -80px;
+    bottom: -80px;
+    .container {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   .section {
     padding: 80px 0;
@@ -246,10 +255,14 @@ body {
       font-size: 56px;
     }
   }
+
 }
 
 @include respond-to($md) {
-
+  .main__bg {
+    top: -60px;
+    bottom: -60px;
+  }
   .section__title {
     font-size: 32px;
   }
@@ -283,6 +296,10 @@ body {
     margin-bottom: 24px;
   }
 }
+  .main__bg {
+    top: -40px;
+    bottom: -40px;
+  }
   .dynamic-content {
     blockquote {
       padding: 15px 0;
