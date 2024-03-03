@@ -237,15 +237,16 @@ $(document).ready(function () {
     const effIntro = sectionEffectsIntroAnim();
 
 
-    function symptomsAnim() {
+    function complaintsAnim() {
         const timeline = gsap.timeline({
             scrollTrigger: {
-                trigger: '.section-symptoms .container',
+                trigger: '#complaints',
                 start: 'top-=40% top',
-                end: 'center bottom',
-                pin: true,
-                duration: 3,
+                // end: 'center bottom',
+                end: 'bottom bottom',
+                // scrub: 8,
                 scrub: 6,
+                pin: true,
 
                 invalidateOnRefresh: true,
                 // markers: true
@@ -325,54 +326,67 @@ $(document).ready(function () {
         return timeline;
     }
 
-    const symptoms = symptomsAnim();
-
-    // function imgScaleAnim() {
-    //     const imgTimeline = gsap.timeline({
-    //         scrollTrigger: {
-    //             trigger: '#about-main-img-start',
-    //             start: 'top center',
-    //             end: 'bottom center ',
-    //             scrub: true,
-    //             markers: true,
-    //         }
-    //     });
-    //
-    //     const details = document.querySelector('#about-main-img-end img');
-    //     Flip.fit(details, document.querySelector('#about-main-img-start'), {
-    //         scale: true,
-    //         fitChild: document.querySelector('#about-main-img-end img')
-    //     });
-    //
-    //     const state = Flip.getState(details);
-    //
-    //     // set the final state
-    //     gsap.set(details, {clearProps: true}); // wipe out all inline stuff so it's in the native state (not scaled)
-    //     gsap.set(details, {visibility: "visible", overflow: "hidden"});
-    //
-    //     Flip.from(state, {
-    //         duration: 1.4,
-    //         ease: "power2.inOut",
-    //         scale: true,
-    //     })
-    //     imgTimeline.to('#about-main-img-start img', {yPercent: 45});
-    //     return imgScaleAnim();
-    // }
-    // const imgScale = imgScaleAnim();
+    const complaints = complaintsAnim();
 
     function aboutAnim() {
         const timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: '.section-about',
-                start: 'top-=20% top',
-                end: 'top bottom ',
+                start: 'top 30%',
+                // end: 'bottom bottom',
+                end: 'bottom bottom',
                 pin: true,
-                duration: 2,
-                scrub: 5,
+                scrub: 6,
+                // scrub: 8,
                 markers: true,
                 invalidateOnRefresh: true,
             }
         });
+
+        timeline.fromTo('#about-main-img-end', {
+            y: -400,
+            xPercent: -50,
+            scale: 1.5,
+            left: '100%',
+            opacity: 0,
+            // duration: 0.6,
+            duration: 0.1
+        }, {
+            y: -400,
+            xPercent: -50,
+            scale: 1.5,
+            left: '100%',
+            opacity: 1,
+            duration: 0.6,
+        })
+
+        timeline.fromTo('#about-main-img-end', {
+            y: -400,
+            xPercent: -50,
+            scale: 1.5,
+            left: '100%',
+        }, {
+            y: 0,
+            xPercent: 0,
+            scale: 1,
+            duration: 1,
+            left: 0,
+        }, '>')
+
+        // timeline.fromTo('#about-main-img-end', {
+        //     y: -400,
+        //     xPercent: -50,
+        //     scale: 1.5,
+        //     left: '100%',
+        // }, {
+        //     y: 0,
+        //     xPercent: 0,
+        //     scale: 1,
+        //     duration: 1,
+        //     left: 0,
+        // })
+
+
         timeline.fromTo('.img-about_2',
             {
                 x: -600,
@@ -380,16 +394,19 @@ $(document).ready(function () {
             },
             {
                 opacity: 1,
-                x: 0
+                x: 0,
+                duration: 1
             },
+            '-=0.5'
         );
+
         timeline.fromTo('.swiper-pagination',
             {
                 opacity: 0,
             },
             {
                 opacity: 1,
-            }, '<15%'
+            }, '15%'
         );
         timeline.fromTo('.section-about .section__title',
             {
@@ -399,7 +416,7 @@ $(document).ready(function () {
             {
                 opacity: 1,
                 y: 0,
-            }, ' < 15%'
+            }, '15%'
         );
         timeline.fromTo('.slider-components',
             {
@@ -409,7 +426,8 @@ $(document).ready(function () {
             {
                 opacity: 1,
                 y: 0
-            }, '<'
+                // }, '<50%'
+            }, '<-=50%'
         );
         timeline.fromTo('.section-about .arrow-left',
             {
@@ -421,6 +439,7 @@ $(document).ready(function () {
                 x: 0
             }, '<'
         );
+
         return timeline;
     }
 
@@ -428,7 +447,6 @@ $(document).ready(function () {
 
 
     gsap.to('.disclaimer-main', {
-        toggleClass: '.hide',
         scrollTrigger: {
             trigger: '.footer',
             start: 'bottom bottom',
@@ -438,13 +456,28 @@ $(document).ready(function () {
         }
     });
 
-    document.addEventListener('resize', () => {
-        symptoms.refresh();
-        effIntro.refresh();
-        about.refresh();
-    });
+    // Debounce
+    function debounce(func, time) {
+        var time = time || 100; // 100 by default if no param
+        var timer;
+        return function (event) {
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(func, time, event);
+        };
+    }
 
+    function resizeContent() {
+        // Do loads of stuff once window has resized
+        complaints.scrollTrigger.refresh();
+        effIntro.scrollTrigger.refresh();
+        about.scrollTrigger.refresh();
+        console.log('resized');
+    }
+
+// Eventlistener
+    window.addEventListener("resize", debounce(resizeContent, 150));
 });
+
 
 
 

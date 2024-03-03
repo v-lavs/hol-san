@@ -1,5 +1,4 @@
 .section-about {
-  //min-height: 789px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -29,10 +28,16 @@
   }
 }
 
-.img-about_1 {
-  display: block;
+.about-main-img-end {
+  position: relative;
   max-width: 393px;
   width: 70%;
+  //opacity: 0;
+  img {
+    max-width: none;
+    width: 100%;
+
+  }
 }
 
 .img-about_2 {
