@@ -74,7 +74,7 @@
 }
 
 .active .accordion__caret {
-  transform: rotate(45deg);
+  transform: translateY(-50%) rotate(45deg) ;
   transition: transform .35s ease-in-out;
   background-color: #ffffff;
 

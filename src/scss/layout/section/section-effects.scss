@@ -71,7 +71,8 @@
   .card__thumb {
     position: absolute;
     top: 0;
-    transform: translateY(-100%);
+    left: 50%;
+    transform: translate(-50%, -100%);
     width: 100%;
     background-color: #fafbff;
     z-index: 1;

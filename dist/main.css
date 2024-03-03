@@ -1282,7 +1282,7 @@ body {
 }
 
 .active .accordion__caret {
-  transform: rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
   transition: transform .35s ease-in-out;
   background-color: #ffffff;
 }
@@ -1822,7 +1822,8 @@ body {
 .effects .card__thumb {
   position: absolute;
   top: 0;
-  transform: translateY(-100%);
+  left: 50%;
+  transform: translate(-50%, -100%);
   width: 100%;
   background-color: #fafbff;
   z-index: 1;
@@ -2659,17 +2660,6 @@ body {
     padding-top: 70px;
   }
 
-  .section-banner .section__title {
-    font-size: 22px;
-    margin-bottom: 24px;
-  }
-
-  .section-banner .btn_main {
-    margin-bottom: 24px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-
   .section-banner .part_right {
     max-width: 280px;
     height: 195px;
@@ -2700,6 +2690,19 @@ body {
   .section-about .part_left {
     max-width: 280px;
     height: 205px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .section-banner .btn_main {
+    margin-bottom: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .section-banner .section__title {
+    font-size: 22px;
+    margin-bottom: 24px;
   }
 }
 

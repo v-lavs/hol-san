@@ -160,20 +160,25 @@
   .section-banner {
     padding-top: 70px;
 
-    .section__title {
-      font-size: 22px;
-      margin-bottom: 24px;
-    }
 
+    .part_right {
+      max-width: 280px;
+      height: 195px;
+    }
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .section-banner {
     .btn_main {
       margin-bottom: 24px;
       padding-top: 8px;
       padding-bottom: 8px;
     }
 
-    .part_right {
-      max-width: 280px;
-      height: 195px;
+    .section__title {
+      font-size: 22px;
+      margin-bottom: 24px;
     }
   }
 }

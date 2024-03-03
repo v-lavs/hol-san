@@ -192,7 +192,7 @@ $(document).ready(function () {
         });
     }
 
-    // bannerOutAnim();
+    bannerOutAnim();
 
 
     function sectionEffectsIntroAnim() {
@@ -210,6 +210,7 @@ $(document).ready(function () {
 
         timeline.to('.effects .card__thumb', {
             yPercent: 50,
+            xPercent: -50,
         });
 
         timeline.to(".section-effects .card__text", {
