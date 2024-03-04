@@ -26,6 +26,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     bottom: -100px;
+
     .container {
       height: 100%;
       display: grid;
@@ -42,9 +43,9 @@ body {
   }
 }
 
-.container-scale-img{
+.spacer-anim {
   position: relative;
-  height: 50vh;
+  height: 20vh;
 }
 
 .section {
@@ -244,6 +245,7 @@ body {
   .main__bg {
     top: -80px;
     bottom: -80px;
+
     .container {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -289,13 +291,14 @@ body {
 }
 
 @include respond-to($xs) {
-.section{
-  padding: 40px 0;
-  &__title{
-    font-size: 22px;
-    margin-bottom: 24px;
+  .section {
+    padding: 40px 0;
+
+    &__title {
+      font-size: 22px;
+      margin-bottom: 24px;
+    }
   }
-}
   .main__bg {
     top: -40px;
     bottom: -40px;

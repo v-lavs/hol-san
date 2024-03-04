@@ -62,9 +62,10 @@ $(document).ready(function () {
             speed: 2000,
             slidesPerView: 1,
             delay: 10000,
-            // autoplay: {
-            //     delay: 3000
-            // },
+            autoplay: {
+                delay: 3000
+            },
+            loop: true,
             pagination: {
                 el: ".section-about .part_right .swiper-pagination",
                 clickable: true,
@@ -81,7 +82,7 @@ $(document).ready(function () {
                 },
             },
         });
-        result.innerHTML = '0' + sliderComponents.slides.length;
+        result.innerHTML = '0' + (sliderComponents.slides.length - 2);
 
         sliderComponents.on('slideChange', function () {
             let currentSlide = (sliderComponents.realIndex);
@@ -103,7 +104,24 @@ $(document).ready(function () {
             }
         })
     );
+    const $sectionBanner = $('.section-banner .container');
+    const $colorDisclaimer = $('.disclaimer-main');
+    $(window).on('scroll', (e) => {
+        const offset = Math.floor($(window).scrollTop());
+        const bannerHeight = Math.floor($sectionBanner.height());
 
+        requestAnimationFrame(() => {
+            if (offset < bannerHeight) {
+                $colorDisclaimer.css({
+                    color: '#ffffff',
+                })
+            } else if (offset > bannerHeight) {
+                $colorDisclaimer.css({
+                    color: '#DCDDE0',
+                })
+            }
+        });
+    });
 
     // ------------------------------------------GSAP----------------------
 
@@ -243,7 +261,7 @@ $(document).ready(function () {
                 trigger: '#complaints',
                 start: 'top-=40% top',
                 // end: 'center bottom',
-                end: 'bottom bottom',
+                end: 'bottom bottom+=200px',
                 // scrub: 8,
                 scrub: 6,
                 pin: true,
@@ -326,6 +344,25 @@ $(document).ready(function () {
         return timeline;
     }
 
+    function sOutAnim() {
+        const sGoOutStage = gsap.to(
+            '.section-symptoms', {
+                opacity: 0,
+            })
+
+        ScrollTrigger.create({
+            animation: sGoOutStage,
+            trigger: document.querySelector('.section-symptoms'),
+            start: "bottom center",
+            immediateRender: true,
+            invalidateOnRefresh: true,
+            scrub: 6,
+            markers:true
+        });
+    }
+
+    sOutAnim();
+
     const complaints = complaintsAnim();
 
     function aboutAnim() {
@@ -333,13 +370,11 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: '.section-about',
                 start: 'top 30%',
-                // end: 'bottom bottom',
                 end: 'bottom bottom',
                 pin: true,
                 scrub: 6,
-                // scrub: 8,
-                markers: true,
                 invalidateOnRefresh: true,
+                // markers: true,
             }
         });
 
@@ -349,7 +384,6 @@ $(document).ready(function () {
             scale: 1.5,
             left: '100%',
             opacity: 0,
-            // duration: 0.6,
             duration: 0.1
         }, {
             y: -400,
@@ -358,7 +392,7 @@ $(document).ready(function () {
             left: '100%',
             opacity: 1,
             duration: 0.6,
-        })
+        });
 
         timeline.fromTo('#about-main-img-end', {
             y: -400,
@@ -371,21 +405,7 @@ $(document).ready(function () {
             scale: 1,
             duration: 1,
             left: 0,
-        }, '>')
-
-        // timeline.fromTo('#about-main-img-end', {
-        //     y: -400,
-        //     xPercent: -50,
-        //     scale: 1.5,
-        //     left: '100%',
-        // }, {
-        //     y: 0,
-        //     xPercent: 0,
-        //     scale: 1,
-        //     duration: 1,
-        //     left: 0,
-        // })
-
+        }, '>');
 
         timeline.fromTo('.img-about_2',
             {
@@ -397,17 +417,14 @@ $(document).ready(function () {
                 x: 0,
                 duration: 1
             },
-            '-=0.5'
-        );
-
+            '-=0.5');
         timeline.fromTo('.swiper-pagination',
             {
                 opacity: 0,
             },
             {
                 opacity: 1,
-            }, '15%'
-        );
+            }, '15%');
         timeline.fromTo('.section-about .section__title',
             {
                 opacity: 0,
@@ -416,8 +433,7 @@ $(document).ready(function () {
             {
                 opacity: 1,
                 y: 0,
-            }, '15%'
-        );
+            }, '15%');
         timeline.fromTo('.slider-components',
             {
                 y: 100,
@@ -427,8 +443,7 @@ $(document).ready(function () {
                 opacity: 1,
                 y: 0
                 // }, '<50%'
-            }, '<-=50%'
-        );
+            }, '<-=50%');
         timeline.fromTo('.section-about .arrow-left',
             {
                 x: 50,
@@ -437,11 +452,11 @@ $(document).ready(function () {
             {
                 opacity: 1,
                 x: 0
-            }, '<'
-        );
+            }, '<+=2%');
 
         return timeline;
     }
+
 
     const about = aboutAnim();
 

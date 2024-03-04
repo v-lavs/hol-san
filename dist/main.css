@@ -889,9 +889,9 @@ body {
   border-right: 1px solid #f0f1f5;
 }
 
-.container-scale-img {
+.spacer-anim {
   position: relative;
-  height: 50vh;
+  height: 20vh;
 }
 
 .section {
@@ -1515,6 +1515,7 @@ body {
   max-width: 342px;
   width: 70%;
   margin-left: auto;
+  opacity: 0;
 }
 
 .img-banner_2 {
@@ -1781,6 +1782,7 @@ body {
 .effects__pill {
   display: flex;
   justify-content: center;
+  opacity: 0;
 }
 
 .effects {
@@ -1801,12 +1803,12 @@ body {
 
 .effects__pill_left {
   right: 50%;
-  transform: translateX(-680px);
+  transform: translateX(-1000px);
 }
 
 .effects__pill_right {
   left: 50%;
-  transform: translateX(680px);
+  transform: translateX(1000px);
 }
 
 .effects__item {
