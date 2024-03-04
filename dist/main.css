@@ -874,6 +874,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   bottom: -100px;
+  width: 100%;
 }
 
 .main__bg .container {
@@ -1540,10 +1541,6 @@ body {
   display: flex;
 }
 
-.section-symptoms .main__bg .container {
-  padding: 0;
-}
-
 .section-symptoms .img_1 {
   display: block;
   max-width: 462px;
@@ -1762,13 +1759,8 @@ body {
 }
 
 .section-effects {
-  padding: 0;
   background-color: #fafbff;
   align-items: center;
-}
-
-.section-effects .container {
-  padding: 100px 0;
 }
 
 .pill-side {
@@ -1845,6 +1837,7 @@ body {
 
 .section-questions {
   min-height: 0;
+  z-index: -1;
 }
 
 .section-about {
