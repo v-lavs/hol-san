@@ -356,7 +356,7 @@ $(document).ready(function () {
             start: "bottom center",
             immediateRender: true,
             invalidateOnRefresh: true,
-            scrub: 6,
+            scrub: 8,
             markers:true
         });
     }
