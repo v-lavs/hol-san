@@ -60,29 +60,23 @@
   }
 
   .card {
-    padding-top: 80.25%;
     position: relative;
-    height: 100%;
+    min-height: 305px;
   }
 
-  .card__inner {
-    position: relative;
-  }
+
 
   .card__thumb {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -100%);
+    position: relative;
     width: 100%;
     background-color: #fafbff;
     z-index: 1;
-
+    margin: 0 auto;
+    max-width: 225px;
     img {
       position: relative;
       height: 100%;
       width: 100%;
-      max-width: 225px;
       object-fit: contain;
     }
   }
@@ -90,11 +84,11 @@
 
 @include respond-to($lg) {
   .section-effects {
-    height: auto;
+    min-height: 100vh;
 
     .section__title {
       max-width: 678px;
-      margin: 0 auto;
+      margin: 0 auto 60px;
     }
   }
   .effects {
@@ -109,16 +103,13 @@
     }
 
     .card {
-      padding-top: 60.25%;
+
     }
   }
 }
 
 @include respond-to($md) {
   .effects {
-    .card {
-      padding-top: 80.25%;
-    }
 
     .card__text {
       padding: 0 23px;
@@ -139,8 +130,7 @@
     }
 
     .card {
-      padding-top: 84.25%;
-
+      min-height: 214px;
       &__thumb {
         max-width: 152px;
       }
@@ -155,9 +145,6 @@
 @include respond-to($xs) {
 
   .effects {
-    .card{
-      padding-top: 100%;
-    }
     .card__text {
       padding: 0;
     }

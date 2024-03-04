@@ -37,21 +37,21 @@ $(document).ready(function () {
     });
 
     // SMOOTH SCROLL TO ANCHOR
-    function smoothScrollToAnchor(selector) {
-        $(selector).on('click', function (event) {
-            let anchor = $.attr(this, 'href');
-
-            if (anchor.match(/^#/) && anchor !== '#') {
-                event.preventDefault();
-
-                $('html, body').animate({
-                    scrollTop: $($.attr(this, 'href')).offset().top + 50
-                }, 3000);
-            }
-        });
-    }
-
-    smoothScrollToAnchor('.menu__item a');
+    // function smoothScrollToAnchor(selector) {
+    //     $(selector).on('click', function (event) {
+    //         let anchor = $.attr(this, 'href');
+    //
+    //         if (anchor.match(/^#/) && anchor !== '#') {
+    //             event.preventDefault();
+    //
+    //             $('html, body').animate({
+    //                 scrollTop: $($.attr(this, 'href')).offset().top + 50
+    //             }, 3000);
+    //         }
+    //     });
+    // }
+    //
+    // smoothScrollToAnchor('.menu__item a');
 
     //SLIDER
     let currentSlideRes = document.querySelector('.current-slide');
@@ -127,6 +127,7 @@ $(document).ready(function () {
 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Flip);
 
+
     function bannerAnimation() {
         // Banner letters
         const bannerTitle = document.querySelector('.section-banner .section__title');
@@ -189,6 +190,11 @@ $(document).ready(function () {
                 opacity: 0,
                 yPercent: -100,
             })
+        const bannerGoOutStage2 = gsap.from(
+            '.section-banner', {
+                opacity: 0,
+
+            })
 
         ScrollTrigger.create({
             animation: bannerGoOutStage,
@@ -228,7 +234,6 @@ $(document).ready(function () {
 
         timeline.to('.effects .card__thumb', {
             yPercent: 50,
-            xPercent: -50,
         });
 
         timeline.to(".section-effects .card__text", {
@@ -256,100 +261,86 @@ $(document).ready(function () {
     }
 
     const effIntro = sectionEffectsIntroAnim();
+    //==========================================================================================
+    // ScrollTrigger.matchMedia({
+    //  'min-width: 1024px':   function (){
+         function complaintsAnim() {
+             const timeline = gsap.timeline({
+                 scrollTrigger: {
+                     trigger: '#complaints',
+                     start: 'top top+=200',
+                     scrub: 3,
+                     pin: true,
 
+                     invalidateOnRefresh: true,
+                     // markers: true
+                 }
+             });
+             const defaultPositionProps = {
+                 y: 100,
+                 opacity: 0,
+             };
+             timeline.fromTo('.img_1',
+                 defaultPositionProps,
+                 {
+                     y: 0,
+                     opacity: 1,
+                     ease: 'power4.out',
+                 },);
+             timeline.fromTo('.block-bg',
+                 defaultPositionProps,
+                 {
+                     y: 0,
+                     opacity: 1,
+                     stagger: 0.2,
+                     ease: 'power1.out',
+                 },'<60%');
+             timeline.fromTo('.img-ellipse',
+                 defaultPositionProps,
+                 {
+                     y: 0,
+                     opacity: 1,
+                     duration: 0.35,
+                     stagger: 0.25,
+                     ease: 'power1.out',
+                 }, '<10%',);
+             timeline.fromTo('.section-symptoms .section__title',
+                 defaultPositionProps,
+                 {
+                     y: 0,
+                     opacity: 1,
+                     stagger: 0.4,
+                     ease: 'power1.out',
+                     duration: 2.2,
+                 }, '<60%');
+             timeline.fromTo('.dot',
+                 {
+                     y: 50,
+                     opacity: 0,
+                 },
+                 {
+                     y: 0,
+                     opacity: 1,
+                     stagger: 0.3,
+                     duration: 1.2,
+                 },'<');
+             timeline.fromTo(".symptoms .card",
+                 {
+                     opacity: 0,
+                     duration: -1,
+                 },
+                 {
+                     opacity: 1,
+                     stagger: 0.2,
+                     ease: 'power1.in',
+                 }, '<');
 
-    function complaintsAnim() {
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: '#complaints',
-                start: 'top top+=100',
-                scrub: 6,
-                pin: true,
-
-                invalidateOnRefresh: true,
-                // markers: true
-            }
-        });
-
-        const defaultPositionProps = {
-            y: 100,
-            opacity: 0,
-        };
-
-        timeline.fromTo('.img_1',
-            defaultPositionProps,
-            {
-                y: 0,
-                opacity: 1,
-                ease: 'power1.out',
-            },
-        );
-
-        timeline.fromTo('.block-bg',
-            defaultPositionProps,
-            {
-                y: 0,
-                opacity: 1,
-                stagger: 0.2,
-                ease: 'power1.out',
-            },
-            '<60%'
-        );
-
-        timeline.fromTo('.img-ellipse',
-            defaultPositionProps,
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.35,
-                stagger: 0.25,
-                ease: 'power1.out',
-            }, '<10%',
-        );
-
-        timeline.fromTo('.section-symptoms .section__title',
-            defaultPositionProps,
-            {
-                y: 0,
-                opacity: 1,
-                stagger: 0.4,
-                ease: 'power1.out',
-                duration: 2.2,
-            }, '<60%');
-
-        timeline.fromTo('.dot',
-            {
-                y: 50,
-                opacity: 0,
-            },
-            {
-                y: 0,
-                opacity: 1,
-                stagger: 0.3,
-                duration: 1.2,
-            },
-            '<'
-        );
-
-        timeline.fromTo(".symptoms .card",
-            {
-                opacity: 0,
-                duration: -1,
-            },
-            {
-                opacity: 1,
-                stagger: 0.2,
-                ease: 'power1.in',
-            }, '<');
-        // timeline.fromTo(".section-symptoms",
-        //     {
-        //         opacity: 1,
-        //     },
-        //     {
-        //         opacity: 0, delay:.25,
-        //     });
-        return timeline;
-    }
+             return timeline;
+         }
+         const complaints = complaintsAnim();
+    //      complaints.scrollTrigger.refresh();
+    //  }
+    // });
 
     function sOutAnim() {
         const sGoOutStage = gsap.to(
@@ -367,10 +358,120 @@ $(document).ready(function () {
             markers:true
         });
     }
-
     sOutAnim();
 
-    const complaints = complaintsAnim();
+
+
+ // ====================================================================================
+    // function complaintsAnim() {
+    //
+    //
+    //     const timeline = gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: '#complaints',
+    //             start: 'top top+=100',
+    //             scrub: 6,
+    //             pin: true,
+    //
+    //             invalidateOnRefresh: true,
+    //             // markers: true
+    //         }
+    //     });
+    //
+    //     const defaultPositionProps = {
+    //         y: 100,
+    //         opacity: 0,
+    //     };
+    //
+    //     timeline.fromTo('.img_1',
+    //         defaultPositionProps,
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             ease: 'power1.out',
+    //         },
+    //     );
+    //
+    //     timeline.fromTo('.block-bg',
+    //         defaultPositionProps,
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             stagger: 0.2,
+    //             ease: 'power1.out',
+    //         },
+    //         '<60%'
+    //     );
+    //
+    //     timeline.fromTo('.img-ellipse',
+    //         defaultPositionProps,
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             duration: 0.35,
+    //             stagger: 0.25,
+    //             ease: 'power1.out',
+    //         }, '<10%',
+    //     );
+    //
+    //     timeline.fromTo('.section-symptoms .section__title',
+    //         defaultPositionProps,
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             stagger: 0.4,
+    //             ease: 'power1.out',
+    //             duration: 2.2,
+    //         }, '<60%');
+    //
+    //     timeline.fromTo('.dot',
+    //         {
+    //             y: 50,
+    //             opacity: 0,
+    //         },
+    //         {
+    //             y: 0,
+    //             opacity: 1,
+    //             stagger: 0.3,
+    //             duration: 1.2,
+    //         },
+    //         '<'
+    //     );
+    //
+    //     timeline.fromTo(".symptoms .card",
+    //         {
+    //             opacity: 0,
+    //             duration: -1,
+    //         },
+    //         {
+    //             opacity: 1,
+    //             stagger: 0.2,
+    //             ease: 'power1.in',
+    //         }, '<');
+    //
+    //     return timeline;
+    // }
+    //
+    // function sOutAnim() {
+    //     const sGoOutStage = gsap.to(
+    //         '.section-symptoms', {
+    //             opacity: 0,
+    //         })
+    //
+    //     ScrollTrigger.create({
+    //         animation: sGoOutStage,
+    //         trigger: document.querySelector('.section-symptoms'),
+    //         start: 'bottom top-=50%',
+    //         immediateRender: true,
+    //         invalidateOnRefresh: true,
+    //         scrub: 3,
+    //         markers:true
+    //     });
+    // }
+    //
+    // sOutAnim();
+    //
+    // const complaints = complaintsAnim();
 
     function aboutAnim() {
         const timeline = gsap.timeline({
@@ -467,6 +568,7 @@ $(document).ready(function () {
 
     const about = aboutAnim();
 
+
     gsap.to('.disclaimer-main', {
         scrollTrigger: {
             trigger: '.footer',
@@ -497,6 +599,7 @@ $(document).ready(function () {
         complaints.scrollTrigger.refresh();
         effIntro.scrollTrigger.refresh();
         about.scrollTrigger.refresh();
+
         console.log('resized');
     }
 
