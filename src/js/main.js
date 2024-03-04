@@ -262,8 +262,8 @@ $(document).ready(function () {
                 start: 'top-=40% top',
                 // end: 'center bottom',
                 end: 'bottom bottom+=200px',
-                // scrub: 8,
-                scrub: 6,
+                scrub: 8,
+                // scrub: 6,
                 pin: true,
 
                 invalidateOnRefresh: true,
@@ -356,7 +356,7 @@ $(document).ready(function () {
             start: "bottom center",
             immediateRender: true,
             invalidateOnRefresh: true,
-            scrub: 8,
+            scrub: 6,
             markers:true
         });
     }
