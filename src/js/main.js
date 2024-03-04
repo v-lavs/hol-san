@@ -262,10 +262,7 @@ $(document).ready(function () {
         const timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: '#complaints',
-                start: 'top-=40% top',
-                // end: 'center bottom',
-                end: 'bottom bottom+=200px',
-                // scrub: 8,
+                start: 'top top+=100',
                 scrub: 6,
                 pin: true,
 
@@ -363,11 +360,10 @@ $(document).ready(function () {
         ScrollTrigger.create({
             animation: sGoOutStage,
             trigger: document.querySelector('.section-symptoms'),
-            start: 'bottom center',
-            end: 'bottom top',
+            start: 'bottom top-=50%',
             immediateRender: true,
             invalidateOnRefresh: true,
-            scrub: 6,
+            scrub: 3,
             markers:true
         });
     }
@@ -480,6 +476,11 @@ $(document).ready(function () {
             invalidateOnRefresh: true,
         }
     });
+
+
+
+
+
 
     // Debounce
     function debounce(func, time) {
