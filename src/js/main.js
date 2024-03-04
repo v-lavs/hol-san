@@ -239,10 +239,13 @@ $(document).ready(function () {
             scale: 0.45,
             opacity: 0,
         });
-
+        timeline.to('.section-effects .effects__pill',
+            {opacity: 1,},
+            "<-=0.2"
+        );
         timeline.to('.section-effects .effects__pill',
             {x: 0,},
-            "<"
+            "<+=0.2"
         );
 
         timeline.to('.section-effects .pill-side',
@@ -341,6 +344,13 @@ $(document).ready(function () {
                 stagger: 0.2,
                 ease: 'power1.in',
             }, '<');
+        // timeline.fromTo(".section-symptoms",
+        //     {
+        //         opacity: 1,
+        //     },
+        //     {
+        //         opacity: 0, delay:.25,
+        //     });
         return timeline;
     }
 
@@ -459,7 +469,6 @@ $(document).ready(function () {
 
 
     const about = aboutAnim();
-
 
     gsap.to('.disclaimer-main', {
         scrollTrigger: {

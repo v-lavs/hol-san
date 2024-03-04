@@ -19,6 +19,7 @@
 .effects__pill {
   display: flex;
   justify-content: center;
+  opacity:0;
 }
 
 .effects {
@@ -37,12 +38,12 @@
 
     &_left {
       right: 50%;
-      transform: translateX(-680px);
+      transform: translateX(-1000px);
     }
 
     &_right {
       left: 50%;
-      transform: translateX(680px);
+      transform: translateX(1000px);
     }
   }
 
