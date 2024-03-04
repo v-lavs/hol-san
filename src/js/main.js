@@ -265,8 +265,8 @@ $(document).ready(function () {
                 start: 'top-=40% top',
                 // end: 'center bottom',
                 end: 'bottom bottom+=200px',
-                scrub: 8,
-                // scrub: 6,
+                // scrub: 8,
+                scrub: 6,
                 pin: true,
 
                 invalidateOnRefresh: true,
@@ -363,7 +363,8 @@ $(document).ready(function () {
         ScrollTrigger.create({
             animation: sGoOutStage,
             trigger: document.querySelector('.section-symptoms'),
-            start: "bottom center",
+            start: 'bottom center',
+            end: 'bottom top',
             immediateRender: true,
             invalidateOnRefresh: true,
             scrub: 6,
