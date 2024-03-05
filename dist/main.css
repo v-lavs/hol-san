@@ -1762,14 +1762,10 @@ body {
   transition: .2s ease-in;
 }
 
-.effects__pill_right {
-  margin-bottom: -2px;
-}
-
 .effects__pill {
   display: flex;
   justify-content: center;
-  opacity: 0;
+  align-items: center;
 }
 
 .effects {
