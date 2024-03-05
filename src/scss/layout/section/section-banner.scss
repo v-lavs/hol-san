@@ -167,7 +167,11 @@
     }
   }
 }
-
+@include respond-to($xs){
+  .section-banner{
+    padding-top: 70px;
+  }
+}
 @media screen and (max-width: 340px) {
   .section-banner {
     .btn_main {
