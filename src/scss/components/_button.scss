@@ -87,13 +87,14 @@
   height: 65px;
   border: none;
   padding: 0;
-  z-index: 500;
+  z-index: 700;
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
   transition: .5s;
   background-color: transparent;
   border-radius: 50%;
+
   svg {
     display: inline-block;
     width: 100%;
@@ -128,7 +129,7 @@
 .btn_up {
   position: fixed;
   bottom: 18vh;
-  z-index: 100;
+  z-index: 700;
 
   &.show {
     opacity: 1;
@@ -138,7 +139,7 @@
 
 .btn_buy {
   position: sticky;
-  bottom:27vh;
+  bottom: 27vh;
 
   &.show {
     position: fixed;
@@ -147,8 +148,21 @@
   }
 }
 
-@include respond-to($xs){
-  .btn_round{
+.btn_load-more {
+  padding: 16px 32px;
+  background-color: #ff7330;
+  border: none;
+  color: #fff;
+  transition: .35s;
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@include respond-to($xs) {
+  .btn_round {
     width: 56px;
     height: 56px;
   }

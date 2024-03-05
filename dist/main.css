@@ -1188,7 +1188,7 @@ body {
   height: 65px;
   border: none;
   padding: 0;
-  z-index: 500;
+  z-index: 700;
   overflow: hidden;
   opacity: 0;
   visibility: hidden;
@@ -1230,7 +1230,7 @@ body {
 .btn_up {
   position: fixed;
   bottom: 18vh;
-  z-index: 100;
+  z-index: 700;
 }
 
 .btn_up.show {
@@ -1247,6 +1247,19 @@ body {
   position: fixed;
   opacity: 1;
   visibility: visible;
+}
+
+.btn_load-more {
+  padding: 16px 32px;
+  background-color: #ff7330;
+  border: none;
+  color: #fff;
+  transition: .35s;
+}
+
+.btn_load-more.hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .swiper-pagination {
@@ -2100,6 +2113,25 @@ body {
 .section-note ol li:before {
   counter-increment: list;
   content: counter(list) ". ";
+}
+
+.section-note .wrap-btn {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.text-read {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .35s;
+}
+
+.text-read.active {
+  display: inline-flex;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .35s;
 }
 
 @media only screen and (max-width: 1440px) {

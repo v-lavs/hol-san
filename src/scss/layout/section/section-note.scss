@@ -41,4 +41,23 @@
       }
     }
   }
+
+  .wrap-btn {
+    margin-top: 40px;
+    text-align: center;
+  }
+}
+
+.text-read {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .35s;
+
+  &.active {
+    display: inline-flex;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .35s;
+  }
 }

@@ -10,7 +10,7 @@
 
 $(document).ready(function () {
         const lenis = new Lenis({
-            duration: 2.5,
+            duration: 2.8,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         })
 
@@ -153,6 +153,14 @@ $(document).ready(function () {
         window.addEventListener('scroll', trackScroll);
         goTopBtn.addEventListener('click', backToTop);
     })();
+
+const btnReadMore = document.querySelector('.btn_load-more');
+const textRead = document.querySelector(".text-read");
+
+    btnReadMore.addEventListener("click", function(e) {
+        textRead.classList.add("active");
+        btnReadMore.classList.add("hide");
+    })
 
         // ------------------------------------------GSAP----------------------
 
