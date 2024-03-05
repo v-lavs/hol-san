@@ -118,7 +118,7 @@ $(document).ready(function () {
                         color: '#DCDDE0',
                     })
 
-                } else if(offset <= bannerHeight) {
+                } else if (offset <= bannerHeight) {
                     $colorDisclaimer.css({
                         color: '#ffffff',
                     })
@@ -315,51 +315,49 @@ $(document).ready(function () {
                         animation: timeline,
                         // markers: true
                     });
-                }
-               // else if (isMobile) {
-               //      timeline.to('.effects .card__thumb', {
-               //          yPercent: 50,
-               //      });
-               //
-               //      timeline.to(".section-effects .card__text", {
-               //          opacity: 0
-               //      }, "<");
-               //
-               //      timeline.to('.effects', {
-               //          scale: 0.45,
-               //          opacity: 0,
-               //      });
-               //
-               //      timeline.to('.section-effects .effects__pill',
-               //          {opacity: 1,},
-               //          "<-=0.2"
-               //      );
-               //      timeline.to('.section-effects .effects__pill',
-               //          {x: 0,},
-               //          "<+=0.2"
-               //      );
-               //
-               //      timeline.to('.section-effects .pill-side',
-               //          {width: 0},
-               //          "<"
-               //      );
-               //      ScrollTrigger.create({
-               //          trigger: '#action',
-               //          pin: true,
-               //          scrub: 2,
-               //          start: () => {
-               //              return "top top+=50";
-               //          }, // when the top of the trigger hits the top of the viewport
-               //          end: () => {
-               //              return "bottom center-=50";
-               //          },
-               //          invalidateOnRefresh: true,
-               //          animation: timeline,
-               //          markers: true
-               //      });
-               //  }
-            });
+                } else if (isMobile) {
+                    timeline.to('.effects .card__thumb', {
+                        yPercent: 50,
+                    });
 
+                    timeline.to(".section-effects .card__text", {
+                        opacity: 0
+                    }, "<");
+
+                    timeline.to('.effects', {
+                        scale: 0.45,
+                        opacity: 0,
+                    });
+
+                    timeline.to('.section-effects .effects__pill',
+                        {opacity: 1,},
+                        "<-=0.2"
+                    );
+                    timeline.to('.section-effects .effects__pill',
+                        {x: 0,},
+                        "<+=0.2"
+                    );
+
+                    timeline.to('.section-effects .pill-side',
+                        {width: 0},
+                        "<"
+                    );
+                    ScrollTrigger.create({
+                        trigger: '#action',
+                        pin: true,
+                        scrub: 2,
+                        start: () => {
+                            return "top top+=50";
+                        }, // when the top of the trigger hits the top of the viewport
+                        end: () => {
+                            return "bottom center-=50";
+                        },
+                        invalidateOnRefresh: true,
+                        animation: timeline,
+                        markers: true
+                    });
+                }
+            });
 
 
             return timeline;
@@ -372,7 +370,7 @@ $(document).ready(function () {
             const timeline = gsap.timeline({});
 
             const mm1 = gsap.matchMedia();
-            const breakPoint = 1024;
+            const breakPoint = 769;
 
             mm1.add(
                 {
@@ -448,72 +446,73 @@ $(document).ready(function () {
                             // markers: true
                         });
                     }
-                    else if (isMobile) {
-                        const defaultPositionProps = {
-                            opacity: 0,
-                            y: 100,
-
-                        };
-                        timeline.fromTo('.img_1',
-                            defaultPositionProps, {
-                                y: 0,
-                                opacity: 1,
-                                ease: 'power4.out',
-                            },);
-                        timeline.fromTo('.block-bg',
-                            defaultPositionProps, {
-                                y: 0,
-                                opacity: 1,
-                                stagger: 0.2,
-                                ease: 'power1.out',
-                            }, '<70%');
-                        timeline.fromTo('.img-ellipse',
-                            defaultPositionProps, {
-                                y: 0,
-                                opacity: 1,
-                                duration: 0.35,
-                                stagger: 0.25,
-                                ease: 'power1.out',
-                            }, '<20%',);
-                        timeline.fromTo('.section-symptoms .section__title',
-                            defaultPositionProps, {
-                                y: 0,
-                                opacity: 1,
-                                stagger: 0.4,
-                                ease: 'power1.out',
-                                duration: 2.2,
-                            }, '<70%');
-                        timeline.fromTo('.dot', {
-                            y: 50,
-                            opacity: 0,
-                        }, {
-                            y: 0,
-                            opacity: 1,
-                            stagger: 0.3,
-                            duration: 1.2,
-                        }, '<');
-                        timeline.fromTo(".symptoms .card", {
-                                opacity: 0,
-                                duration: -1,
-                            },
-                            {
-                                opacity: 1,
-                                stagger: 0.2,
-                                ease: 'power1.in',
-                            }, '<');
-
-                        ScrollTrigger.create({
-                            trigger: '#complaints',
-                            start: 'top top+=50',
-                            // end:'center+=100 center',
-                            scrub: 2,
-                            pin: true,
-
-                            invalidateOnRefresh: true,
-                            animation: timeline,
-                            // markers: true
-                        });
-                    }
+                    // else if (isMobile) {
+                    //     const defaultPositionProps = {
+                    //         opacity: 0,
+                    //         y: 100,
+                    //
+                    //     };
+                    //     // timeline.fromTo('.img_1',
+                    //     //     defaultPositionProps, {
+                    //     //         y: 0,
+                    //     //         opacity: 1,
+                    //     //         ease: 'power4.out',
+                    //     //     },);
+                    //     // timeline.fromTo('.block-bg',
+                    //     //     defaultPositionProps, {
+                    //     //         y: 0,
+                    //     //         opacity: 1,
+                    //     //         stagger: 0.2,
+                    //     //         ease: 'power1.out',
+                    //     //     }, '<70%');
+                    //     timeline.fromTo('.img-ellipse',
+                    //         defaultPositionProps, {
+                    //             y: 0,
+                    //             opacity: 1,
+                    //             duration: 0.35,
+                    //             stagger: 0.25,
+                    //             ease: 'power1.out',
+                    //         }, '<20%',);
+                    //     timeline.fromTo('.section-symptoms .section__title',
+                    //         defaultPositionProps, {
+                    //             y: 0,
+                    //             opacity: 1,
+                    //             stagger: 0.4,
+                    //             ease: 'power1.out',
+                    //             duration: 2.2,
+                    //         }, '<70%');
+                    //     timeline.fromTo('.dot', {
+                    //         y: 50,
+                    //         opacity: 0,
+                    //     }, {
+                    //         y: 0,
+                    //         opacity: 1,
+                    //         stagger: 0.3,
+                    //         duration: 1.2,
+                    //     }, '<');
+                    //     timeline.fromTo(".symptoms .card", {
+                    //             opacity: 0,
+                    //             duration: -1,
+                    //         },
+                    //         {
+                    //             opacity: 1,
+                    //             stagger: 0.2,
+                    //             ease: 'power1.in',
+                    //         }, '<');
+                    //
+                    //     ScrollTrigger.create({
+                    //         trigger: '#complaints',
+                    //         // start: 'top top+=50',
+                    //         start: 'top top+=200',
+                    //         // end:'center+=100 center',
+                    //         scrub: 4,
+                    //         // pin: true,
+                    //
+                    //         invalidateOnRefresh: true,
+                    //         animation: timeline,
+                    //         // markers: true
+                    //     });
+                    // }
                     return () => {
                     };
                 }
@@ -540,8 +539,8 @@ $(document).ready(function () {
                     let {isDesktop, isMobile} = context.conditions;
 
                     if (isDesktop) {
-                        sGoOutStage.to('.section-symptoms',{
-                            opacity:0
+                        sGoOutStage.to('.section-symptoms', {
+                            opacity: 0
                         })
                         ScrollTrigger.create({
                             animation: sGoOutStage,
@@ -560,9 +559,9 @@ $(document).ready(function () {
                     //     })
                     //     ScrollTrigger.create({
                     //         animation: sGoOutStage,
-                    //         trigger: document.querySelector('.section-symptoms'),
-                    //         start: 'bottom top-=50',
-                    //         end: 'bottom top',
+                    //         trigger: document.querySelector('.spacer-anim'),
+                    //         start: 'bottom+=100% bottom',
+                    //
                     //         immediateRender: true,
                     //         invalidateOnRefresh: true,
                     //         scrub: 3,
@@ -693,11 +692,12 @@ $(document).ready(function () {
         function aboutAnim() {
             const timeline = gsap.timeline();
             const mm = gsap.matchMedia();
-            const breakPointX = 768;
+            const breakPointX = 769;
 
             mm.add({
                 isDesktop: `(min-width: ${breakPointX}px)`,
-                isMobile: `(max-width: ${breakPointX - 1}px)`
+                isMobile: `(max-width: ${breakPointX - 1}px)`,
+
             }, (context) => {
                 const {isDesktop, isMobile} = context.conditions;
                 if (isDesktop) {
@@ -773,80 +773,7 @@ $(document).ready(function () {
                         invalidateOnRefresh: true,
                         animation: timeline,
                     });
-                } else if (isMobile) {
-                    timeline.fromTo('#about-main-img-end', {
-                        y: -300,
-                        xPercent: -50,
-                        scale: 1.25,
-                        left: '50%',
-                        opacity: 0,
-                        duration: 0.1
-                    }, {
-                        y: -300,
-                        xPercent: -50,
-                        scale: 1.25,
-                        left: '50%',
-                        opacity: 1,
-                        duration: 0.6,
-                    });
-                    timeline.fromTo('#about-main-img-end', {
-                        y: -300,
-                        xPercent: -50,
-                        scale: 1.25,
-                        left: '50%',
-                    }, {
-                        y: 0,
-                        xPercent: 0,
-                        scale: 1,
-                        duration: 1,
-                        left: 0,
-                    }, '>');
-                    timeline.fromTo('.img-about_2', {
-                        x: -600,
-                        opacity: 0,
-                    }, {
-                        opacity: 1,
-                        x: 0,
-                        duration: 1
-                    }, '-=0.5');
-
-                    timeline.fromTo('.swiper-pagination', {
-                        opacity: 0,
-                    }, {
-                        opacity: 1,
-                    }, '15%');
-                    timeline.fromTo('.section-about .section__title', {
-                        opacity: 0,
-                        y: 100,
-                    }, {
-                        opacity: 1,
-                        y: 0,
-                    }, '15%');
-                    timeline.fromTo('.slider-components', {
-                        y: 100,
-                        opacity: 0,
-                    }, {
-                        opacity: 1,
-                        y: 0
-                        // }, '<50%'
-                    }, '<-=50%');
-                    timeline.fromTo('.section-about .arrow-left', {
-                        x: 50,
-                        opacity: 0,
-                    }, {
-                        opacity: 1,
-                        x: 0 }, '<+=2%');
-                    ScrollTrigger.create({
-                        trigger: '.section-about',
-                        start: 'top 42%',
-                        end: 'bottom bottom',
-                        pin: true,
-                        scrub: 6,
-                        invalidateOnRefresh: true,
-                        animation: timeline,
-                    });
                 }
-
             });
             return timeline;
         }

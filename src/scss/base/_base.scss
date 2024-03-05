@@ -47,7 +47,7 @@ body {
   position: relative;
   height: 20vh;
 }
-@media screen and (max-width: 1024px) and (min-height: 1180px) {
+@include respond-to($md){
   .spacer-anim {
     height: 1px;
   }
