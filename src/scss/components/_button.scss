@@ -77,7 +77,73 @@
   }
 }
 
-@include respond-to($xs) {
+.btn_round {
 
+  display: inline-block;
+  cursor: pointer;
+  appearance: none;
+  right: 10px;
+  width: 65px;
+  height: 65px;
+  border: none;
+  padding: 0;
+  z-index: 500;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+  background-color: transparent;
+  border-radius: 50%;
+  svg {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+  }
+
+  defs stop:first-child {
+    stop-color: #FC8014;
+  }
+
+  defs stop:last-child {
+    stop-color: #FCA61A;
+  }
+
+  &:hover defs stop:first-child {
+    stop-color: #FCA61A;
+  }
+
+  &:hover defs stop:last-child {
+    stop-color: #FFC21D;
+  }
+
+  &:active defs stop:first-child {
+    stop-color: #FC5111;
+  }
+
+  &:active defs stop:last-child {
+    stop-color: #FC8014;
+  }
+}
+
+.btn_up {
+  position: fixed;
+  bottom: 18vh;
+  z-index: 100;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.btn_buy {
+  position: sticky;
+  bottom:27vh;
+
+  &.show {
+    position: fixed;
+    opacity: 1;
+    visibility: visible;
+  }
 }
 

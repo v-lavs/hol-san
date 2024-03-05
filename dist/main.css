@@ -1179,6 +1179,76 @@ body {
   height: auto;
 }
 
+.btn_round {
+  display: inline-block;
+  cursor: pointer;
+  appearance: none;
+  right: 10px;
+  width: 65px;
+  height: 65px;
+  border: none;
+  padding: 0;
+  z-index: 500;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: .5s;
+  background-color: transparent;
+  border-radius: 50%;
+}
+
+.btn_round svg {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+.btn_round defs stop:first-child {
+  stop-color: #FC8014;
+}
+
+.btn_round defs stop:last-child {
+  stop-color: #FCA61A;
+}
+
+.btn_round:hover defs stop:first-child {
+  stop-color: #FCA61A;
+}
+
+.btn_round:hover defs stop:last-child {
+  stop-color: #FFC21D;
+}
+
+.btn_round:active defs stop:first-child {
+  stop-color: #FC5111;
+}
+
+.btn_round:active defs stop:last-child {
+  stop-color: #FC8014;
+}
+
+.btn_up {
+  position: fixed;
+  bottom: 18vh;
+  z-index: 100;
+}
+
+.btn_up.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.btn_buy {
+  position: sticky;
+  bottom: 27vh;
+}
+
+.btn_buy.show {
+  position: fixed;
+  opacity: 1;
+  visibility: visible;
+}
+
 .swiper-pagination {
   right: 0 !important;
 }
