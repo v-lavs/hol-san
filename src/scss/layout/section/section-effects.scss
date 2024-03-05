@@ -39,12 +39,12 @@
 
     &_left {
       right: 50%;
-      //transform: translateX(-1000px);
+      transform: translateX(-1000px);
     }
 
     &_right {
       left: 50%;
-      //transform: translateX(1000px);
+      transform: translateX(1000px);
     }
   }
 

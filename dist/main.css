@@ -1793,10 +1793,12 @@ body {
 
 .effects__pill_left {
   right: 50%;
+  transform: translateX(-1000px);
 }
 
 .effects__pill_right {
   left: 50%;
+  transform: translateX(1000px);
 }
 
 .effects__item {
