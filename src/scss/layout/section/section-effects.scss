@@ -11,14 +11,13 @@
 }
 
 .effects__pill_right {
-  //margin-bottom: -2px;
+  margin-bottom: -2px;
 }
 
 .effects__pill {
   display: flex;
   justify-content: center;
-  align-items: center;
-  //opacity:0;
+  opacity:0;
 }
 
 .effects {
@@ -34,15 +33,18 @@
     position: absolute;
     bottom: 0;
     z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
 
     &_left {
       right: 50%;
-      transform: translateX(-1000px);
+      //transform: translateX(-1000px);
     }
 
     &_right {
       left: 50%;
-      transform: translateX(1000px);
+      //transform: translateX(1000px);
     }
   }
 
@@ -94,7 +96,7 @@
     flex-wrap: wrap;
 
     &__pill {
-      bottom: 150px;
+      //bottom: 150px;
     }
 
     &__item {
@@ -122,10 +124,11 @@
 
     &__pill {
       bottom: 116px;
+      width: 160px;
     }
 
     &__pill_right {
-      margin-bottom: 0.5px;
+      margin-bottom: 0;
     }
 
     .card {

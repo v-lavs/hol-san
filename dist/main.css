@@ -1762,10 +1762,14 @@ body {
   transition: .2s ease-in;
 }
 
+.effects__pill_right {
+  margin-bottom: -2px;
+}
+
 .effects__pill {
   display: flex;
   justify-content: center;
-  align-items: center;
+  opacity: 0;
 }
 
 .effects {
@@ -1782,16 +1786,17 @@ body {
   position: absolute;
   bottom: 0;
   z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .effects__pill_left {
   right: 50%;
-  transform: translateX(-1000px);
 }
 
 .effects__pill_right {
   left: 50%;
-  transform: translateX(1000px);
 }
 
 .effects__item {
@@ -2271,10 +2276,6 @@ body {
     flex-wrap: wrap;
   }
 
-  .effects__pill {
-    bottom: 150px;
-  }
-
   .effects__item {
     width: 50%;
   }
@@ -2587,10 +2588,11 @@ body {
 
   .effects__pill {
     bottom: 116px;
+    width: 160px;
   }
 
   .effects__pill_right {
-    margin-bottom: 0.5px;
+    margin-bottom: 0;
   }
 
   .effects .card {
