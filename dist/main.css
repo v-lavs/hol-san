@@ -2583,6 +2583,10 @@ body {
     height: 229px;
   }
 
+  .section-symptoms {
+    padding-bottom: 0;
+  }
+
   .section-symptoms__wrap-img {
     width: 90%;
     min-height: 403px;
@@ -2671,6 +2675,10 @@ body {
   .section-banner .part_right {
     max-width: 280px;
     height: 195px;
+  }
+
+  .section-symptoms {
+    padding-bottom: 0;
   }
 
   .section-symptoms__wrap-img {
