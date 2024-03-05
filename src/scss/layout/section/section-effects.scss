@@ -7,7 +7,21 @@
 }
 
 .pill-side {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
   transition: .2s ease-in;
+}
+
+.pill-side_left {
+  left: 1px;
+  transform: translateX(-100%);
+}
+
+.pill-side_right {
+  right: 1px;
+  transform: translateX(100%);
 }
 
 .effects__pill_right {
@@ -96,7 +110,7 @@
     flex-wrap: wrap;
 
     &__pill {
-      //bottom: 150px;
+      bottom: 150px;
     }
 
     &__item {
@@ -124,7 +138,6 @@
 
     &__pill {
       bottom: 116px;
-      width: 160px;
     }
 
     &__pill_right {

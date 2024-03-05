@@ -65,6 +65,16 @@ body {
   color: #2e3540;
   margin-bottom: 60px;
 
+  .mobile-only {
+    display: none;
+  }
+
+  @include respond-to($sm) {
+    .mobile-only {
+      display: block;
+    }
+  }
+
   sup {
     font-weight: 400;
     vertical-align: bottom;

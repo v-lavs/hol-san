@@ -913,6 +913,10 @@ body {
   margin-bottom: 60px;
 }
 
+.section__title .mobile-only {
+  display: none;
+}
+
 .section__title sup {
   font-weight: 400;
   vertical-align: bottom;
@@ -1759,7 +1763,21 @@ body {
 }
 
 .pill-side {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%;
   transition: .2s ease-in;
+}
+
+.pill-side_left {
+  left: 1px;
+  transform: translateX(-100%);
+}
+
+.pill-side_right {
+  right: 1px;
+  transform: translateX(100%);
 }
 
 .effects__pill_right {
@@ -2278,6 +2296,10 @@ body {
     flex-wrap: wrap;
   }
 
+  .effects__pill {
+    bottom: 150px;
+  }
+
   .effects__item {
     width: 50%;
   }
@@ -2510,6 +2532,10 @@ body {
 }
 
 @media only screen and (max-width: 568px) {
+  .section__title .mobile-only {
+    display: block;
+  }
+
   .container {
     max-width: 375px;
   }
@@ -2590,7 +2616,6 @@ body {
 
   .effects__pill {
     bottom: 116px;
-    width: 160px;
   }
 
   .effects__pill_right {

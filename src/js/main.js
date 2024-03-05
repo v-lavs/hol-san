@@ -128,7 +128,7 @@ $(document).ready(function () {
 
         // ------------------------------------------GSAP----------------------
 
-        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, Flip);
+        gsap.registerPlugin(ScrollTrigger, Flip);
 
 
         function bannerAnimation() {
