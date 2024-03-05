@@ -126,7 +126,7 @@ $(document).ready(function () {
         });
     });
 
-
+    //BTN-UP
     (function () {
 
         function trackScroll() {
@@ -154,6 +154,7 @@ $(document).ready(function () {
         goTopBtn.addEventListener('click', backToTop);
     })();
 
+    //READ MORE TEXT
     const btnReadMore = document.querySelector('.btn_load-more');
     const textRead = document.querySelector(".text-read");
 
@@ -287,7 +288,7 @@ $(document).ready(function () {
                     scrub: 1.5,
                     start: () => {
                         return "top+=150 top";
-                    }, // when the top of the trigger hits the top of the viewport
+                    },
                     end: () => {
                         return "bottom center";
                     },
