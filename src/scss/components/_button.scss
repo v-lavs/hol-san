@@ -147,3 +147,9 @@
   }
 }
 
+@include respond-to($xs){
+  .btn_round{
+    width: 56px;
+    height: 56px;
+  }
+}
