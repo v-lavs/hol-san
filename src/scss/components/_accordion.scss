@@ -30,11 +30,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
+  color: #ffffff;;
   transition: .35s ease-in-out;
 
   &:before {
-    position: absolute;
     content: '';
     width: 24px;
     height: 24px;
@@ -42,10 +41,9 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
-
+    transform-origin: 50% 50%;
+    transform: rotate(45deg);
+    transition: .35s ease-in-out;
   }
 
   &:hover,
@@ -74,12 +72,12 @@
 }
 
 .active .accordion__caret {
-  transform: translateY(-50%) rotate(45deg) ;
-  transition: transform .35s ease-in-out;
   background-color: #ffffff;
 
   &:before {
     filter: invert(57%) sepia(59%) saturate(2489%) hue-rotate(337deg) brightness(126%) contrast(105%);
+
+    transform: rotate(0) ;
   }
 }
 

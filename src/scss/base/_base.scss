@@ -43,15 +43,6 @@ body {
   }
 }
 
-.spacer-anim {
-  position: relative;
-  height: 20vh;
-}
-@include respond-to($md){
-  .spacer-anim {
-    height: 1px;
-  }
-}
 .section {
   position: relative;
   display: flex;

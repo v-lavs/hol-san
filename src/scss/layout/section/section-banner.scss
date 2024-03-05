@@ -156,7 +156,7 @@
 
 }
 
-@include respond-to($xs) {
+@media screen and (max-width: 390px){
   .section-banner {
     padding-top: 70px;
 

@@ -1,6 +1,5 @@
 .section-questions {
   min-height: 0;
-  z-index: -1;
 }
 
 @include respond-to($md) {
