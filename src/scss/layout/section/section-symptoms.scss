@@ -118,9 +118,11 @@
     }
   }
 }
-.pin-wrapper{
+
+.pin-wrapper {
   min-height: 874px;
 }
+
 .symptoms {
   position: absolute;
   padding: 138px 0;
@@ -309,6 +311,8 @@
     }
   }
 }
+
+
 
 @include respond-to($md) {
   .section-symptoms {

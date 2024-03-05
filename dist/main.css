@@ -1052,10 +1052,8 @@ body {
   z-index: 100;
   transition: .35s;
   background-color: rgba(255, 255, 255, 0.1);
-  color: #DCDDE0;
-}
-
-.disclaimer-main.white {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(2px);
   color: #ffffff;
 }
 
@@ -1763,6 +1761,10 @@ body {
   align-items: center;
 }
 
+.section-effects .main__bg {
+  top: 0;
+}
+
 .pill-side {
   transition: .2s ease-in;
 }
@@ -2113,6 +2115,12 @@ body {
 
   .section-about .part_left {
     height: 340px;
+  }
+}
+
+@media screen and (max-width: 1024px) and (min-height: 1180px) {
+  .spacer-anim {
+    height: 1px;
   }
 }
 
@@ -2633,7 +2641,7 @@ body {
   }
 }
 
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 375px) {
   .section {
     padding: 40px 0;
   }
