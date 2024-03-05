@@ -875,6 +875,7 @@ body {
   transform: translateX(-50%);
   bottom: -100px;
   width: 100%;
+  pointer-events: none;
 }
 
 .main__bg .container {
