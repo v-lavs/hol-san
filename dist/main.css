@@ -1710,6 +1710,12 @@ body {
   border-radius: 16px;
 }
 
+.symptoms .card__thumb .img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .symptoms .card__text {
   flex-shrink: 0;
 }
