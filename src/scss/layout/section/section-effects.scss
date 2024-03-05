@@ -1,9 +1,9 @@
 .section-effects {
   background-color: #fafbff;
   align-items: center;
-.main__bg{
-  top: 0;
-}
+    .main__bg{
+      top: 0;
+    }
 }
 
 .pill-side {
@@ -88,7 +88,7 @@
     z-index: 1;
     margin: 0 auto;
     max-width: 225px;
-    img {
+    .img {
       position: relative;
       height: 100%;
       width: 100%;

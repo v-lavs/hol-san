@@ -1845,7 +1845,7 @@ body {
   max-width: 225px;
 }
 
-.effects .card__thumb img {
+.effects .card__thumb .img {
   position: relative;
   height: 100%;
   width: 100%;
