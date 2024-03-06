@@ -9,7 +9,7 @@
 // CUSTOM SCRIPTS
 
 $(document).ready(function () {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
 if(window.innerWidth >=1160) {
     const lenis = new Lenis({
@@ -324,6 +324,7 @@ if(window.innerWidth >=1160) {
                             opacity: 1,
                             duration: 1.5,
                             ease: 'none',
+
                         },);
                     timeline.fromTo('.block-bg',
                         defaultPositionProps, {
@@ -332,6 +333,7 @@ if(window.innerWidth >=1160) {
                             stagger: 0.2,
                             ease: 'none',
                             duration: 1.5,
+
                         }, '<60%');
                     timeline.fromTo('.img-ellipse',
                         defaultPositionProps, {
@@ -364,7 +366,7 @@ if(window.innerWidth >=1160) {
                     }, {
                         opacity: 1,
                         stagger: 0.2,
-                        ease: 'power1.in',
+                        ease: 'none',
                         duration: 1.1,
                     }, '<');
 
@@ -372,6 +374,7 @@ if(window.innerWidth >=1160) {
                         trigger: '.section-symptoms',
                         start: 'top center+=150',
                         end: '+=200',
+                        pin:true,
                         scrub: 8,
                         invalidateOnRefresh: true,
                         animation: timeline,
@@ -412,10 +415,12 @@ if(window.innerWidth >=1160) {
         if(window.innerHeight !== windowW) {
             if (complaints && complaints.scrollTrigger) {
                 complaints.scrollTrigger.refresh();
+
             }
 
             if (effIntro && effIntro.scrollTrigger) {
                 effIntro.scrollTrigger.refresh();
+
             }
         }
 
