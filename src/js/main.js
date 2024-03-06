@@ -11,7 +11,20 @@
 $(document).ready(function () {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+if(window.innerWidth >=1160) {
+    const lenis = new Lenis({
+        // duration: 2.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    })
 
+    function raf(time) {
+        lenis.raf(time);
+        ScrollTrigger.update();
+        requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf);
+}
 
     // MOBILE MENU
     const nav = $('.header__nav');
@@ -249,7 +262,7 @@ $(document).ready(function () {
                 scrub: 1,
                 ease: 'none',
                 start: 'top top-=200',
-                end: 'bottom+=100% bottom',
+                end: '+=1000',
                 // end: 'bottom center+=50',
                 invalidateOnRefresh: true,
                 markers: true
@@ -365,7 +378,7 @@ $(document).ready(function () {
                         scrub: 8,
                         invalidateOnRefresh: true,
                         animation: timeline,
-                        markers: true
+                        // markers: true
                     });
                 }
                 return () => {
