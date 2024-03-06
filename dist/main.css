@@ -1011,7 +1011,7 @@ body {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #00ADF1;
+  background-color: #009a9d;
   z-index: -1;
 }
 
@@ -1075,10 +1075,6 @@ body {
 
 .disclaimer-main .img-mob {
   display: none;
-}
-
-.text_sm {
-  font-size: 16px;
 }
 
 .menu {
@@ -2478,10 +2474,6 @@ body {
 
   .disclaimer-main .img-desk {
     display: none;
-  }
-
-  .menu__item {
-    font-size: 24px;
   }
 
   .accordion__tab-container {

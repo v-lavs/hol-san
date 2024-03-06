@@ -9,11 +9,10 @@
 // CUSTOM SCRIPTS
 
 $(document).ready(function () {
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    gsap.registerPlugin(ScrollTrigger);
 
 if(window.innerWidth >=1160) {
     const lenis = new Lenis({
-        // duration: 2.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     })
 
@@ -50,7 +49,7 @@ if(window.innerWidth >=1160) {
 
                 $('html, body').animate({
                     scrollTop: $($.attr(this, 'href')).offset().top
-                }, 600);
+                }, 800);
             }
         });
     }
@@ -266,10 +265,7 @@ if(window.innerWidth >=1160) {
                     return `top+=${gap} top`
                 },
                 end: '+=1000',
-                // end: 'bottom center+=50',
                 invalidateOnRefresh: true,
-                markers: true
-
             }
         });
 
@@ -299,9 +295,7 @@ if(window.innerWidth >=1160) {
         return timeline;
     }
 
-
     const effIntro = sectionEffectsIntroAnim();
-
 
     function complaintsAnim() {
         const timeline = gsap.timeline({});
@@ -381,14 +375,11 @@ if(window.innerWidth >=1160) {
                         scrub: 8,
                         invalidateOnRefresh: true,
                         animation: timeline,
-                        // markers: true
                     });
                 }
-                return () => {
-                };
+                return () => { };
             }
         );
-
         return timeline;
     }
 
@@ -407,7 +398,7 @@ if(window.innerWidth >=1160) {
 
     // Debounce
     function debounce(func, timedef) {
-        var time = timedef || 100; // 100 by default if no param
+        var time = timedef || 100;
         var timer;
         return function (event) {
             if (timer) clearTimeout(timer);
@@ -418,7 +409,6 @@ if(window.innerWidth >=1160) {
     let windowW = window.innerHeight;
 
     function resizeContent() {
-        // Do loads of stuff once window has resized
         if(window.innerHeight !== windowW) {
             if (complaints && complaints.scrollTrigger) {
                 complaints.scrollTrigger.refresh();

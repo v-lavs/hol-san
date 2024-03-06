@@ -53,14 +53,4 @@
     }
 
   }
-
-  @include respond-to($md) {
-    &__item {
-      font-size: 24px;
-    }
-
-  }
-  @include respond-to($xs) {
-
-  }
 }
