@@ -234,7 +234,7 @@ $(document).ready(function () {
             animation: bannerGoOutStage,
             trigger: document.querySelector('.section-effects'),
             end: "bottom center",
-            scrub:true,
+            scrub: true,
             immediateRender: true,
             invalidateOnRefresh: true,
         });
@@ -243,7 +243,7 @@ $(document).ready(function () {
 
         ScrollTrigger.create({
             trigger: '.section-banner',
-            start: () =>  "top top",
+            start: () => "top top",
             pin: true,
             pinSpacing: false,
             invalidateOnRefresh: true,
@@ -260,7 +260,7 @@ $(document).ready(function () {
                 scrub: 1,
                 ease: 'none',
                 start: 'top top-=200',
-                end:'bottom+=100% bottom',
+                end: 'bottom+=100% bottom',
                 // end: 'bottom center+=50',
                 invalidateOnRefresh: true
 
@@ -314,70 +314,70 @@ $(document).ready(function () {
 
                 if (isDesktop) {
 
-        const defaultPositionProps = {
-            opacity: 0,
-            y: 100
-        };
-        timeline.fromTo('.img_1',
-            defaultPositionProps, {
-                y: 0,
-                opacity: 1,
-                duration: 1.5,
-                ease: 'none',
-            }, );
-        timeline.fromTo('.block-bg',
-            defaultPositionProps, {
-                y: 0,
-                opacity: 1,
-                stagger: 0.2,
-                ease: 'none',
-                duration: 1.5,
-            }, '<60%');
-        timeline.fromTo('.img-ellipse',
-            defaultPositionProps, {
-                y: 0,
-                opacity: 1,
-                duration: 1.1,
-                stagger: 0.25,
-                ease: 'power1.out',
-            }, '<40%',);
-        timeline.fromTo('.section-symptoms .section__title',
-            defaultPositionProps, {
-                y: 0,
-                opacity: 1,
-                stagger: 0.4,
-                ease: 'power1.out',
-                duration: 2.2,
-            }, '<60%');
-        timeline.fromTo('.dot', {
-            y: 50,
-            opacity: 0,
-        }, {
-            y: 0,
-            opacity: 1,
-            stagger: 0.3,
-            duration: 1.2,
-        }, '<');
-        timeline.fromTo(".symptoms .card", {
-                opacity: 0,
-                duration: -1,
-            },  {
-                opacity: 1,
-                stagger: 0.2,
-                ease: 'power1.in',
-                duration: 1.1,
-            }, '<');
+                    const defaultPositionProps = {
+                        opacity: 0,
+                        y: 100
+                    };
+                    timeline.fromTo('.img_1',
+                        defaultPositionProps, {
+                            y: 0,
+                            opacity: 1,
+                            duration: 1.5,
+                            ease: 'none',
+                        },);
+                    timeline.fromTo('.block-bg',
+                        defaultPositionProps, {
+                            y: 0,
+                            opacity: 1,
+                            stagger: 0.2,
+                            ease: 'none',
+                            duration: 1.5,
+                        }, '<60%');
+                    timeline.fromTo('.img-ellipse',
+                        defaultPositionProps, {
+                            y: 0,
+                            opacity: 1,
+                            duration: 1.1,
+                            stagger: 0.25,
+                            ease: 'power1.out',
+                        }, '<40%',);
+                    timeline.fromTo('.section-symptoms .section__title',
+                        defaultPositionProps, {
+                            y: 0,
+                            opacity: 1,
+                            stagger: 0.4,
+                            ease: 'power1.out',
+                            duration: 2.2,
+                        }, '<60%');
+                    timeline.fromTo('.dot', {
+                        y: 50,
+                        opacity: 0,
+                    }, {
+                        y: 0,
+                        opacity: 1,
+                        stagger: 0.3,
+                        duration: 1.2,
+                    }, '<');
+                    timeline.fromTo(".symptoms .card", {
+                        opacity: 0,
+                        duration: -1,
+                    }, {
+                        opacity: 1,
+                        stagger: 0.2,
+                        ease: 'power1.in',
+                        duration: 1.1,
+                    }, '<');
 
-        ScrollTrigger.create({
-            trigger: '.section-symptoms',
-            start: 'top center+=150',
-            end: 'top+=100 bottom',
-            scrub: 10,
-            pin: true,
-            invalidateOnRefresh: true,
-            animation: timeline,
-            markers: true
-        });
+                    ScrollTrigger.create({
+                        trigger: '.section-symptoms',
+                        start: 'top center+=150',
+                        end: 'top+=100 bottom',
+                        scrub: 10,
+                        pin: true,
+                        invalidateOnRefresh: true,
+                        animation: timeline,
+                        markers: true
+                    });
                 }
                 return () => {
                 };
@@ -410,16 +410,18 @@ $(document).ready(function () {
         };
     }
 
+    let windowW = window.innerHeight;
+
     function resizeContent() {
         // Do loads of stuff once window has resized
-        ScrollTrigger.update();
+        if(window.innerHeight !== windowW) {
+            if (complaints && complaints.scrollTrigger) {
+                complaints.scrollTrigger.refresh();
+            }
 
-        if (complaints && complaints.scrollTrigger) {
-            complaints.scrollTrigger.refresh();
-        }
-
-        if (effIntro && effIntro.scrollTrigger) {
-            effIntro.scrollTrigger.refresh();
+            if (effIntro && effIntro.scrollTrigger) {
+                effIntro.scrollTrigger.refresh();
+            }
         }
 
         console.log('resized');
