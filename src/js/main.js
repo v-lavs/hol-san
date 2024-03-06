@@ -222,7 +222,6 @@ $(document).ready(function () {
 
     bannerAnimation();
 
-
     function bannerOutAnim() {
         const bannerGoOutStage = gsap.to(
             '.section-banner .container', {
@@ -285,7 +284,7 @@ $(document).ready(function () {
                 ScrollTrigger.create({
                     trigger: '#action',
                     pin: true,
-                    scrub: 1.5,
+                    scrub: 3,
                     start: () => {
                         return "top+=150 top";
                     },
