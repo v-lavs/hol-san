@@ -1848,6 +1848,10 @@ body {
   top: 0;
 }
 
+.section-effects .section__title {
+  margin-bottom: 12vh;
+}
+
 .pill-side {
   transition: .2s ease-in;
 }

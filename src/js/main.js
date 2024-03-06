@@ -12,7 +12,7 @@ $(document).ready(function () {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     const lenis = new Lenis({
-        duration: 2.5,
+        // duration: 2.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     })
 
@@ -234,7 +234,7 @@ $(document).ready(function () {
             animation: bannerGoOutStage,
             trigger: document.querySelector('.section-effects'),
             end: "bottom center",
-            scrub: 0.1,
+            scrub:true,
             immediateRender: true,
             invalidateOnRefresh: true,
         });
@@ -243,7 +243,7 @@ $(document).ready(function () {
 
         ScrollTrigger.create({
             trigger: '.section-banner',
-            start: () => banner.offsetHeight < window.innerHeight ? "top top" : "bottom bottom",
+            start: () =>  "top top",
             pin: true,
             pinSpacing: false,
             invalidateOnRefresh: true,
@@ -257,86 +257,42 @@ $(document).ready(function () {
             scrollTrigger: {
                 trigger: '#action',
                 pin: true,
-                scrub: 1.5,
-                start: "top+=150 top",
-                end:"bottom center",
+                scrub: 1,
+                ease: 'none',
+                start: 'top top-=200',
+                end:'bottom+=100% bottom',
+                // end: 'bottom center+=50',
                 invalidateOnRefresh: true
-                // markers: true
+
             }
         });
 
         timeline.to('.effects .card__thumb', {
-                            yPercent: 50,
-                        });
+            yPercent: 50,
+        });
 
-                        timeline.to(".section-effects .card__text", {
-                            opacity: 0
-                        }, "<");
+        timeline.to(".section-effects .card__text", {
+            opacity: 0
+        }, "<");
 
-                        timeline.to('.effects', {
-                            scale: 0.45,
-                            opacity: 0,
-                        });
+        timeline.to('.effects', {
+            scale: 0.45,
+            opacity: 0,
+        });
 
-                        timeline.to('.section-effects .effects__pill',
-                            {opacity: 1,},
-                            "<-=0.2");
-                        timeline.to('.section-effects .effects__pill',
-                            {x: 0,},
-                            "<+=0.2");
+        timeline.to('.section-effects .effects__pill',
+            {opacity: 1,},
+            "<-=0.2");
+        timeline.to('.section-effects .effects__pill',
+            {x: 0,},
+            "<+=0.2");
 
-                        timeline.to('.section-effects .pill-side',
-                            {width: 0},
-                            "<");
+        timeline.to('.section-effects .pill-side',
+            {width: 0},
+            "<");
         return timeline;
     }
 
-    // function sectionEffectsIntroAnim() {
-    //     const timeline = gsap.timeline();
-    //
-    //             timeline.to('.effects .card__thumb', {
-    //                 yPercent: 50,
-    //             });
-    //
-    //             timeline.to(".section-effects .card__text", {
-    //                 opacity: 0
-    //             }, "<");
-    //
-    //             timeline.to('.effects', {
-    //                 scale: 0.45,
-    //                 opacity: 0,
-    //             });
-    //
-    //             timeline.to('.section-effects .effects__pill',
-    //                 {opacity: 1,},
-    //                 "<-=0.2"
-    //             );
-    //             timeline.to('.section-effects .effects__pill',
-    //                 {x: 0,},
-    //                 "<+=0.2"
-    //             );
-    //
-    //             timeline.to('.section-effects .pill-side',
-    //                 {width: 0},
-    //                 "<"
-    //             );
-    //             ScrollTrigger.create({
-    //                 trigger: '#action',
-    //                 pin: true,
-    //                 scrub: 3,
-    //                 start: () => {
-    //                     return "top+=150 top";
-    //                 },
-    //                 end: () => {
-    //                     return "bottom center";
-    //                 },
-    //                 invalidateOnRefresh: true,
-    //                 animation: timeline,
-    //                 // markers: true
-    //             });
-    //
-    //     return timeline;
-    // }
 
     const effIntro = sectionEffectsIntroAnim();
 
@@ -358,68 +314,70 @@ $(document).ready(function () {
 
                 if (isDesktop) {
 
-                    const defaultPositionProps = {
-                        opacity: 0,
-                        y: 100,
+        const defaultPositionProps = {
+            opacity: 0,
+            y: 100
+        };
+        timeline.fromTo('.img_1',
+            defaultPositionProps, {
+                y: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: 'none',
+            }, );
+        timeline.fromTo('.block-bg',
+            defaultPositionProps, {
+                y: 0,
+                opacity: 1,
+                stagger: 0.2,
+                ease: 'none',
+                duration: 1.5,
+            }, '<60%');
+        timeline.fromTo('.img-ellipse',
+            defaultPositionProps, {
+                y: 0,
+                opacity: 1,
+                duration: 1.1,
+                stagger: 0.25,
+                ease: 'power1.out',
+            }, '<40%',);
+        timeline.fromTo('.section-symptoms .section__title',
+            defaultPositionProps, {
+                y: 0,
+                opacity: 1,
+                stagger: 0.4,
+                ease: 'power1.out',
+                duration: 2.2,
+            }, '<60%');
+        timeline.fromTo('.dot', {
+            y: 50,
+            opacity: 0,
+        }, {
+            y: 0,
+            opacity: 1,
+            stagger: 0.3,
+            duration: 1.2,
+        }, '<');
+        timeline.fromTo(".symptoms .card", {
+                opacity: 0,
+                duration: -1,
+            },  {
+                opacity: 1,
+                stagger: 0.2,
+                ease: 'power1.in',
+                duration: 1.1,
+            }, '<');
 
-                    };
-                    timeline.fromTo('.img_1',
-                        defaultPositionProps, {
-                            y: 0,
-                            opacity: 1,
-                            ease: 'power4.out',
-                        },);
-                    timeline.fromTo('.block-bg',
-                        defaultPositionProps, {
-                            y: 0,
-                            opacity: 1,
-                            stagger: 0.2,
-                            ease: 'power1.out',
-                        }, '<60%');
-                    timeline.fromTo('.img-ellipse',
-                        defaultPositionProps, {
-                            y: 0,
-                            opacity: 1,
-                            duration: 0.35,
-                            stagger: 0.25,
-                            ease: 'power1.out',
-                        }, '<10%',);
-                    timeline.fromTo('.section-symptoms .section__title',
-                        defaultPositionProps, {
-                            y: 0,
-                            opacity: 1,
-                            stagger: 0.4,
-                            ease: 'power1.out',
-                            duration: 2.2,
-                        }, '<60%');
-                    timeline.fromTo('.dot', {
-                        y: 50,
-                        opacity: 0,
-                    }, {
-                        y: 0,
-                        opacity: 1,
-                        stagger: 0.3,
-                        duration: 1.2,
-                    }, '<');
-                    timeline.fromTo(".symptoms .card", {
-                            opacity: 0,
-                            duration: -1,
-                        },
-                        {
-                            opacity: 1,
-                            stagger: 0.2,
-                            ease: 'power1.in',
-                        }, '<');
-
-                    ScrollTrigger.create({
-                        trigger: '#complaints',
-                        start: 'top top+=200',
-                        scrub: 3,
-                        pin: true,
-                        invalidateOnRefresh: true,
-                        animation: timeline,
-                        // markers: true
-                    });
+        ScrollTrigger.create({
+            trigger: '.section-symptoms',
+            start: 'top center+=150',
+            end: 'top+=100 bottom',
+            scrub: 10,
+            pin: true,
+            invalidateOnRefresh: true,
+            animation: timeline,
+            markers: true
+        });
                 }
                 return () => {
                 };
@@ -456,11 +414,11 @@ $(document).ready(function () {
         // Do loads of stuff once window has resized
         ScrollTrigger.update();
 
-        if(complaints && complaints.scrollTrigger){
+        if (complaints && complaints.scrollTrigger) {
             complaints.scrollTrigger.refresh();
         }
 
-        if(effIntro && effIntro.scrollTrigger){
+        if (effIntro && effIntro.scrollTrigger) {
             effIntro.scrollTrigger.refresh();
         }
 

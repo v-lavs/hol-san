@@ -2,9 +2,12 @@
   background-color: #fafbff;
   align-items: center;
   will-change: transform;
-
-  .main__bg{
+  .main__bg {
     top: 0;
+  }
+
+  .section__title {
+    margin-bottom: 12vh;
   }
 }
 
@@ -19,7 +22,7 @@
 .effects__pill {
   display: flex;
   justify-content: center;
-  opacity:0;
+  opacity: 0;
 }
 
 .effects {
@@ -65,7 +68,6 @@
   }
 
 
-
   .card__thumb {
     position: relative;
     width: 100%;
@@ -73,6 +75,7 @@
     z-index: 1;
     margin: 0 auto;
     max-width: 225px;
+
     img {
       position: relative;
       height: 100%;
@@ -133,6 +136,7 @@
 
     .card {
       min-height: 214px;
+
       &__thumb {
         max-width: 152px;
       }
@@ -150,17 +154,12 @@
     .card__text {
       padding: 0;
     }
+
     .effects .card__thumb img {
       max-width: 156px;
     }
   }
 }
-
-
-
-
-
-
 
 
 //.section-effects {
