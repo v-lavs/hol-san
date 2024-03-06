@@ -2783,6 +2783,10 @@ body {
     height: 56px;
   }
 
+  .fixed-btns {
+    width: 56px;
+  }
+
   .container {
     width: 100%;
     padding: 0 15px;
