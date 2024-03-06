@@ -2710,6 +2710,8 @@ body {
 
   .effects__pill {
     bottom: 116px;
+    width: 165px;
+    height: 140px;
   }
 
   .effects__pill_right {
