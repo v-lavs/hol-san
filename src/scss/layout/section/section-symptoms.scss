@@ -357,6 +357,7 @@
 
 @include respond-to($sm) {
   .section-symptoms {
+    padding-top: 0;
     padding-bottom: 0;
     &__wrap-img {
       width: 90%;

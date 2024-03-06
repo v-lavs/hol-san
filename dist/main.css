@@ -1227,24 +1227,18 @@ body {
   stop-color: #FC8014;
 }
 
-.btn_up {
+.fixed-btns {
   position: fixed;
   bottom: 18vh;
+  right: 16px;
   z-index: 700;
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.btn_up.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.btn_buy {
-  position: sticky;
-  bottom: 27vh;
-}
-
-.btn_buy.show {
-  position: fixed;
+.fixed-btns .show {
   opacity: 1;
   visibility: visible;
 }
@@ -2691,6 +2685,7 @@ body {
   }
 
   .section-symptoms {
+    padding-top: 0;
     padding-bottom: 0;
   }
 

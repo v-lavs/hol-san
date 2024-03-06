@@ -126,27 +126,23 @@
   }
 }
 
-.btn_up {
+.fixed-btns {
   position: fixed;
   bottom: 18vh;
+  right: 16px;
   z-index: 700;
+  width: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
-  &.show {
+  .show {
     opacity: 1;
     visibility: visible;
   }
 }
 
-.btn_buy {
-  position: sticky;
-  bottom: 27vh;
 
-  &.show {
-    position: fixed;
-    opacity: 1;
-    visibility: visible;
-  }
-}
 
 .btn_load-more {
   padding: 16px 32px;
