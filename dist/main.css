@@ -1539,6 +1539,7 @@ body {
 }
 
 .section-banner .container {
+  will-change: transform;
   min-height: 340px;
   align-items: center;
 }
@@ -1846,6 +1847,7 @@ body {
 .section-effects {
   background-color: #fafbff;
   align-items: center;
+  will-change: transform;
 }
 
 .section-effects .main__bg {

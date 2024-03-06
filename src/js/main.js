@@ -9,6 +9,8 @@
 // CUSTOM SCRIPTS
 
 $(document).ready(function () {
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
     const lenis = new Lenis({
         duration: 2.5,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -165,7 +167,6 @@ $(document).ready(function () {
 
     // ------------------------------------------GSAP----------------------
 
-    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
     function bannerAnimation() {
         // Banner letters
@@ -453,8 +454,15 @@ $(document).ready(function () {
 
     function resizeContent() {
         // Do loads of stuff once window has resized
-        complaints.scrollTrigger.refresh();
-        effIntro.scrollTrigger.refresh();
+        ScrollTrigger.update();
+
+        if(complaints && complaints.scrollTrigger){
+            complaints.scrollTrigger.refresh();
+        }
+
+        if(effIntro && effIntro.scrollTrigger){
+            effIntro.scrollTrigger.refresh();
+        }
 
         console.log('resized');
     }
