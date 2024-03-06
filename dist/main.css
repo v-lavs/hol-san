@@ -861,6 +861,10 @@ body {
   flex-wrap: wrap;
 }
 
+.pin-spacer {
+  background-color: #fafbff;
+}
+
 .main {
   position: relative;
   flex: 1 0 auto;
