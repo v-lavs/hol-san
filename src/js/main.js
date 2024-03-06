@@ -261,7 +261,10 @@ if(window.innerWidth >=1160) {
                 pin: true,
                 scrub: 1,
                 ease: 'none',
-                start: 'top top-=200',
+                start: () => {
+                    const gap =  window.innerHeight >= 650 ? 200: 100;
+                    return `top+=${gap} top`
+                },
                 end: '+=1000',
                 // end: 'bottom center+=50',
                 invalidateOnRefresh: true,
