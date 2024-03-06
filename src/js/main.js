@@ -251,53 +251,91 @@ $(document).ready(function () {
 
     bannerOutAnim();
 
-
     function sectionEffectsIntroAnim() {
-        const timeline = gsap.timeline();
+        const timeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: '#action',
+                pin: true,
+                scrub: 1.5,
+                start: "top+=150 top",
+                end:"bottom center",
+                invalidateOnRefresh: true
+                // markers: true
+            }
+        });
 
-                timeline.to('.effects .card__thumb', {
-                    yPercent: 50,
-                });
+        timeline.to('.effects .card__thumb', {
+                            yPercent: 50,
+                        });
 
-                timeline.to(".section-effects .card__text", {
-                    opacity: 0
-                }, "<");
+                        timeline.to(".section-effects .card__text", {
+                            opacity: 0
+                        }, "<");
 
-                timeline.to('.effects', {
-                    scale: 0.45,
-                    opacity: 0,
-                });
+                        timeline.to('.effects', {
+                            scale: 0.45,
+                            opacity: 0,
+                        });
 
-                timeline.to('.section-effects .effects__pill',
-                    {opacity: 1,},
-                    "<-=0.2"
-                );
-                timeline.to('.section-effects .effects__pill',
-                    {x: 0,},
-                    "<+=0.2"
-                );
+                        timeline.to('.section-effects .effects__pill',
+                            {opacity: 1,},
+                            "<-=0.2");
+                        timeline.to('.section-effects .effects__pill',
+                            {x: 0,},
+                            "<+=0.2");
 
-                timeline.to('.section-effects .pill-side',
-                    {width: 0},
-                    "<"
-                );
-                ScrollTrigger.create({
-                    trigger: '#action',
-                    pin: true,
-                    scrub: 3,
-                    start: () => {
-                        return "top+=150 top";
-                    },
-                    end: () => {
-                        return "bottom center";
-                    },
-                    invalidateOnRefresh: true,
-                    animation: timeline,
-                    // markers: true
-                });
-
+                        timeline.to('.section-effects .pill-side',
+                            {width: 0},
+                            "<");
         return timeline;
     }
+
+    // function sectionEffectsIntroAnim() {
+    //     const timeline = gsap.timeline();
+    //
+    //             timeline.to('.effects .card__thumb', {
+    //                 yPercent: 50,
+    //             });
+    //
+    //             timeline.to(".section-effects .card__text", {
+    //                 opacity: 0
+    //             }, "<");
+    //
+    //             timeline.to('.effects', {
+    //                 scale: 0.45,
+    //                 opacity: 0,
+    //             });
+    //
+    //             timeline.to('.section-effects .effects__pill',
+    //                 {opacity: 1,},
+    //                 "<-=0.2"
+    //             );
+    //             timeline.to('.section-effects .effects__pill',
+    //                 {x: 0,},
+    //                 "<+=0.2"
+    //             );
+    //
+    //             timeline.to('.section-effects .pill-side',
+    //                 {width: 0},
+    //                 "<"
+    //             );
+    //             ScrollTrigger.create({
+    //                 trigger: '#action',
+    //                 pin: true,
+    //                 scrub: 3,
+    //                 start: () => {
+    //                     return "top+=150 top";
+    //                 },
+    //                 end: () => {
+    //                     return "bottom center";
+    //                 },
+    //                 invalidateOnRefresh: true,
+    //                 animation: timeline,
+    //                 // markers: true
+    //             });
+    //
+    //     return timeline;
+    // }
 
     const effIntro = sectionEffectsIntroAnim();
 
