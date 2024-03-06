@@ -1853,21 +1853,7 @@ body {
 }
 
 .pill-side {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  height: 100%;
   transition: .2s ease-in;
-}
-
-.pill-side_left {
-  left: 1px;
-  transform: translateX(-100%);
-}
-
-.pill-side_right {
-  right: 1px;
-  transform: translateX(100%);
 }
 
 .effects__pill_right {
@@ -1894,9 +1880,6 @@ body {
   position: absolute;
   bottom: 0;
   z-index: 4;
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
 }
 
 .effects__pill_left {
@@ -1934,7 +1917,7 @@ body {
   max-width: 225px;
 }
 
-.effects .card__thumb .img {
+.effects .card__thumb img {
   position: relative;
   height: 100%;
   width: 100%;
@@ -2728,7 +2711,7 @@ body {
   }
 
   .effects__pill_right {
-    margin-bottom: 0;
+    margin-bottom: 0.5px;
   }
 
   .effects .card {
