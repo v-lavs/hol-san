@@ -11,18 +11,7 @@
 $(document).ready(function () {
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-    const lenis = new Lenis({
-        // duration: 2.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    })
 
-    function raf(time) {
-        lenis.raf(time);
-        ScrollTrigger.update();
-        requestAnimationFrame(raf)
-    }
-
-    requestAnimationFrame(raf);
 
     // MOBILE MENU
     const nav = $('.header__nav');
@@ -206,7 +195,7 @@ $(document).ready(function () {
             x: 0,
             opacity: 1,
             stagger: 0.2,
-            ease: 'power1.out',
+            ease: 'none',
             duration: 1.2,
             delay: 0.2
         }, '<');
@@ -262,7 +251,8 @@ $(document).ready(function () {
                 start: 'top top-=200',
                 end: 'bottom+=100% bottom',
                 // end: 'bottom center+=50',
-                invalidateOnRefresh: true
+                invalidateOnRefresh: true,
+                markers: true
 
             }
         });
@@ -339,14 +329,14 @@ $(document).ready(function () {
                             opacity: 1,
                             duration: 1.1,
                             stagger: 0.25,
-                            ease: 'power1.out',
+                            ease: 'none',
                         }, '<40%',);
                     timeline.fromTo('.section-symptoms .section__title',
                         defaultPositionProps, {
                             y: 0,
                             opacity: 1,
                             stagger: 0.4,
-                            ease: 'power1.out',
+                            ease: 'none',
                             duration: 2.2,
                         }, '<60%');
                     timeline.fromTo('.dot', {
@@ -371,9 +361,8 @@ $(document).ready(function () {
                     ScrollTrigger.create({
                         trigger: '.section-symptoms',
                         start: 'top center+=150',
-                        end: 'top+=100 bottom',
-                        scrub: 10,
-                        pin: true,
+                        end: '+=200',
+                        scrub: 8,
                         invalidateOnRefresh: true,
                         animation: timeline,
                         markers: true
