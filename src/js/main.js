@@ -192,7 +192,7 @@ if(window.innerWidth >=1160) {
 
         const banner_img_defaultProps = {
             x: 500,
-            duration: -1,
+            duration: 0,
             opacity: 0
         };
 
