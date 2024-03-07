@@ -313,19 +313,18 @@ if(window.innerWidth >=1160) {
                 let {isDesktop, isMobile} = context.conditions;
 
                 if (isDesktop) {
-
                     const defaultPositionProps = {
                         opacity: 0,
                         y: 100
                     };
+
                     timeline.fromTo('.img_1',
                         defaultPositionProps, {
                             y: 0,
                             opacity: 1,
-                            duration: 1.5,
                             ease: 'none',
+                        });
 
-                        },);
                     timeline.fromTo('.block-bg',
                         defaultPositionProps, {
                             y: 0,
@@ -333,8 +332,8 @@ if(window.innerWidth >=1160) {
                             stagger: 0.2,
                             ease: 'none',
                             duration: 1.5,
-
                         }, '<60%');
+
                     timeline.fromTo('.img-ellipse',
                         defaultPositionProps, {
                             y: 0,
@@ -343,14 +342,16 @@ if(window.innerWidth >=1160) {
                             stagger: 0.25,
                             ease: 'none',
                         }, '<40%',);
+
                     timeline.fromTo('.section-symptoms .section__title',
                         defaultPositionProps, {
                             y: 0,
                             opacity: 1,
                             stagger: 0.4,
                             ease: 'none',
-                            duration: 2.2,
+                            duration: 1.2,
                         }, '<60%');
+
                     timeline.fromTo('.dot', {
                         y: 50,
                         opacity: 0,
@@ -360,33 +361,32 @@ if(window.innerWidth >=1160) {
                         stagger: 0.3,
                         duration: 1.2,
                     }, '<');
+
                     timeline.fromTo(".symptoms .card", {
                         opacity: 0,
                         duration: -1,
                     }, {
                         opacity: 1,
-                        stagger: 0.2,
+                        stagger: 0.3,
                         ease: 'none',
                         duration: 1.1,
                     }, '<');
-
-                    ScrollTrigger.create({
-                        trigger: '.section-symptoms',
-                        start: 'top center+=150',
-                        end: '+=200',
-                        pin:true,
-                        scrub: 8,
-                        invalidateOnRefresh: true,
-                        animation: timeline,
-                    });
                 }
-                // return () => { };
             }
         );
         return timeline;
     }
 
     const complaints = complaintsAnim();
+
+    ScrollTrigger.create({
+        trigger: '.section-symptoms',
+        start: 'top center',
+        end: '+=250',
+        scrub: 8,
+        invalidateOnRefresh: true,
+        animation: complaints,
+    });
 
     gsap.to('.disclaimer-main', {
         scrollTrigger: {
