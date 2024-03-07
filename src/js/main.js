@@ -380,7 +380,7 @@ if(window.innerWidth >=1160) {
                         animation: timeline,
                     });
                 }
-                return () => { };
+                // return () => { };
             }
         );
         return timeline;
