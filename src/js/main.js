@@ -264,7 +264,7 @@ if(window.innerWidth >=1160) {
                     const gap =  window.innerHeight >= 650 ? 200: 100;
                     return `top+=${gap} top`
                 },
-                end: '+=1000',
+                end: '+=500',
                 invalidateOnRefresh: true,
             }
         });
