@@ -2703,6 +2703,7 @@ body {
   }
 
   .section-symptoms {
+    margin-top: -10vh;
     padding: 0;
   }
 
